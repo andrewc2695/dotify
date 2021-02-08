@@ -1,0 +1,407 @@
+Started GET "/" for ::1 at 2021-02-08 14:20:30 -0800
+
+ActiveRecord::NoDatabaseError - FATAL:  database "dotify_development" does not exist:
+
+Started POST "/__better_errors/d904684c633c9b75/variables" for ::1 at 2021-02-08 14:20:30 -0800
+  [1m[35m (202.9ms)[0m  [1m[35mCREATE DATABASE "dotify_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (69.2ms)[0m  [1m[35mCREATE DATABASE "dotify_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+Started GET "/" for ::1 at 2021-02-08 14:21:03 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 83ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+request.formats: ["text/html"]
+request.variant: []
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/4d36b588f37ccb9f/variables" for ::1 at 2021-02-08 14:21:03 -0800
+Started GET "/" for ::1 at 2021-02-08 14:22:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70357991411520'
+
+Started POST "/__better_errors/43ce675cc1fabb7f/variables" for ::1 at 2021-02-08 14:22:46 -0800
+Started GET "/" for ::1 at 2021-02-08 14:27:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358044057880'
+
+Started POST "/__better_errors/77fd5769eda262cb/variables" for ::1 at 2021-02-08 14:27:16 -0800
+Started GET "/" for ::1 at 2021-02-08 14:27:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358015392080'
+
+Started POST "/__better_errors/f61cf6b86595d864/variables" for ::1 at 2021-02-08 14:27:18 -0800
+Started GET "/" for ::1 at 2021-02-08 14:30:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358075152280'
+
+Started POST "/__better_errors/74e834ae6ab4b286/variables" for ::1 at 2021-02-08 14:30:05 -0800
+Started GET "/" for ::1 at 2021-02-08 14:30:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358042583620'
+
+Started POST "/__better_errors/511616d9c6aabf28/variables" for ::1 at 2021-02-08 14:30:07 -0800
+Started GET "/" for ::1 at 2021-02-08 14:30:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358023776200'
+
+Started POST "/__better_errors/f5e2ee13c8008895/variables" for ::1 at 2021-02-08 14:30:08 -0800
+Started GET "/" for ::1 at 2021-02-08 14:30:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358041277060'
+
+Started POST "/__better_errors/fdc1e83af37755dc/variables" for ::1 at 2021-02-08 14:30:59 -0800
+Started GET "/" for ::1 at 2021-02-08 14:31:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358075066760'
+
+Started POST "/__better_errors/261a4dee4b58c599/variables" for ::1 at 2021-02-08 14:31:03 -0800
+Started GET "/" for ::1 at 2021-02-08 14:32:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70357991151380'
+
+Started POST "/__better_errors/33182de1b805649a/variables" for ::1 at 2021-02-08 14:32:40 -0800
+Started GET "/" for ::1 at 2021-02-08 14:34:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358009735220'
+
+Started POST "/__better_errors/a82f55ac5500ec1d/variables" for ::1 at 2021-02-08 14:34:27 -0800
+Started GET "/" for ::1 at 2021-02-08 14:35:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358005069460'
+
+Started POST "/__better_errors/cc1bf41ead2a40dd/variables" for ::1 at 2021-02-08 14:35:13 -0800
+Started GET "/" for ::1 at 2021-02-08 14:36:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358041077240'
+
+Started POST "/__better_errors/37b30cb772c3783a/variables" for ::1 at 2021-02-08 14:36:54 -0800
+Started GET "/" for ::1 at 2021-02-08 14:37:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70357993377420'
+
+Started POST "/__better_errors/871daa47f8fbbbb3/variables" for ::1 at 2021-02-08 14:37:43 -0800
+Started GET "/" for ::1 at 2021-02-08 14:39:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/andrewcurd/Desktop/dotify/app/assets/config
+  /Users/andrewcurd/Desktop/dotify/app/assets/images
+  /Users/andrewcurd/Desktop/dotify/app/assets/javascripts
+  /Users/andrewcurd/Desktop/dotify/app/assets/stylesheets
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/andrewcurd/Desktop/dotify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1281286835931462362_70358015669480'
+
+Started POST "/__better_errors/16835c3f931b83c6/variables" for ::1 at 2021-02-08 14:39:51 -0800
+Started POST "/__better_errors/16835c3f931b83c6/variables" for ::1 at 2021-02-08 14:39:58 -0800
+Started GET "/" for ::1 at 2021-02-08 14:42:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 2010ms (Views: 2006.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-08 14:45:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-08 14:45:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-08 14:46:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 558ms (Views: 554.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-08 14:46:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 523ms (Views: 520.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (48.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5986601103686592690)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateUsers (20210208225322)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5986601103686592690)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5986601103686592690)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateUsers (20210208225322)
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210208225322_create_users.rb:3
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/migrate/20210208225322_create_users.rb:10
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20210208225322_create_users.rb:11
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20210208225322_create_users.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (5.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210208225322"]]
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-08 22:59:44.098968"], ["updated_at", "2021-02-08 22:59:44.098968"]]
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5986601103686592690)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
