@@ -1,2 +1,2 @@
-# dotify
-#a spotify clone!
+# README
+# a spotify clone named dotify!
