@@ -1,2 +1,2 @@
 # dotify
-#a spotify clone
+#a spotify clone!
