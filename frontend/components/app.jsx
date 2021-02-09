@@ -2,6 +2,7 @@ import React from "react"
 import { Link, Redirect, Route, Switch } from "react-router-dom"
 import homeComponent from "./home/home_component";
 import signUpContainer from "./session/sign_up_container";
+import logInContainer from "./session/log_in_container"
 
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
     <div>
         <Switch>
             <Route path="/signup" component={signUpContainer}/>
+            <Route path="/login" component={logInContainer}/>
             <Route path="/" component={homeComponent} />
         </Switch>
     </div>

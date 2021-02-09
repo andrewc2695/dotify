@@ -7,7 +7,9 @@ const homeComponent = () => {
         <div>
         <header>
              <h1>Welcome to dotify</h1>
-             <button><Link to="/signup">Sign Up</Link></button> <button>Log In</button>
+             <button><Link to="/signup">Sign Up</Link></button>
+             <button><Link to="login">Login</Link></button>
+
         </header>
         </div>
     )

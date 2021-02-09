@@ -8,6 +8,18 @@ class SessionForm extends React.Component{
         super(props);
         this.state = {username: "", password: ""};
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleCahnge(type){
+        return (e => {
+            this.setState({[type]: e.currentTarget.value})
+        })
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.action(this.state);
+        this.props.history.push('/');
 
     }
 
