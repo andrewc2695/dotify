@@ -1,0 +1,12 @@
+ #session_div{
+     border: 2px solid red;
+     height: 1000px;
+ }
+
+ #session_form {
+     display: flexbox;
+     justify-self: center;
+    /* border: 2px solid green; */
+    width: 50%;
+
+ }

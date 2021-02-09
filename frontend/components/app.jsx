@@ -3,14 +3,15 @@ import { Link, Redirect, Route, Switch } from "react-router-dom"
 import homeComponent from "./home/home_component";
 import signUpContainer from "./session/sign_up_container";
 import logInContainer from "./session/log_in_container"
+import { AuthRoute } from "../util/route_util"
 
 
 const App = () => {
     return (
     <div>
         <Switch>
-            <Route path="/signup" component={signUpContainer}/>
-            <Route path="/login" component={logInContainer}/>
+            <AuthRoute exact path="/signup" component={signUpContainer}/>
+            <AuthRoute exact path="/login" component={logInContainer}/>
             <Route path="/" component={homeComponent} />
         </Switch>
     </div>
