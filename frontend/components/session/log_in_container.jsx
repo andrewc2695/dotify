@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { thunkLogin, thunkSignup } from "../../actions/session_actions"
+import { thunkLogin } from "../../actions/session_actions"
 import SessionForm from "./session_form.jsx"
 
 export const mapStateToProps = state => {
@@ -7,7 +7,9 @@ export const mapStateToProps = state => {
         formType: 'LOG IN',
         headerMsg: 'To Continue, log in to Dotify.',
         otherMsg: "Don't have an account?",
-        otherButtonMsg: 'SIGN UP FOR DOTIFY'
+        otherButtonMsg: 'SIGN UP FOR DOTIFY',
+        otherLink: '/signup',
+        errors: state.errors.session.errors
     }
 }
 

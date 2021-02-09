@@ -19,18 +19,25 @@ class SessionForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.action(this.state);
+        // debugger
         // conditional for if errors.
-        this.props.history.push('/');
+        // this.props.history.push('/');
 
+    }
+
+    componentDidUpdate(){
+        
     }
 
     render(){
         const { formType, headerMsg, otherMsg, otherButtonMsg } = this.props
         return(
-            //header
             <div id="session_div">
+            <header>
+                <h2 className="dotify_logo">Dotify</h2>
+            </header>
             <form onSubmit={this.handleSubmit} id="session_form">
-                <h4 className="session_msg">{headerMsg}</h4> 
+                <h4 className="session_msg" id="top_msg">{headerMsg}</h4> 
                     <hr className="thin" />
 
                     <label id="session_username" className="session_label"> Username:
@@ -60,7 +67,7 @@ class SessionForm extends React.Component{
                 </button>
                 <hr className="thin"/>
                 <h3 className="session_msg" id="otherMsg">{otherMsg}</h3>
-                <button className="session_button" id="session_switch">{otherButtonMsg}</button>
+                <Link className="session_button" id="session_switch" to={this.props.otherLink}>{otherButtonMsg}</Link>
             </form>
             </div>
         )
@@ -68,3 +75,7 @@ class SessionForm extends React.Component{
 }
 
 export default SessionForm;
+
+{/* <button className="session_button" id="session_switch" onClick={this.handleSwitch}>
+    <Link to={this.props.otherLink}>{otherButtonMsg}</Link>
+</button> */}

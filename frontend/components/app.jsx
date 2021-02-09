@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, Redirect, Route, Switch } from "react-router-dom"
-import homeComponent from "./home/home_component";
+import homeComponentContainer from "./home/home_compnent_container"
 import signUpContainer from "./session/sign_up_container";
 import logInContainer from "./session/log_in_container"
 import { AuthRoute } from "../util/route_util"
@@ -12,7 +12,7 @@ const App = () => {
         <Switch>
             <AuthRoute exact path="/signup" component={signUpContainer}/>
             <AuthRoute exact path="/login" component={logInContainer}/>
-            <Route path="/" component={homeComponent} />
+            <Route path="/" component={homeComponentContainer} />
         </Switch>
     </div>
     )

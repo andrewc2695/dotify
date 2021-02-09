@@ -1,6 +1,14 @@
+ 
  #session_div{
      margin: 0;
      padding: 0;
+ }
+
+ .dotify_logo{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: 700;
  }
 
  #session_form {
@@ -11,9 +19,11 @@
     /* border: 2px solid red; */
  }
 
- #session_username, #session_password{
-     font-weight: 700;
-     margin-bottom: 5px;
+ .session_label{
+    font-family: Verdana;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
  }
 
  .session_input{
@@ -50,6 +60,9 @@
  }
 
  #session_switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 2px solid black;
     background: white;
  }
@@ -63,7 +76,6 @@
     border: 2px solid #616467;
     color: white
  }
-
 
  .session_msg{
     text-align: center;
@@ -85,10 +97,8 @@
     color: #D9DADC;
  }
 
+
  .session_row{
 
  }
 
-
- transition-property: background-color,border-color,color,box-shadow,filter;
-    transition-duration: .3s;

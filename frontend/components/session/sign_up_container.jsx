@@ -5,7 +5,13 @@ const { thunkSignup } = require("../../actions/session_actions");
 
 const mapStateToProps = (state) => {
     return{
-        formType: 'Sign Up!'
+        formType: 'SIGN UP',
+        headerMsg: 'Sign up for free to start listening.',
+        otherMsg: "Already have an account?",
+        otherButtonMsg: 'LOG IN',
+        otherLink: '/login',
+        errors: state.errors.session.errors
+
     };
 }
 

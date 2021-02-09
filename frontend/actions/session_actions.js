@@ -4,7 +4,6 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER"
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
 
 const receiveCurrentUser = user => {
-    debugger
     return{
         type: RECEIVE_CURRENT_USER,
         user
@@ -17,20 +16,22 @@ const logoutCurrentUser = () => {
     }
 }
 
-const receiveErrors = (errorArr) => {
+const receiveErrors = (errorsArr) => {
     return{
         type: RECEIVE_ERRORS,
-        errors
+        errorsArr
     }
 }
 
 
 export const thunkLogin = (user) => dispatch => SessionApiUtil.login(user)
-    .then(user => dispatch(receiveCurrentUser(user)));
+    .then(user => dispatch(receiveCurrentUser(user)))
+    .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const thunkLogout = () => dispatch => SessionApiUtil.logout()
     .then(() => dispatch(logoutCurrentUser()));
 
 export const thunkSignup = (user) => dispatch => SessionApiUtil.signup(user)
-    .then(user => dispatch(receiveCurrentUser(user)));
+    .then(user => dispatch(receiveCurrentUser(user)))
+    .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
 
