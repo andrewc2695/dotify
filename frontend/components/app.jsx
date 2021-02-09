@@ -1,13 +1,14 @@
 import React from "react"
 import { Link, Redirect, Route, Switch } from "react-router-dom"
 import homeComponent from "./home/home_component";
+import signUpContainer from "./session/sign_up_container";
 
 
 const App = () => {
     return (
     <div>
         <Switch>
-            {/* <Route path="/signup" component={signupComponent}/> */}
+            <Route path="/signup" component={signUpContainer}/>
             <Route path="/" component={homeComponent} />
         </Switch>
     </div>
