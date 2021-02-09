@@ -10,8 +10,7 @@ const mapStateToProps = (state) => {
         otherMsg: "Already have an account?",
         otherButtonMsg: 'LOG IN',
         otherLink: '/login',
-        errors: state.errors.session.errors
-
+        errors: state.errors.session.errors,
     };
 }
 

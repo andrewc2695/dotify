@@ -26,11 +26,17 @@ class SessionForm extends React.Component{
     }
 
     componentDidUpdate(){
-        
+        // debugger
     }
 
     render(){
-        const { formType, headerMsg, otherMsg, otherButtonMsg } = this.props
+        const { formType, headerMsg, otherMsg, otherButtonMsg, errors } = this.props;
+        let errorsClass = "errors_hidden";
+        let inputClass = "session_input"
+        if(errors.length){
+            errorsClass = "errors_visable"
+            inputClass = "session_input_errors"
+        }
         return(
             <div id="session_div">
             <header>
@@ -38,16 +44,18 @@ class SessionForm extends React.Component{
             </header>
             <form onSubmit={this.handleSubmit} id="session_form">
                 <h4 className="session_msg" id="top_msg">{headerMsg}</h4> 
+                <div className={errorsClass}>{errors[0]}</div>
                     <hr className="thin" />
 
                     <label id="session_username" className="session_label"> Username:
                 
                     <input 
                         id="session_user_input"
-                        className="session_input"
+                        className={inputClass}
                         type="text" value={this.state.username} 
                         onChange={this.handleCahnge("username")}
                         placeholder="Username"
+                        onClick={() => inputClass = "session_input"}
                         />
                 </label>
                 <br/>
@@ -56,7 +64,7 @@ class SessionForm extends React.Component{
                     <input
                         id="session_password_input"
                         placeholder="Password"
-                        className="session_input"
+                        className={inputClass}
                         type="password" value={this.state.password}
                         onChange={this.handleCahnge("password")}
                     />
@@ -79,3 +87,5 @@ export default SessionForm;
 {/* <button className="session_button" id="session_switch" onClick={this.handleSwitch}>
     <Link to={this.props.otherLink}>{otherButtonMsg}</Link>
 </button> */}
+
+//123456

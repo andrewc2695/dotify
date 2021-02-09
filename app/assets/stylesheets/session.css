@@ -97,8 +97,32 @@
     color: #D9DADC;
  }
 
+.errors_hiddden{
+    display: none,
+}
 
- .session_row{
+.errors_visable{
+    background: #E22034;
+    color: white;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
 
- }
+.session_input_errors{
+     display: inline-block;
+     border: 1px solid #E22034;
+     width: 100%;
+     margin-top: 6px;
+     margin-bottom: 12px;
+     height: 30px;
+}
 
+.session_input_errors:focus{
+    border: 1px solid #D9DADC;
+}

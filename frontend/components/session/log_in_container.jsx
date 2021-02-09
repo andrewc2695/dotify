@@ -9,7 +9,7 @@ export const mapStateToProps = state => {
         otherMsg: "Don't have an account?",
         otherButtonMsg: 'SIGN UP FOR DOTIFY',
         otherLink: '/signup',
-        errors: state.errors.session.errors
+        errors: state.errors.session.errors,
     }
 }
 
