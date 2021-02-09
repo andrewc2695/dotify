@@ -30,10 +30,10 @@ class SessionForm extends React.Component{
             <form onSubmit={this.handleSubmit} id="session_form">
                 <h3 className="session_row">{formType}</h3>
                     <label id="session_username" className="session_row"> Username:
-                <br/>
+                
                     <input 
                         id="session_user_input"
-                        className="session_row"
+                        className="session_input"
                         type="text" value={this.state.username} 
                         onChange={this.handleCahnge("username")}
                         placeholder="Username"
@@ -41,19 +41,20 @@ class SessionForm extends React.Component{
                 </label>
                 <br/>
                 <label id="session_password"> Password:
-                <br/>
+                
                     <input
                         id="session_password_input"
                         placeholder="Password"
-                        className="session_row"
+                        className="session_input"
                         type="password" value={this.state.password}
                         onChange={this.handleCahnge("password")}
                     />
                 </label>
-                <br/>
+                
                     <button type="submit" id="session_submit" className="session_row">
                     {formType}
                 </button>
+                <hr className="thin"/>
             </form>
             </div>
         )

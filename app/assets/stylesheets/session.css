@@ -8,6 +8,7 @@
     margin-left: auto;
     width: 400px;
     height: 500px;
+    /* border: 2px solid red; */
  }
 
  #session_username, #session_password{
@@ -15,24 +16,37 @@
      margin-bottom: 5px;
  }
 
- #session_user_input, #session_password_input {
+ .session_input{
      display: inline-block;
-     border: 1px solid grey ;
-     width: 80%;
+     border: 1px solid #D9DADC;
+     width: 100%;
      margin-top: 5px;
      margin-bottom: 5px;
+     height: 30px;
  }
 
  #session_submit {
+    display: block;
+    margin-right: auto; 
+    margin-left: auto;
     border-radius: 25px;
-    background: #73AD21;
-    color: white
+    background: #13893D;
+    color: white;
+    width: 95%;
+    height: 42px;
+    text-align: center;
  }
 
  ::placeholder{
-     padding-left: 5px;
+     padding-left: 7px;
      font-weight: 300;
  }
+ .thin{
+    width: 99%;
+    border-radius: 25px;
+    color: #D9DADC;
+ }
+
  .session_row{
 
  }
