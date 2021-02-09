@@ -4,7 +4,10 @@ import SessionForm from "./session_form.jsx"
 
 export const mapStateToProps = state => {
     return{
-        formType: 'Log In!'
+        formType: 'LOG IN',
+        headerMsg: 'To Continue, log in to Dotify.',
+        otherMsg: "Don't have an account?",
+        otherButtonMsg: 'SIGN UP FOR DOTIFY'
     }
 }
 

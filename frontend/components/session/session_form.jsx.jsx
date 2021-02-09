@@ -19,17 +19,21 @@ class SessionForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.action(this.state);
+        // conditional for if errors.
         this.props.history.push('/');
 
     }
 
     render(){
-        const { formType } = this.props
+        const { formType, headerMsg, otherMsg, otherButtonMsg } = this.props
         return(
+            //header
             <div id="session_div">
             <form onSubmit={this.handleSubmit} id="session_form">
-                <h3 className="session_row">{formType}</h3>
-                    <label id="session_username" className="session_row"> Username:
+                <h4 className="session_msg">{headerMsg}</h4> 
+                    <hr className="thin" />
+
+                    <label id="session_username" className="session_label"> Username:
                 
                     <input 
                         id="session_user_input"
@@ -40,7 +44,7 @@ class SessionForm extends React.Component{
                         />
                 </label>
                 <br/>
-                <label id="session_password"> Password:
+                <label id="session_password" className="session_label"> Password:
                 
                     <input
                         id="session_password_input"
@@ -51,10 +55,12 @@ class SessionForm extends React.Component{
                     />
                 </label>
                 
-                    <button type="submit" id="session_submit" className="session_row">
+                    <button type="submit" id="session_submit" className="session_button">
                     {formType}
                 </button>
                 <hr className="thin"/>
+                <h3 className="session_msg" id="otherMsg">{otherMsg}</h3>
+                <button className="session_button" id="session_switch">{otherButtonMsg}</button>
             </form>
             </div>
         )

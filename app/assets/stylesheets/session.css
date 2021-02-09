@@ -20,21 +20,59 @@
      display: inline-block;
      border: 1px solid #D9DADC;
      width: 100%;
-     margin-top: 5px;
-     margin-bottom: 5px;
+     margin-top: 6px;
+     margin-bottom: 12px;
      height: 30px;
  }
 
- #session_submit {
+ .session_button {
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: block;
     margin-right: auto; 
     margin-left: auto;
     border-radius: 25px;
-    background: #13893D;
-    color: white;
     width: 95%;
     height: 42px;
     text-align: center;
+    font-family: Verdana;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s; 
+
+ }
+
+  #session_submit {
+    background: #13893D;
+    color: white;
+ }
+
+ #session_switch {
+    border: 2px solid black;
+    background: white;
+ }
+
+ #session_submit:hover {
+    background: #43B947;
+ }
+
+ #session_switch:hover{
+    background: #616467;
+    border: 2px solid #616467;
+    color: white
+ }
+
+
+ .session_msg{
+    text-align: center;
+    letter-spacing: normal;
+    /* margin-top: 20px; */
+ }
+
+ #otherMsg{
+     margin-top: 40px;
  }
 
  ::placeholder{
@@ -50,3 +88,7 @@
  .session_row{
 
  }
+
+
+ transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
