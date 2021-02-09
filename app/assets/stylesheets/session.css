@@ -1,12 +1,38 @@
  #session_div{
-     border: 2px solid red;
-     height: 1000px;
+     margin: 0;
+     padding: 0;
  }
 
  #session_form {
-     display: flexbox;
-     justify-self: center;
-    /* border: 2px solid green; */
-    width: 50%;
+    margin-right: auto; 
+    margin-left: auto;
+    width: 400px;
+    height: 500px;
+ }
+
+ #session_username, #session_password{
+     font-weight: 700;
+     margin-bottom: 5px;
+ }
+
+ #session_user_input, #session_password_input {
+     display: inline-block;
+     border: 1px solid grey ;
+     width: 80%;
+     margin-top: 5px;
+     margin-bottom: 5px;
+ }
+
+ #session_submit {
+    border-radius: 25px;
+    background: #73AD21;
+    color: white
+ }
+
+ ::placeholder{
+     padding-left: 5px;
+     font-weight: 300;
+ }
+ .session_row{
 
  }
