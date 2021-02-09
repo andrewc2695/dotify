@@ -4,6 +4,7 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER"
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
 
 const receiveCurrentUser = user => {
+    debugger
     return{
         type: RECEIVE_CURRENT_USER,
         user

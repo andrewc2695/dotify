@@ -1,12 +1,13 @@
 import React from "react"
 import { Link, Redirect, Route, Switch } from "react-router-dom"
 import homeComponent from "./home/home_component";
-import signupComponent from "./signup/sign_up_component"
+
 
 const App = () => {
     return (
     <div>
         <Switch>
+            {/* <Route path="/signup" component={signupComponent}/> */}
             <Route path="/" component={homeComponent} />
         </Switch>
     </div>
