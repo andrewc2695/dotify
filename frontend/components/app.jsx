@@ -19,9 +19,3 @@ const App = () => {
 }
 
 export default App;
-
-        // <header>
-        //     <h1>Welcome to dotify</h1>
-        //     <button><Link to="/signup">Sign Up</Link></button> <button>Log In</button>
-        // </header>
-        // <Route exact path="/signup"><Redirect to="google.com"/></Route>
