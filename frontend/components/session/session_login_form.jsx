@@ -8,6 +8,8 @@ class SessionLoginForm extends React.Component{
         super(props);
         this.state = props.formInfo;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.props.removeErrors();
+
     }
 
     handleCahnge(type){
@@ -61,7 +63,7 @@ class SessionLoginForm extends React.Component{
                         onClick={() => inputClass = "session_input"}
                         />
                 </label>
-                <br/>
+                
                 <label id="session_password" className="session_label"> Password:
                 
                     <input
@@ -76,9 +78,9 @@ class SessionLoginForm extends React.Component{
                 <button type="submit" id="session_submit" className="session_button">
                     {formType}
                 </button>
+
                 <button type="submit" id="session_submit" className="session_button"
-                    onClick={() => this.setState({username: "Demo", password: '123456'})}
-                >
+                    onClick={() => this.setState({username: "Demo", password: '123456'})}>
                     DEMO LOG IN
                 </button>
                 <hr className="thin"/>
