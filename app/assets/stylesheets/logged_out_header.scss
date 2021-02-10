@@ -34,6 +34,10 @@
     }
 }
 
+#loggout_modal_hidden{
+    display: none
+}
+
 #loggout_modal{
     position: fixed;
     z-index: 1; 
@@ -50,11 +54,27 @@
     background-color: black;
     margin-left: auto; 
     padding: 20px;
-    width: 227px;
-    height: 300px;
+    width: 200px;
+    height: 230px;
+    color: azure;
 }
 
-.modal_link_div{
-    border: 2px solid red;
-    color: azure;
+#modal_close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    // margin-left: 225px;
+}
+
+#modal_links{
+    height: 80%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#modal_line{
+    width: 76%
 }
