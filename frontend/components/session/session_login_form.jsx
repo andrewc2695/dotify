@@ -34,7 +34,7 @@ class SessionLoginForm extends React.Component{
     }
 
     render(){
-        const { formType, headerMsg, otherMsg, otherButtonMsg, errors } = this.props;
+        const { formType, headerMsg, otherMsg, otherButtonMsg, errors, removeErrors } = this.props;
         let errorsClass = "errors_hidden";
         let inputClass = "session_input"
         if(errors.length){
@@ -79,7 +79,10 @@ class SessionLoginForm extends React.Component{
                 </button>
                 <hr className="thin"/>
                 <h3 className="session_msg" id="otherMsg">{otherMsg}</h3>
-                <Link className="session_button" id="session_switch" to={this.props.otherLink}>{otherButtonMsg}</Link>
+                <Link className="session_button" id="session_switch" 
+                    to={this.props.otherLink} onClick={() => removeErrors()}>
+                        {otherButtonMsg}
+                </Link>
             </form>
             </div>
         )

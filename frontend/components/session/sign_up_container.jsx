@@ -1,6 +1,7 @@
 import SessionSignupForm from "./session_signup_form.jsx";
 import { connect } from "react-redux"
 const { thunkSignup } = require("../../actions/session_actions");
+import { removeErrors } from "../../actions/session_actions"
 
 
 const mapStateToProps = (state) => {
@@ -16,7 +17,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        action: user => dispatch(thunkSignup(user))
+        action: user => dispatch(thunkSignup(user)),
+        removeErrors: () => dispatch(removeErrors())
     };
 }
 

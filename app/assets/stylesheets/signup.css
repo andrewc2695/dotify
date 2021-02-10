@@ -30,12 +30,12 @@
      border: 1px solid #D9DADC;
      width: 100%;
      margin-top: 6px;
-     margin-bottom: 12px;
+     margin-bottom: 5px;
      height: 30px;
  }
 
  .signup_session_button {
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 2px;
     display: block;
     margin-right: auto; 
@@ -128,4 +128,23 @@
     margin-left: 5px;
     color: #1CB954;
     text-decoration: underline;
+}
+
+.username_errors_hidden{
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+.username_errors_displayed, .password_errors_displayed {
+    color: red;
+    margin-top: 0px;
+}
+
+.username_input_errors, .password_input_errors{
+    display: inline-block;
+    border: 1px solid red;
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 5px;
+    height: 30px;
 }

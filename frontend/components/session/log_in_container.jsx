@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { thunkLogin } from "../../actions/session_actions"
+import { removeErrors, thunkLogin } from "../../actions/session_actions"
 import SessionLoginForm from "./session_login_form.jsx"
 
 export const mapStateToProps = state => {
@@ -16,6 +16,7 @@ export const mapStateToProps = state => {
 export const mapDispatchToProps = dispatch => {
     return{
         action: user => dispatch(thunkLogin(user)),
+        removeErrors: () => dispatch(removeErrors()),
     }
 }
 

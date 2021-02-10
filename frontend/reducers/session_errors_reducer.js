@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from "../actions/session_actions";
+import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, REMOVE_ERRORS } from "../actions/session_actions";
 
 
 const SessionErrorsReducer = (oldState = { errors: [] }, action) => {
@@ -11,6 +11,9 @@ const SessionErrorsReducer = (oldState = { errors: [] }, action) => {
         case RECEIVE_CURRENT_USER:
             newState.errors = [];
             return newState
+        case REMOVE_ERRORS:
+            newState.errors = [];
+            return newState;
         default:
             return oldState;
     }
