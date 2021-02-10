@@ -3,7 +3,7 @@ import { Link, Redirect, Route } from "react-router-dom"
 
 
 
-class SessionForm extends React.Component{
+class SessionSignupForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {username: "", password: ""};
@@ -12,8 +12,13 @@ class SessionForm extends React.Component{
 
     handleCahnge(type){
         return (e => {
-            this.setState({[type]: e.currentTarget.value})
-        })
+            this.setState({[type]: e.currentTarget.value});
+            if(type === "username"){
+                this.username = true;
+            }else if(type === "password"){
+                this.password = true;
+            }
+        });
     }
 
     handleSubmit(e){
@@ -26,43 +31,44 @@ class SessionForm extends React.Component{
     }
 
     componentDidUpdate(){
-        // debugger
+
     }
 
     render(){
         const { formType, headerMsg, otherMsg, otherButtonMsg, errors } = this.props;
-        let errorsClass = "errors_hidden";
-        let inputClass = "session_input"
+        let errorsClass = "signup_errors_hidden";
+        let inputClass = "signup_session_input"
         if(errors.length){
-            errorsClass = "errors_visable"
-            inputClass = "session_input_errors"
+            errorsClass = "signup_errors_visable"
+            inputClass = "signup_session_input_errors"
         }
         return(
-            <div id="session_div">
+            <div id="signup_session_div">
             <header>
                 <h2 className="dotify_logo">Dotify</h2>
             </header>
-            <form onSubmit={this.handleSubmit} id="session_form">
-                <h4 className="session_msg" id="top_msg">{headerMsg}</h4> 
+                <form onSubmit={this.handleSubmit} id="signup_session_form">
+                <h4 className="signup_session_msg" id="signup_top_msg">{headerMsg}</h4> 
                 <div className={errorsClass}>{errors[0]}</div>
                     <hr className="thin" />
 
-                    <label id="session_username" className="session_label"> Username:
+                    <label id="signup_session_username" className="signup_session_label"> What should we call you?
                 
                     <input 
-                        id="session_user_input"
+                        id="signup_session_user_input"
                         className={inputClass}
                         type="text" value={this.state.username} 
                         onChange={this.handleCahnge("username")}
                         placeholder="Username"
-                        onClick={() => inputClass = "session_input"}
+                        onClick={() => inputClass = "signup_session_input"}
                         />
                 </label>
+                <div className="signup_session_label" id="under_username">This appears on your profile.</div>
                 <br/>
-                <label id="session_password" className="session_label"> Password:
+                <label id="signup_session_password" className="signup_session_label"> Create a password
                 
                     <input
-                        id="session_password_input"
+                        id="signup_session_password_input"
                         placeholder="Password"
                         className={inputClass}
                         type="password" value={this.state.password}
@@ -70,22 +76,17 @@ class SessionForm extends React.Component{
                     />
                 </label>
                 
-                    <button type="submit" id="session_submit" className="session_button">
+                    <button type="submit" id="signup_session_submit" className="signup_session_button">
                     {formType}
                 </button>
-                <hr className="thin"/>
-                <h3 className="session_msg" id="otherMsg">{otherMsg}</h3>
-                <Link className="session_button" id="session_switch" to={this.props.otherLink}>{otherButtonMsg}</Link>
+                <div class="otherDiv">
+                    <h5 className="signup_session_msg" id="signup_otherMsg">{otherMsg}</h5>
+                    <Link className="signup_session_link" id="signup_session_switch" to={this.props.otherLink}>{otherButtonMsg}</Link>
+                </div>
             </form>
             </div>
         )
     }
 }
 
-export default SessionForm;
-
-{/* <button className="session_button" id="session_switch" onClick={this.handleSwitch}>
-    <Link to={this.props.otherLink}>{otherButtonMsg}</Link>
-</button> */}
-
-//123456
+export default SessionSignupForm;

@@ -1,4 +1,4 @@
-import SessionForm from "./session_form.jsx";
+import SessionSignupForm from "./session_signup_form.jsx";
 import { connect } from "react-redux"
 const { thunkSignup } = require("../../actions/session_actions");
 
@@ -7,8 +7,8 @@ const mapStateToProps = (state) => {
     return{
         formType: 'SIGN UP',
         headerMsg: 'Sign up for free to start listening.',
-        otherMsg: "Already have an account?",
-        otherButtonMsg: 'LOG IN',
+        otherMsg: "Have an account?",
+        otherButtonMsg: 'Log in.',
         otherLink: '/login',
         errors: state.errors.session.errors,
     };
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SessionSignupForm);

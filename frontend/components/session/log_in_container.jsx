@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import { thunkLogin } from "../../actions/session_actions"
-import SessionForm from "./session_form.jsx"
+import SessionLoginForm from "./session_login_form.jsx"
 
 export const mapStateToProps = state => {
     return{
@@ -19,4 +19,4 @@ export const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SessionLoginForm);
