@@ -1,0 +1,79 @@
+
+.website_header{
+    height: 68px;
+    background: black;
+    color: white;
+
+}
+
+.logged_out_div{
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, #2D46B9, #1CB954);
+}
+
+.logged_out_text_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 50%;
+}
+
+.logged_out_text{
+    font-family: Verdana;
+    font-weight: 600;
+    color: #1BD760;
+}
+
+#logged_out_big_text{
+    margin-top: 110px;
+    margin-bottom: 40px;
+}
+
+#logged_out_small_text{
+    margin-bottom: 20px;
+}
+
+
+@media screen and (min-width: 736px){
+    #logged_out_big_text{
+        font-size: 80px;
+    }
+    #logged_out_small_text{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 735px){
+    #logged_out_big_text{
+        font-size: 50px;
+    }
+    #logged_out_small_text{
+        font-size: 15px;
+    }
+}
+
+#logged_out_button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 227px;
+    height: 42px;
+    font-family: Verdana;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s; 
+    background-color: #1BD760;
+    color: #2D46B9
+}
+
+#logged_out_button:hover{
+background-color: azure;
+}

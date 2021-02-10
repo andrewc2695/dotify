@@ -1,0 +1,19 @@
+.website_header_div{
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.website_header_div_div{
+    font-family: Verdana;
+    font-weight: 500;
+}
+
+#logout_link_div{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}

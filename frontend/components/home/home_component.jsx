@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, Redirect, Route } from "react-router-dom"
 import { login } from "../../util/session_api_util";
+import LoggedOutComponet from "./logged_out_component.jsx";
 
 class homeComponent extends React.Component {
     constructor(props) {
@@ -20,9 +21,7 @@ class homeComponent extends React.Component {
             return(
                 <div>
                     <header>
-                        <h1>Welcome to dotify</h1>
-                        <button><Link to="/signup">Sign Up</Link></button>
-                        <button><Link to="login">Login</Link></button>
+                        <LoggedOutComponet />
                     </header>
                 </div>
             )

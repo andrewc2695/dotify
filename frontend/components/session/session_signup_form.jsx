@@ -49,7 +49,7 @@ class SessionSignupForm extends React.Component{
                 if (error === "Username has already been taken") {
                     this.usernameTaken = <Link to="/login" 
                     onClick={() => removeErrors()}> 
-                        Log in
+                        . Log in?
                     </Link>;
                 };
             } else if (error.split(" ")[0] === "Password") {
@@ -83,7 +83,7 @@ class SessionSignupForm extends React.Component{
                         placeholder="Username"
                         />
                 </label>
-                <div className="signup_session_label" className={this.usernameErrors} id="under_username">{this.usernameErrorMsg + "."}{this.usernameTaken}</div>
+                <div className="signup_session_label" className={this.usernameErrors} id="under_username">{this.usernameErrorMsg}{this.usernameTaken}</div>
                 
                 <label id="signup_session_password" className="signup_session_label"> Create a password
                     <input
