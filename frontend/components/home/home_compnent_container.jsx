@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { thunkLogout } from "../../actions/session_actions"
+import { thunkLogin, thunkLogout } from "../../actions/session_actions"
 import homeComponent from "./home_component";
 
 
@@ -13,6 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         logout: () => dispatch(thunkLogout()),
+        Login: (user) =>dispatch(thunkLogin(user))
     };
 }
 

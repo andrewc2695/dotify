@@ -6,7 +6,7 @@ import { Link, Redirect, Route } from "react-router-dom"
 class SessionLoginForm extends React.Component{
     constructor(props){
         super(props);
-        this.state = {username: "", password: ""};
+        this.state = props.formInfo;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -29,9 +29,6 @@ class SessionLoginForm extends React.Component{
 
     }
 
-    componentDidUpdate(){
-
-    }
 
     render(){
         const { formType, headerMsg, otherMsg, otherButtonMsg, errors, removeErrors } = this.props;
@@ -44,7 +41,9 @@ class SessionLoginForm extends React.Component{
         return(
             <div id="session_div">
             <header>
-                <h2 className="dotify_logo">Dotify</h2>
+                <div className="logo_div">
+                    <Link to="/" className="dotify_logo">Dotify</Link>
+                </div>
             </header>
             <form onSubmit={this.handleSubmit} id="session_form">
                 <h4 className="session_msg" id="top_msg">{headerMsg}</h4> 
@@ -74,8 +73,13 @@ class SessionLoginForm extends React.Component{
                     />
                 </label>
                 
-                    <button type="submit" id="session_submit" className="session_button">
+                <button type="submit" id="session_submit" className="session_button">
                     {formType}
+                </button>
+                <button type="submit" id="session_submit" className="session_button"
+                    onClick={() => this.setState({username: "Demo", password: '123456'})}
+                >
+                    DEMO LOG IN
                 </button>
                 <hr className="thin"/>
                 <h3 className="session_msg" id="otherMsg">{otherMsg}</h3>

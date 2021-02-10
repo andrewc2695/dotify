@@ -3,12 +3,6 @@
      padding: 0;
  }
 
- .signup_dotify_logo{
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 40px;
-    font-weight: 700;
- }
 
  #signup_session_form {
     margin-right: auto; 
@@ -53,6 +47,7 @@
 
  }
 
+
   #signup_session_submit {
     background: #1CB954;
     color: white;
@@ -82,23 +77,6 @@
     border-radius: 25px;
     color: #D9DADC;
  }
-
-.signup_errors_hiddden{
-    display: none,
-}
-
-.signup_errors_visable{
-    background: #E22034;
-    color: white;
-    height: 42px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Verdana;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
 
 .signup_session_input_errors{
      display: inline-block;
@@ -133,11 +111,16 @@
 .username_errors_hidden{
     font-family: Verdana;
     font-size: 12px;
+    margin-bottom: 10px;
 }
 
 .username_errors_displayed, .password_errors_displayed {
     color: red;
+    font-family: Verdana;
+    font-size: 12px;
     margin-top: 0px;
+    margin-bottom: 10px;
+
 }
 
 .username_input_errors, .password_input_errors{
@@ -147,4 +130,13 @@
     margin-top: 6px;
     margin-bottom: 5px;
     height: 30px;
+}
+
+.username_input_errors:focus, .password_input_errors:focus{
+    border: 1px solid #D9DADC;
+}
+
+#under_password{
+    height: 10px;
+    margin-bottom: 10px;
 }
