@@ -22400,6 +22400,7 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 1227ms (Views: 1224.2ms | ActiveRecord: 1.2ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for ::1 at 2021-02-10 14:29:07 -0800
 Processing by StaticPagesController#root as HTML
   Rendering static_pages/root.html.erb within layouts/application
@@ -22409,3 +22410,5 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.4ms)
 
 
+=======
+>>>>>>> 92277a6863ba86de580618edaf80428663d3ab8e
