@@ -24,7 +24,6 @@ class SessionLoginForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.action(this.state);
-        // debugger
         // conditional for if errors.
         // this.props.history.push('/');
 
