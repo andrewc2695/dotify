@@ -3,6 +3,8 @@ import { Link, Redirect, Route } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import { faHeadphones } from '@fortawesome/free-solid-svg-icons'
+
 
 
 
@@ -28,7 +30,7 @@ handleModal(){
                 <header className="website_header">
                     <div className="website_header_div">
                         <div className="website_header_div_div" id="logout_logo_div">
-                            <h1>Dotify</h1>
+                            <h1><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</h1>
                         </div>
                         <div className="website_header_div_div" id="logout_link_div">
                             <Link to="/signup">Sign Up</Link>

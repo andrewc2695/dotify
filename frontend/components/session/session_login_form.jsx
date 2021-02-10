@@ -1,5 +1,7 @@
 import React from "react"
 import { Link, Redirect, Route } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeadphones } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -44,7 +46,9 @@ class SessionLoginForm extends React.Component{
             <div id="session_div">
             <header>
                 <div className="logo_div">
-                    <Link to="/" className="dotify_logo">Dotify</Link>
+                        <Link to="/" className="dotify_logo">
+                            <FontAwesomeIcon icon={faHeadphones} rotation={90} />otify
+                        </Link>
                 </div>
             </header>
             <form onSubmit={this.handleSubmit} id="session_form">
