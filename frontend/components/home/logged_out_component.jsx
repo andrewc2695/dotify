@@ -17,6 +17,9 @@ class LoggedOutComponet extends React.Component{
                             <Link to="/signup">Sign Up</Link>
                             <Link to="login">Login</Link>
                         </div>
+                        <div className="website_header_div_div" id="modal_button_div">
+                            button
+                        </div>
                     </div>
                 </header>
                 <div className="logged_out_div">
@@ -33,6 +36,15 @@ class LoggedOutComponet extends React.Component{
                             id="logged_out_button">
                             Sign Up
                         </Link>
+                    </div>
+                    <div id="loggout_modal">
+                        <div id="modal_content">
+                            <div id="modal_link_div">
+                                hi
+                                <Link to="/signup">Sign Up</Link>
+                                <Link to="login">Login</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
