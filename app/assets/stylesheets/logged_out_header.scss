@@ -14,11 +14,23 @@
 }
 
 #logout_link_div{
-    width: 180px;
+    width: 400px;
     display: flex;
     justify-content: space-between;
     padding-left: 30px;
-    border-left: 2px solid azure
+}
+
+#linkedin{
+    padding-right: 25px;
+    border-right: 2px solid white
+}
+
+.non_personal_link{
+    color: #D9DADC
+}
+
+#logout_logo_div{
+    font-size: 30px;
 }
 
 #modal_button_div{
@@ -55,7 +67,7 @@
     margin-left: auto; 
     padding: 20px;
     width: 200px;
-    height: 130px;
+    height: 250px;
     color: azure;
 }
 

@@ -64,7 +64,7 @@ class SessionSignupForm extends React.Component{
             };
         });
         return(
-            <div id="signup_session_div">
+            <div id="session_div">
             <header>
                 <div className="logo_div">
                         <Link to="/" className="dotify_logo" onClick={() => removeErrors()}>
@@ -115,8 +115,10 @@ class SessionSignupForm extends React.Component{
                         {otherButtonMsg}
                     </Link>
                 </div>
-                
             </form>
+            <div className="session_color">
+            
+            </div>
             </div>
         )
     }

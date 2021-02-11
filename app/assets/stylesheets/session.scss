@@ -1,8 +1,8 @@
  
  #session_div{
-     margin: 0;
-     padding: 0;
+   margin-top: 83px;
  }
+
  .logo_div{
     display: flex;
     justify-content: center;
@@ -11,10 +11,10 @@
  .dotify_logo{
     margin-bottom: 22px;
     font-family: Verdana;
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 700;
     cursor: pointer;
-    width: 150px; 
+    width: 170px; 
  }
 
  #session_form {
@@ -22,8 +22,7 @@
     margin-left: auto;
     width: 400px;
     height: 500px;
-    /* border: 2px solid red; */
- }
+}
 
  .session_label{
     font-family: Verdana;

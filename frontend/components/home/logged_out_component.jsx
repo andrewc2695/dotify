@@ -33,8 +33,10 @@ handleModal(){
                             <a href="/"><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</a>
                         </div>
                         <div className="website_header_div_div" id="logout_link_div">
-                            <Link to="/signup">Sign Up</Link>
-                            <Link to="login">Login</Link>
+                            <a className="personal_link" id="github" href="https://github.com/andrewc2695">Github</a>
+                            <a className="personal_link" id="linkedin" href="https://www.linkedin.com/in/andrew-curd-054997b1/">LinkedIn</a>
+                                <Link className="non_personal_link" to="/signup">Sign Up</Link>
+                                <Link className="non_personal_link" to="login">Login</Link>
                         </div>
                         <button className="website_header_div_div" id="modal_button_div"
                             onClick={() => this.handleModal()}>
@@ -61,9 +63,11 @@ handleModal(){
                         <div className="website_header_div_div" id="modal_content">
                             <button id="modal_close" onClick={() => this.handleModal()}><FontAwesomeIcon icon={faWindowClose} /></button>
                             <div id="modal_links">
-                                <Link to="/signup">Sign Up</Link>
+                                <Link className="non_personal_link" to="/signup">Sign Up</Link>
+                                <Link className="non_personal_link" to="login">Login</Link>
                                 <hr id="modal_line" />
-                                <Link to="login">Login</Link>
+                                <a className="personal_link" id="github" href="https://github.com/andrewc2695">Github</a>
+                                <a className="personal_link"  href="https://www.linkedin.com/in/andrew-curd-054997b1/">LinkedIn</a>
                             </div>
                         </div>
                     </div>
