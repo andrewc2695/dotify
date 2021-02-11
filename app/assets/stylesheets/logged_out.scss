@@ -57,13 +57,12 @@
 
 #logged_out_button{
     margin-top: 20px;
-    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
     width: 227px;
-    height: 42px;
+    min-height: 42px;
     font-family: Verdana;
     font-weight: 600;
     font-size: 14px;

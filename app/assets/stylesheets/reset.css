@@ -50,3 +50,7 @@ input[type="submit"] {
 h1, h2, h3, h4, h5, h6{
   font-family: Verdana;
 }
+
+input {
+  border-radius: 5px;
+}

@@ -109,6 +109,12 @@
     text-decoration: underline;
 }
 
+.signup_session_link:hover{
+    color:  #00FF09;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s; 
+}
+
 .username_errors_hidden{
     font-family: Verdana;
     font-size: 12px;

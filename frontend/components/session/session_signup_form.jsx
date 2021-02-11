@@ -49,7 +49,7 @@ class SessionSignupForm extends React.Component{
                 this.usernameInput = "username_input_errors";
                 this.usernameErrorMsg = error;
                 if (error === "Username has already been taken") {
-                    this.usernameTaken = <Link to="/login" 
+                    this.usernameTaken = <Link to="/login"
                     onClick={() => removeErrors()}> 
                         . Log in?
                     </Link>;
@@ -67,7 +67,7 @@ class SessionSignupForm extends React.Component{
             <div id="signup_session_div">
             <header>
                 <div className="logo_div">
-                        <Link to="/" className="dotify_logo">
+                        <Link to="/" className="dotify_logo" onClick={() => removeErrors()}>
                             <FontAwesomeIcon icon={faHeadphones} rotation={90} />otify
                         </Link>
                 </div>

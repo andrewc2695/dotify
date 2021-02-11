@@ -27,7 +27,7 @@ class LoggedInComponet extends React.Component {
                 <header className="website_header">
                     <div className="website_header_div">
                         <div className="website_header_div_div">
-                            <h1><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</h1>
+                            <a><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</a>
                         </div>
                         <button className="website_header_div_div" id="user_profile_div" onClick={() => this.handleModal()}>
                             <FontAwesomeIcon icon={faGrinAlt} /> 

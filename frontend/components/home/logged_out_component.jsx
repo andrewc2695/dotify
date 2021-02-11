@@ -30,7 +30,7 @@ handleModal(){
                 <header className="website_header">
                     <div className="website_header_div">
                         <div className="website_header_div_div" id="logout_logo_div">
-                            <h1><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</h1>
+                            <a href="/"><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</a>
                         </div>
                         <div className="website_header_div_div" id="logout_link_div">
                             <Link to="/signup">Sign Up</Link>
