@@ -1,0 +1,15 @@
+
+.sidebar_comp{
+    height: 100%;
+}
+
+#sidebar_top{
+    border: 1px solid green;
+    min-height: 350px;
+}
+
+#sidebar_bottom{
+    height: 521px;
+    max-height: 521px;
+    overflow: hidden;
+}
