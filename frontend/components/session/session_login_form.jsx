@@ -17,17 +17,12 @@ class SessionLoginForm extends React.Component{
     handleCahnge(type){
         return (e => {
             this.setState({[type]: e.currentTarget.value});
-            if(type === "username"){
-                this.username = true;
-            }else if(type === "password"){
-                this.password = true;
-            }
         });
     }
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.action(this.state);
+        this.props.action({username: this.state.username.trim(), password: this.state.password});
         // conditional for if errors.
         // this.props.history.push('/');
 

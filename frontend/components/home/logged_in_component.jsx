@@ -26,13 +26,17 @@ class LoggedInComponet extends React.Component {
             <div className="logged_out_div">
                 <header className="website_header">
                     <div className="website_header_div">
-                        <div className="website_header_div_div">
-                            <a><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</a>
+                        <div className="website_header_div_div" id="logo_div">
+                            <a href="/"><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</a>
                         </div>
-                        <button className="website_header_div_div" id="user_profile_div" onClick={() => this.handleModal()}>
-                            <FontAwesomeIcon icon={faGrinAlt} /> 
-                            {this.props.currentUser.username}
-                        </button>
+                        <div className="website_header_div_div" id="user_profile_div">
+                            <a className="personal_link" id="github" href="https://github.com/andrewc2695">Github</a>
+                            <a className="personal_link" href="https://www.linkedin.com/in/andrew-curd-054997b1/">LinkedIn</a>
+                            <button className="website_header_div_div" onClick={() => this.handleModal()}>
+                                <FontAwesomeIcon icon={faGrinAlt} />
+                                {this.props.currentUser.username}
+                            </button>
+                        </div>
                     </div>
                 </header>
                 <div className="logged_out_text_div">

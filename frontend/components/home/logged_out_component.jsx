@@ -29,7 +29,7 @@ handleModal(){
             <div className="logged_out_div">
                 <header className="website_header">
                     <div className="website_header_div">
-                        <div className="website_header_div_div" id="logout_logo_div">
+                        <div className="website_header_div_div" id="logo_div">
                             <a href="/"><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</a>
                         </div>
                         <div className="website_header_div_div" id="logout_link_div">
