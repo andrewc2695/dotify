@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeadphones, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
+import { faHeadphones, faPlusSquare, faHome, faSearch, faBookOpen } from '@fortawesome/free-solid-svg-icons'
 
 
 class SideBarTop extends React.Component {
@@ -10,16 +10,36 @@ class SideBarTop extends React.Component {
         return(
             <div id="sidebar_top_items">
                 <div id="sidebar_top_logo">
-                    <Link to="/"><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</Link>
+                    <Link id="sidebar_logo" to="/">
+                        <FontAwesomeIcon icon={faHeadphones} rotation={90} />otify
+                    </Link>
                 </div>
                 <div id="sidebar_top_links">
-                    <button>Home</button>
-                    <button>Search</button>
-                    <button>Library</button>
+                    <div className="sidebar_link">
+                        <button className="sidebar_content">
+                            <FontAwesomeIcon icon={faHome} className="sidebar_link_icon"/> 
+                            Home
+                        </button>
+                    </div>
+                    <div className="sidebar_link">
+                        <button className="sidebar_content">
+                            <FontAwesomeIcon icon={faSearch} className="sidebar_link_icon"/> 
+                            Search
+                        </button>
+                    </div>
+                    <div className="sidebar_link">
+                        <button className="sidebar_content">
+                            <FontAwesomeIcon icon={faBookOpen} className="sidebar_link_icon"/> 
+                            Library
+                        </button>
+                    </div>
                 </div>
-                <div id="side_bar_top_playlists">
-                    PLAYLISTS
-                    <FontAwesomeIcon icon={faPlusSquare}/> Create Playlist
+                <div id="sidebar_top_playlists">
+                    <div className="sidebar_static">PLAYLISTS</div>
+                    <div className="sidebar_content" id="playlist_create">
+                        <FontAwesomeIcon icon={faPlusSquare} id="playlist_create_icon"/> 
+                        Create Playlist
+                    </div>
                 </div>
             </div>
         )
