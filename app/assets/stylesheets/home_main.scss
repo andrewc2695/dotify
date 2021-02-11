@@ -1,0 +1,48 @@
+.main_div{
+    height: 100vh;
+}
+
+.main_and_side_div{
+    border: 2px solid black;
+    height: 86%;
+    display: flex;
+}
+
+.side_component{
+    border: 2px solid red;
+    width: 15%;
+    max-width: 23%;
+    min-width: 7%;
+    height: 100;
+}
+
+// #handle{
+//     float: right;
+//     height: 100%;
+//     width: 1px;
+//     background-color: blue;
+//     z-index: 1;
+// }
+
+#handle::after {
+    content: "";
+    width: 9px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -4px;
+    background-color: transparent;
+    cursor: ew-resize;
+    z-index: 2;
+}
+// above code taken from https://spin.atomicobject.com/2019/11/21/creating-a-resizable-html-element/
+
+.main_component{
+    height: 100%;
+    width: 100%;
+}
+
+.playbar_component{
+    border: 2px solid purple;
+    height: 14%;
+}
