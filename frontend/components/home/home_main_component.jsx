@@ -9,14 +9,10 @@ class homeMainComponent extends React.Component{
         return(
             <div className="main_div">
                 <div className="main_and_side_div">
-                    <ResizePanel direction="e">
-                        <div className="side_component">
-                            <div id="handle">
+                    <div className="side_component">
 
-                            </div>
 
-                        </div>
-                    </ResizePanel>
+                    </div>
                     <div className="main_component">
 
                     </div>
