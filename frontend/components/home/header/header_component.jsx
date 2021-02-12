@@ -39,7 +39,7 @@ class HeaderComponent extends React.Component{
                         <div id="search_icon">
                             <FontAwesomeIcon icon={faSearch} className="search_icon" />
                         </div>
-                        <input type="text" placeholder="Search" />
+                        <input type="text" placeholder="Search" id="header_search"/>
                     </div>
                 </div>
                 <div id={`${this.userProfile}`}>
