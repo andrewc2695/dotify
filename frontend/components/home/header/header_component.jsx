@@ -1,4 +1,5 @@
 import React from "react"
+import { Link, Redirect, Route } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight, faSearch, faGrin, 
           faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
@@ -7,19 +8,23 @@ import { faChevronLeft, faChevronRight, faSearch, faGrin,
 class HeaderComponent extends React.Component{
     constructor(props){
         super(props);
-        this.state = { dropdownButton: "header_dropdown_button_down", sort: faSortDown}
+        this.state = { dropdownButton: "header_dropdown_button_down", sort: faSortDown};
+        this.userProfile = "header_users_div";
         this.handleDropDown = this.handleDropDown.bind(this);
     }
 
     handleDropDown(){
         if (this.state.dropdownButton === "header_dropdown_button_down"){
-            this.setState({ dropdownButton: "header_dropdown_button_up", sort: faSortUp})
+            this.setState({ dropdownButton: "header_dropdown_button_up", sort: faSortUp});
+            this.userProfile = "header_users_div_up";
         }else{
-            this.setState({ dropdownButton: "header_dropdown_button_down", sort: faSortDown})
+            this.setState({ dropdownButton: "header_dropdown_button_down", sort: faSortDown});
+            this.userProfile = "header_users_div";
         }
     }
 
     render(){
+  
         return(
             <div id="header_component">
                 <div className="header_buttons_and_search">
@@ -36,7 +41,7 @@ class HeaderComponent extends React.Component{
                         <input type="text" placeholder="Search" />
                     </div>
                 </div>
-                <div id="header_users_div">
+                <div id={`${this.userProfile}`}>
                     <div id="header_profile">
                         <FontAwesomeIcon icon={faGrin} className="profile_icon" />
 
@@ -48,8 +53,10 @@ class HeaderComponent extends React.Component{
                         <FontAwesomeIcon icon={this.state.sort} className={this.state.dropdownButton} />
                     </button>
                 </div>
-                <div id="dropdown_menue_visable">
-
+                <div id={this.state.dropdownButton}>
+                    <Link to="" className="drop_down_div"></Link>
+                    <Link to="" className="drop_down_div"></Link>
+                    <button className="drop_down_div">Log Out</button>
                 </div>
             </div>
         )
