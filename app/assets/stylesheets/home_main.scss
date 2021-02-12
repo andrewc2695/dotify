@@ -2,6 +2,26 @@
     height: 100vh;
 }
 
+.main_and_side_div{
+    height: 100%;
+    display: flex;
+}
+
+.side_component{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    min-width: 280px;
+    height: 100%;
+}
+
+
+.main_component{
+    width: 100%;
+    background-color: #131313;
+}
+
 .playbar_component{
     position: fixed;
     bottom: 0;
@@ -9,21 +29,6 @@
     right: 0;
     background-color: #191919;
     min-height: 97px;
-}
-
-.main_and_side_div{
-    height: 100%;
-    display: flex;
-}
-
-.side_component{
-    background-color: #000000;
-    min-width: 280px;
-}
-
-
-.main_component{
-    width: 100%;
-    background-color: #131313;
+    z-index: 1;
 }
 

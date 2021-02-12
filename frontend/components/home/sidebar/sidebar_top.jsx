@@ -5,6 +5,9 @@ import { faHeadphones, faPlusSquare, faHome, faSearch, faBookOpen } from '@forta
 
 
 class SideBarTop extends React.Component {
+    constructor(props){
+        super(props)
+    }
 
     render(){
         return(
