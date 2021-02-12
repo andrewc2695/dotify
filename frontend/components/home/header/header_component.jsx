@@ -11,6 +11,7 @@ class HeaderComponent extends React.Component{
         this.state = { dropdownButton: "header_dropdown_button_down", sort: faSortDown};
         this.userProfile = "header_users_div";
         this.handleDropDown = this.handleDropDown.bind(this);
+        debugger
     }
 
     handleDropDown(){
@@ -47,7 +48,7 @@ class HeaderComponent extends React.Component{
 
                     </div>
                     <div id="header_user_name">
-                        AndrewCurd
+                        {this.props.currentUser}
                     </div>
                     <button id="header_dropdown_button" onClick={this.handleDropDown}>
                         <FontAwesomeIcon icon={this.state.sort} className={this.state.dropdownButton} />
@@ -56,7 +57,9 @@ class HeaderComponent extends React.Component{
                 <div id={this.state.dropdownButton}>
                     <Link to="" className="drop_down_div"></Link>
                     <Link to="" className="drop_down_div"></Link>
-                    <button className="drop_down_div">Log Out</button>
+                    <button className="drop_down_div" onClick={() => this.props.logout()}>
+                        Log Out
+                    </button>
                 </div>
             </div>
         )

@@ -22,7 +22,9 @@ class HomeMainComponent extends React.Component{
                         <HomeMusicComponent />
                     </div>
                     <div className="header_component">
-                        <HeaderComponent />
+                        <HeaderComponent currentUser={this.props.currentUser.username} 
+                            logout={this.props.logout}
+                        />
                     </div>
                 </div>
             </div>
