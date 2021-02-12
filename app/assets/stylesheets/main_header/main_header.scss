@@ -9,6 +9,7 @@
     width: fill;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header_buttons_and_search{
@@ -48,9 +49,50 @@
 
 
 #header_users_div{
-    border: 2px solid green;
-    height: 60px;
-    width: 160px;
+    height: 32px;
+    width: max-content;
+    min-width: 160px;
     margin-right: 35px;
+    color: azure;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    border-radius: 22px;
+    background-color: black;
+    font-family: Verdana;
 }
+
+#header_profile{
+    width: min-content;
+    height: min-content;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+#header_user_name{
+    width: max-content;
+    font-weight: 500;
+}
+
+.header_dropdown_button_up{
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: 23px;
+
+}
+
+.header_dropdown_button_down{
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-size: 23px;
+}
+
+.drop_down_menue_visable{
+    
+}
+
+
+
 
