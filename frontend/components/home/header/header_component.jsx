@@ -1,10 +1,9 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft, faChevronRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 class HeaderComponent extends React.Component{
-
     render(){
         return(
             <div id="header_component">
@@ -15,9 +14,12 @@ class HeaderComponent extends React.Component{
                     <button className="header_history"id="header_forward_button">
                         <FontAwesomeIcon icon={faChevronRight} className="history_icon" />
                     </button>
-                    <input type="text" id="header_search_bar"
-                        value="search"
-                    />
+                    <div id="header_search_bar">
+                        <div id="search_icon">
+                            <FontAwesomeIcon icon={faSearch} className="search_icon" />
+                        </div>
+                        <input type="text" placeholder="Search" />
+                    </div>
                 </div>
                 <div id="header_users_div">
                     <div id="header_users">

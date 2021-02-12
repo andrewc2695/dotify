@@ -37,10 +37,18 @@
     border-radius: 25px;
     color: azure;
     background-color: #12171D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search_icon{
+    margin-left: 10px;
 }
 
 
 #header_users_div{
+    border: 2px solid green;
     height: 60px;
     width: 160px;
     margin-right: 35px;
