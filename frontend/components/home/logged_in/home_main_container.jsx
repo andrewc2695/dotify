@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import { thunkFetchArtist } from "../../../actions/artist_actions"
 import { thunkLogout } from "../../../actions/session_actions"
 import HomeMainComponent from "./home_main_component"
 
@@ -11,7 +12,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        logout: () => dispatch(thunkLogout())
+        logout: () => dispatch(thunkLogout()),
+        fetchArtist: artistId => dispatch(thunkFetchArtist(artistId))
     }
 }
 

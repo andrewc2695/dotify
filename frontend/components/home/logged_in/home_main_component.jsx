@@ -19,6 +19,7 @@ class HomeMainComponent extends React.Component{
                         <SideBarMain />
                     </div>
                     <div className="main_component">
+                        
                         <HomeMusicComponent />
                     </div>
                     <div className="header_component">

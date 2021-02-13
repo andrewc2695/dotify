@@ -1,2 +1,2 @@
-json.extract! @artist, :id, :name
-debugger
+json.extract! @artist, :id, :name, :photo
+
