@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         logout: () => dispatch(thunkLogout()),
-        Login: (user) =>dispatch(thunkLogin(user))
+        Login: (user) => dispatch(thunkLogin(user))
     };
 }
 

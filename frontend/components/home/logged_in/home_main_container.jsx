@@ -6,14 +6,17 @@ import HomeMainComponent from "./home_main_component"
 
 const mapStateToProps = state => {
     return{
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        artists: Object.values(state.entities.artists)
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return{
         logout: () => dispatch(thunkLogout()),
-        fetchArtist: artistId => dispatch(thunkFetchArtist(artistId))
+        fetchArtist: artistId => dispatch(thunkFetchArtist(artistId)),
+        fetchArtists: () => dispatch(thunkFetchArtists())
+
     }
 }
 

@@ -30,7 +30,6 @@ class SessionSignupForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.removeErrors()
-        debugger
         this.props.action({ username: this.state.username.trim(), password: this.state.password });
         this.usernameErrors = "username_errors_hidden";
         this.passwordErrors = "password_errors_hidden";

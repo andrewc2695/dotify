@@ -1,7 +1,7 @@
 import { RECEIVE_ARTIST, RECEIVE_ARTISTS } from "../actions/artist_actions";
 
 
-const artistsReducer = ( oldState = {}, action) => {
+const artistsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     switch(action.type){
         case RECEIVE_ARTISTS:

@@ -18,8 +18,8 @@ const receiveArtists = (artists) => {
     }
 }
 
-export const thunkFetchArtists = () => ArtistApiUtil.fetchArtists()
-    .then(artists => dispatch(receiveArtists(artists)))
-
-export const thunkFetchArtist = artistId => ArtistApiUtil.fetchArtist(artistId)
+export const thunkFetchArtist = artistId => dispatch => ArtistApiUtil.fetchArtist(artistId)
     .then(artist => dispatch(receiveArtist(artist)));
+
+export const thunkFetchArtists = () => dispatch => ArtistApiUtil.fetchArtists()
+    .then(artists => dispatch(receiveArtists(artists)))

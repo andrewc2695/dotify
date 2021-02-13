@@ -1,5 +1,3 @@
-import { $CombinedState } from "redux"
-
 
 export const fetchArtists = () => {
     return $.ajax({
