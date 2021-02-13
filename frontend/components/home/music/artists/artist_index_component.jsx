@@ -16,11 +16,13 @@ class ArtistIndexComponent extends React.Component{
         return(
             <div className="artist_index_div">
                 <div className="artist_index_objects_div">
-                    {artists.map(artist => {
-                        return <ArtistIndexObject artist={artist}/>
-                    })}
+                    <div className="index_title">Artists</div>
+                    <div className="artist_profile_pic_div">
+                        {artists.map(artist => {
+                            return <ArtistIndexObject artist={artist} />
+                        })}
+                    </div>
                 </div>
-
             </div>
         )
     }

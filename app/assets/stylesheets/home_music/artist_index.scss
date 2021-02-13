@@ -5,19 +5,35 @@
     min-height: 100vh;
 }
 
+.index_title{
+    height: 50px;
+    width: 50px;
+    color: azure;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 35px;
+}
+
 .artist_index_objects_div{
-    min-height: 500px;
+    min-height: min-content;
     max-height: max-content;
     margin-left: 280px;
     margin-top: 60px;
-    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+}
+
+.artist_profile_pic_div{
+    min-height: min-content;
+    max-height: max-content;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.artist_profile_object{
-    border: 1px solid red;
+.profile_object{
+    // border: 1px solid red;
+    border-radius: 5px;
     color: azure;
     height: 287px;
     width: 210px;
@@ -26,12 +42,34 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s; 
     background-color: #191919;
 }
 
-.artist_profile_pic{
+.profile_object:hover{
+    background-color: #282828;
+}
+
+.profile_pic{
     height: 180px;
     width: 180px;
     border-radius: 50%;
     overflow: hidden;
+    margin-top: 10px;
+}
+
+.profile_name{
+    width: 100%;
+    margin-left: 37px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+#profile_description{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #B1B1B1
 }
