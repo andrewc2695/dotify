@@ -23068,3 +23068,106 @@ FOREIGN KEY ("blob_id")
   [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Artist"], ["name", "photo"], ["LIMIT", 1]]
   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2021-02-12 15:29:25 -0800
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G/wAcgbyVvwIPxMzv0w3Dg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 2370ms (Views: 2359.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-12 15:30:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G/wAcgbyVvwIPxMzv0w3Dg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 1458ms (Views: 1443.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2021-02-12 15:30:42 -0800
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (2.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Completed 404 Not Found in 9704ms (ActiveRecord: 11.7ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Artist with 'id'=1:
+  app/controllers/api/artists_controller.rb:9:in `show'
+
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+Started GET "/api/artists/11" for ::1 at 2021-02-12 15:32:30 -0800
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (1189265.1ms)
+Completed 200 OK in 1195306ms (Views: 1189283.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-02-12 16:00:45 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G/wAcgbyVvwIPxMzv0w3Dg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (5.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Demo"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Y38kiZZ6pjgmLWbbUQpI7Q=="], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (5.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Y38kiZZ6pjgmLWbbUQpI7Q=="], ["updated_at", "2021-02-13 00:00:46.196308"], ["id", 2]]
+  ↳ app/models/user.rb:29
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+Completed 200 OK in 51ms (Views: 0.8ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-12 16:01:00 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Demo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Demo"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "JubN0vFveWc72wE0jukrKQ=="], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JubN0vFveWc72wE0jukrKQ=="], ["updated_at", "2021-02-13 00:01:01.220288"], ["id", 2]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 242ms (Views: 10.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-12 16:04:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JubN0vFveWc72wE0jukrKQ=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 1446ms (Views: 1436.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/artists/11" for ::1 at 2021-02-12 16:04:51 -0800
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mArtist Load (3.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (5953.7ms)
+Completed 200 OK in 21314ms (Views: 5963.0ms | ActiveRecord: 3.2ms)
+
+

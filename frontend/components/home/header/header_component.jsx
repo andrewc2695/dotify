@@ -11,7 +11,6 @@ class HeaderComponent extends React.Component{
         this.state = { dropdownButton: "header_dropdown_button_down", sort: faSortDown};
         this.userProfile = "header_users_div";
         this.handleDropDown = this.handleDropDown.bind(this);
-        debugger
     }
 
     handleDropDown(){

@@ -41,3 +41,4 @@ export const thunkSignup = (user) => dispatch => SessionApiUtil.signup(user)
     .then(user => dispatch(receiveCurrentUser(user)))
     .fail(errors => dispatch(receiveErrors(errors.responseJSON)));
 
+

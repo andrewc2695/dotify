@@ -3,7 +3,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import { login, logout, signup } from "./util/session_api_util";
-import { thunkLogin, thunkLogout, thunkSignup } from "./actions/session_actions";
+import { thunkFetchArtist, thunkLogin, thunkLogout, thunkSignup } from "./actions/session_actions";
+import { fetchArtist } from "./util/artist_api_util";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -28,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = login
     window.signup = signup;
     window.logout = logout;
+
+    window.fetchArtist = fetchArtist;
+    window.thunkFetchArtist = thunkFetchArtist;
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
