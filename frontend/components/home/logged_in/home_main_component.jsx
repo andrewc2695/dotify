@@ -1,6 +1,6 @@
 import React from "react"
 import HeaderComponent from "../header/header_component";
-import HomeMusicComponent from "../music/home_music_component";
+import ArtistIndexComponent from "../music/artist_index_component";
 import SideBarMain from "../sidebar/sidebar_main_component";
 
 class HomeMainComponent extends React.Component{
@@ -19,8 +19,8 @@ class HomeMainComponent extends React.Component{
                         <SideBarMain />
                     </div>
                     <div className="main_component">
-                        
-                        <HomeMusicComponent />
+
+                        <ArtistIndexComponent />
                     </div>
                     <div className="header_component">
                         <HeaderComponent currentUser={this.props.currentUser.username} 

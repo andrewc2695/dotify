@@ -19,7 +19,7 @@ const receiveArtists = (artists) => {
 }
 
 export const thunkFetchArtists = () => ArtistApiUtil.fetchArtists()
-    .then(artists => console.log(artists))
+    .then(artists => dispatch(receiveArtists(artists)))
 
 export const thunkFetchArtist = artistId => ArtistApiUtil.fetchArtist(artistId)
-    .then(artist => console.log(artist.photo));
+    .then(artist => dispatch(receiveArtist(artist)));
