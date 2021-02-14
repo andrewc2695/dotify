@@ -6,7 +6,7 @@ end
 json.albums do 
     @artist.albums.each do |album|
         json.set! album.id do
-            json.extract! album, :id, :title
+            json.extract! album, :id, :title, :year
             json.photoUrl url_for(album.photo)
         end
     end
