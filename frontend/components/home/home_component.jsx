@@ -15,7 +15,7 @@ class homeComponent extends React.Component {
         if(currentUser){
             return(
                 // <LoggedInComponet currentUser={currentUser} logout={logout}/>
-                <Redirect to="/home" currentUser={currentUser} logout={logout}/>
+                <Redirect to="/home/main" currentUser={currentUser} logout={logout}/>
             )
         }else{
             return(

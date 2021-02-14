@@ -1,4 +1,5 @@
 import React from "react"
+
 import ArtistIndexObject from "./artist_index_object";
 
 class ArtistIndexComponent extends React.Component{
@@ -8,6 +9,7 @@ class ArtistIndexComponent extends React.Component{
 
     componentDidMount(){
         this.props.fetchArtists();
+        debugger
     }
 
     render(){

@@ -10,6 +10,7 @@ class HomeMainComponent extends React.Component{
 
     render(){
         const { artists, fetchArtists, fetchArtist } = this.props;
+        debugger
         return(
             <div className="main_div">
                 <div className="playbar_component">
@@ -20,8 +21,7 @@ class HomeMainComponent extends React.Component{
                         <SideBarMain />
                     </div>
                     <div className="main_component">
-                        <ArtistIndexComponent artists={artists}
-                            fetchArtists={fetchArtists}/>
+            
                     </div>
                     <div className="header_component">
                         <HeaderComponent currentUser={this.props.currentUser.username} 
