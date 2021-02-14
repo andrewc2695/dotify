@@ -1,10 +1,11 @@
+import React from "react"
 
-class ArtistShowComponent{
+class ArtistShowComponent extends React.Component{
 
     render(){
         return(
             <div>
-                HI
+                Hi
             </div>
         )
     }

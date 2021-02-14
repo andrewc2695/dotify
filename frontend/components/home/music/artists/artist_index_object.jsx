@@ -1,11 +1,13 @@
 import React from "react"
+import { Link } from "react-router-dom";
 
 class ArtistIndexObject extends React.Component{
+
 
     render(){
         const { artist } = this.props;
         return(
-            <div className="profile_object" >
+            <Link to={`/home/artist/${artist.id}`} className="profile_object" >
                 <div>
                     <img className="profile_pic" src={artist.photoUrl} />
                 </div>
@@ -14,7 +16,7 @@ class ArtistIndexObject extends React.Component{
                     <div id="profile_description">Artist</div>
                 </div>
 
-            </div>
+            </Link>
         )
     }  
 };
