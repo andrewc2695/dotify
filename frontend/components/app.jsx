@@ -13,17 +13,21 @@ import ArtistShowContainer from "./home/music/artists/artist_show_container"
 const App = () => {
     return (
     <div>
-            <AuthRoute exact path="/signup" component={signUpContainer}/>
-            <AuthRoute exact path="/login" component={logInContainer}/>
-            <ProtcRoute path="/home/main" component={ArtistIndexContainer} />
-            <ProtcRoute path="/home/artist/:artistId" component={ArtistShowContainer} />
-            <ProtcRoute path="/home" component={HomeMainContainer}/>
-            <Route exact path="/" component={homeComponentContainer} />
-            <Route path="*">
-                <Redirect to="/" />
-            </Route>
+            <HomeMainContainer />
+            <Switch >
+                <AuthRoute exact path="/signup" component={signUpContainer} />
+                <AuthRoute exact path="/login" component={logInContainer} />
+                <ProtcRoute path="/home/" component={ArtistIndexContainer} />
+                <ProtcRoute path="/artist/:artistId" component={ArtistShowContainer} />
+                <Route exact path="/" component={homeComponentContainer} />
+                <Route path="*">
+                    <Redirect to="/" />
+                </Route>
+            </Switch>
     </div>
     )
 }
 
 export default App;
+
+<HomeMainContainer />

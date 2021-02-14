@@ -5,6 +5,7 @@ export const RECEIVE_ARTIST = "RECEIVE_ARTIST"
 export const RECEIVE_ARTISTS = "RECEIVE_ARTISTS"
 
 const receiveArtist = (artist) => {
+    debugger
     return{
         type: RECEIVE_ARTIST,
         artist

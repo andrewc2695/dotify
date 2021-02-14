@@ -9,8 +9,10 @@ class HomeMainComponent extends React.Component{
     }
 
     render(){
+        if(this.props.currentUser === undefined){
+            return null;
+        }
         const { artists, fetchArtists, fetchArtist } = this.props;
-        debugger
         return(
             <div className="main_div">
                 <div className="playbar_component">

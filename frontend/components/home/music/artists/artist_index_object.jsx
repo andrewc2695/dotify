@@ -7,7 +7,7 @@ class ArtistIndexObject extends React.Component{
     render(){
         const { artist } = this.props;
         return(
-            <Link to={`/home/artist/${artist.id}`} className="profile_object" >
+            <Link to={`/artist/${artist.id}`} className="profile_object" >
                 <div>
                     <img className="profile_pic" src={artist.photoUrl} />
                 </div>

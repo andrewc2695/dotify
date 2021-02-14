@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import ArtistShowComponent from "./artist_show_component";
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return{
         artist: state.entities.artists[ownProps.match.params.artistId]
     }
