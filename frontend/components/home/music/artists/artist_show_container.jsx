@@ -3,7 +3,8 @@ import ArtistShowComponent from "./artist_show_component";
 
 const mapStateToProps = (state, ownProps) => {
     return{
-        artist: state.entities.artists[ownProps.match.params.artistId]
+        artist: state.entities.artists[ownProps.match.params.artistId],
+        albums: Object.values(state.entities.albums)
     }
 }
 

@@ -8,7 +8,7 @@ const artistsReducer = (oldState = {}, action) => {
             return action.artists;
         case RECEIVE_ARTIST:
             const newState = Object.assign({}, oldState);
-            newState[action.artist.id] = action.artist;
+            newState[action.artist.artist.id] = action.artist.artist;
             return newState;
         default:
             return oldState;

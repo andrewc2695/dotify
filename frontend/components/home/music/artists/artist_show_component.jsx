@@ -1,4 +1,5 @@
 import React from "react"
+import AlbumComponent from "../albums/albums_component"
 
 class ArtistShowComponent extends React.Component{
 
@@ -7,11 +8,11 @@ class ArtistShowComponent extends React.Component{
     }
 
     render(){
+        debugger
         if (this.props.artist === undefined){
             return null;
         }
-        debugger
-        const { artist } = this.props;
+        const  artist  = this.props.artist;
         return(
             <div className="main_content_window">
                 <div className="artist_show_pic">
@@ -28,6 +29,13 @@ class ArtistShowComponent extends React.Component{
                         </div>
                         <div className="artist_popular_div">
 
+                        </div>
+                        <div className="artist_album_div">
+                            {this.props.albums.map(album => {
+                                return(
+                                    <AlbumComponent album={album}/>
+                                )
+                            })}
                         </div>
 
                     </div>
