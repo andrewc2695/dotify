@@ -1,23 +1,24 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 class AlbumComponent extends React.Component{
 
     render(){
+        const { album } = this.props;
         return(
-            <div className="album_object_div">
+            <Link to={`/album/${album.id}`} className="album_object_div">
                 <div className="album_cover_pic">
                     <img className="album_image" src={this.props.album.photoUrl} />
                 </div>
                 <div className="album_title_div">
                     <div id="album_title">
-                        {this.props.album.title}
+                        {album.title}
                     </div>
                     <div id="album_year">   
-                        {this.props.album.year}
+                        {album.year}
                     </div>
                 </div>
-            </div>
-
+            </Link>
         )
     }
 }

@@ -31,13 +31,17 @@ class ArtistShowComponent extends React.Component{
 
                         </div>
                         <div className="artist_album_div">
-                            {this.props.albums.map(album => {
-                                return(
-                                    <AlbumComponent album={album}/>
-                                )
-                            })}
+                            <div id="artist_album_div_title">
+                                Discography
+                            </div>
+                            <div id="aritst_album_div_album">
+                                {this.props.albums.map(album => {
+                                    return (
+                                        <AlbumComponent album={album} />
+                                    )
+                                })}
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
