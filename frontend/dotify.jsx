@@ -5,6 +5,7 @@ import configureStore from "./store/store";
 import { login, logout, signup } from "./util/session_api_util";
 import { thunkLogin, thunkLogout, thunkSignup } from "./actions/session_actions";
 import { thunkFetchArtist, thunkFetchArtists } from "./actions/artist_actions";
+import { thunkFetchAlbum } from "./actions/album_actions";
 
 
 
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.thunkFetchArtist = thunkFetchArtist;
     window.thunkFetchArtists = thunkFetchArtists;
 
+    window.thunkFetchAlbum = thunkFetchAlbum;
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;

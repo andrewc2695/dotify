@@ -19,6 +19,7 @@ const App = () => {
                 <AuthRoute exact path="/login" component={logInContainer} />
                 <ProtcRoute path="/home/" component={ArtistIndexContainer} />
                 <ProtcRoute path="/artist/:artistId" component={ArtistShowContainer} />
+                <ProtcRoute path="/album/:albumId" />
                 <Route exact path="/" component={homeComponentContainer} />
                 <Route path="*">
                     <Redirect to="/" />

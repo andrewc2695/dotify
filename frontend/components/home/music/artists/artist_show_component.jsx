@@ -8,7 +8,6 @@ class ArtistShowComponent extends React.Component{
     }
 
     render(){
-        debugger
         if (this.props.artist === undefined){
             return null;
         }
