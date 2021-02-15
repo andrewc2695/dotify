@@ -44,16 +44,23 @@
     width: 65px;
     border-radius: 50%;
     background-color: #1CB954;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 160%;
+    color: azure;
+}
+
+.green_play_button > *{
+    margin-left: 7px;
 }
 
 .green_play_button:hover{
-    height: 65px;
-    width: 65px;
+
 }
 
 .artist_popular_div{
-    min-height: 415px;
-    border: 1px solid green;
+    min-height: max-content;
 }
 
 .artist_album_div{
@@ -102,6 +109,12 @@
     object-fit: cover;
 }
 
+#popular_songs{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+}
+
 .album_title_div{
     display: flex;
     flex-direction: column;
@@ -119,4 +132,28 @@
     font-weight: 400;
     color: #B3B3B3;
     font-size: 15px;
+}
+
+.popular_song_component{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.popular_song_component:hover{
+    background-color: #2e2e2e;
+}
+
+.popular_song_component_left{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    height: 65px;
+}
+
+.popular_song_component_left > *{
+    margin-left: 20px;
 }

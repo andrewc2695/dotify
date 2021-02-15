@@ -1,5 +1,8 @@
 import React from "react"
 import AlbumComponent from "../albums/albums_component"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
+
 
 class ArtistShowComponent extends React.Component{
 
@@ -16,8 +19,13 @@ class ArtistShowComponent extends React.Component{
             return null;
         }
         const  artist  = this.props.artist;
-        const popular = Object.values(artist.popular)
-        debugger
+        const albums = this.props.albums;
+        let popular = []
+        if(artist.popular !== undefined){
+            popular = (Object.values(artist.popular));
+        }
+
+        let popOrder = 0
         return(
             <div className="main_content_window">
                 <div className="artist_show_pic">
@@ -30,7 +38,9 @@ class ArtistShowComponent extends React.Component{
                     </div>
                     <div className="artist_music_div">
                         <div>
-                            <button className="green_play_button"></button>
+                            <button className="green_play_button">
+                                <FontAwesomeIcon icon={faPlay} />
+                            </button>
                         </div>
                         <div className="artist_popular_div">
                             <div id="artist_album_div_title">
@@ -38,7 +48,24 @@ class ArtistShowComponent extends React.Component{
                             </div>
                             <div className="artist_popular_div">
                                 {popular.map(song => {
-                                    return song.title
+                                    popOrder += 1;
+                                    return(
+                                        <div className="popular_song_component">
+                                            <div className="popular_song_component_left">
+                                                <div>
+                                                    {popOrder}
+                                                </div>
+                                                <img id="popular_songs" src={albums[0].photoUrl} />
+                                                <div>
+                                                    {song.title}
+                                                </div>
+                                            </div>
+                                            <div>
+                                                1:00
+                                            </div>
+                                        </div>
+                                        
+                                    )
                                 })}
                             </div>
                         </div>
@@ -47,7 +74,7 @@ class ArtistShowComponent extends React.Component{
                                 Discography
                             </div>
                             <div id="aritst_album_div_album">
-                                {this.props.albums.map(album => {
+                                {albums.map(album => {
                                     return (
                                         <AlbumComponent album={album} />
                                     )

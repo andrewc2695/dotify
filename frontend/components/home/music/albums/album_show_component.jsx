@@ -1,5 +1,7 @@
 import React from "react"
 import SongComponent from "../songs/song_component"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 
 class AlbumShowComponent extends React.Component{
@@ -37,7 +39,7 @@ class AlbumShowComponent extends React.Component{
                 </div>
                 <div className="album_show_bottom">
                     <button className="green_play_button">
-
+                        <FontAwesomeIcon icon={faPlay} />
                     </button>
                     <div className="album_show_song_div">
                         <div className="song_component_left" id="hash_and_title">
