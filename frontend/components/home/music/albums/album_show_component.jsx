@@ -17,7 +17,6 @@ class AlbumShowComponent extends React.Component{
             songs = Object.values(this.props.album.songs)
         }
         const artist = this.props.album.artist;
-        debugger
         return(
             <div className="main_content_window" id="album_show_main_window">
                 <div className="album_show_top">

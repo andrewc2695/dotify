@@ -24,7 +24,6 @@ class HeaderComponent extends React.Component{
     }
 
     render(){
-  
         return(
             <div id="header_component">
                 <div className="header_buttons_and_search">
