@@ -7,7 +7,7 @@ import { AuthRoute, ProtcRoute } from "../util/route_util"
 import HomeMainContainer from "./home/logged_in/home_main_container";
 import ArtistIndexContainer from "./home/music/artists/artists_index_container"
 import ArtistShowContainer from "./home/music/artists/artist_show_container"
-
+import AlbumShowContainer from "./home/music/albums/album_show_container"
 
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
                 <AuthRoute exact path="/login" component={logInContainer} />
                 <ProtcRoute path="/home/" component={ArtistIndexContainer} />
                 <ProtcRoute path="/artist/:artistId" component={ArtistShowContainer} />
-                <ProtcRoute path="/album/:albumId" />
+                <ProtcRoute path="/album/:albumId" component={AlbumShowContainer}/>
                 <Route exact path="/" component={homeComponentContainer} />
                 <Route path="*">
                     <Redirect to="/" />

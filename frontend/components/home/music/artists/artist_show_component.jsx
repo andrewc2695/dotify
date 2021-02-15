@@ -7,6 +7,10 @@ class ArtistShowComponent extends React.Component{
         this.props.fetchArtist(this.props.match.params.artistId);
     }
 
+    componentWillUnmount(){
+        this.props.removeAlbums();
+    }
+
     render(){
         if (this.props.artist === undefined){
             return null;
