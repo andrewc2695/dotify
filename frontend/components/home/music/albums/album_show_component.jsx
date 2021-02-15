@@ -1,4 +1,5 @@
 import React from "react"
+import SongComponent from "../songs/song_component"
 
 
 class AlbumShowComponent extends React.Component{
@@ -40,8 +41,16 @@ class AlbumShowComponent extends React.Component{
 
                     </button>
                     <div className="album_show_song_div">
+                        <div className="song_component_left" id="hash_and_title">
+                            <div className="ord_div">
+                                #
+                            </div>
+                            <div className="song_info">
+                                TITLE
+                            </div>
+                        </div>
                         {songs.map(song => {
-                            return <SongComponent song={song}/>
+                            return <SongComponent artist={artist[album.artist_id]} song={song}/>
                         })}
                     </div>
 

@@ -17,7 +17,6 @@
     height: 235px;
     width: 235px;
     margin-left: 35px;
-    border: 1px solid red;
 }
 
 #album_show_pic{
@@ -49,9 +48,70 @@
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.2); 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .album_show_bottom > * {
     margin-left: 35px;
+}
+
+.song_component_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    border-radius: 12px;  
+}
+
+.song_component_div:hover{
+    background-color: #2e2e2e;
+}
+
+.song_component_left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.song_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+}
+
+.ord_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.song_component_title_div{
+    color: azure;
+    font-weight: 600;
+}
+
+.album_show_song_div{
+    color: #b3b3b3;
+    width: 95%;
+}
+
+#hash_and_title{
+    margin-bottom: 30px;
+    border-bottom: 1px solid #b3b3b3;
+}
+
+#song_artist_name{
+    font-size: 13px;
+}
+#song_artist_name:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.song_component_right{
+    margin-right: 10px;
 }
