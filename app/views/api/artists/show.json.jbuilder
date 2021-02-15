@@ -1,6 +1,13 @@
 json.artist do
     json.extract! @artist, :id, :name
     json.photoUrl url_for(@artist.photo)
+    json.popular do 
+        @artist.songs.limit(5).each do |song|
+            json.set! song.id do
+                json.extract! song, :id, :title, :album_id
+            end
+        end
+    end
 end
 
 json.albums do 
@@ -11,3 +18,5 @@ json.albums do
         end
     end
 end
+
+

@@ -16,6 +16,8 @@ class ArtistShowComponent extends React.Component{
             return null;
         }
         const  artist  = this.props.artist;
+        const popular = Object.values(artist.popular)
+        debugger
         return(
             <div className="main_content_window">
                 <div className="artist_show_pic">
@@ -31,7 +33,14 @@ class ArtistShowComponent extends React.Component{
                             <button className="green_play_button"></button>
                         </div>
                         <div className="artist_popular_div">
-
+                            <div id="artist_album_div_title">
+                                Popular
+                            </div>
+                            <div className="artist_popular_div">
+                                {popular.map(song => {
+                                    return song.title
+                                })}
+                            </div>
                         </div>
                         <div className="artist_album_div">
                             <div id="artist_album_div_title">

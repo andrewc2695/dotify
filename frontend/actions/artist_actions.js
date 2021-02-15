@@ -12,7 +12,6 @@ const receiveArtist = (artist) => {
 }
 
 const receiveArtists = (artists) => {
-    debugger
     return{
         type: RECEIVE_ARTISTS,
         artists
