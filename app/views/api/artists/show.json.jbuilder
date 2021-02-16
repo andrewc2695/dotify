@@ -5,6 +5,7 @@ json.artist do
         @artist.songs.limit(5).each do |song|
             json.set! song.id do
                 json.extract! song, :id, :title, :album_id
+                json.photoUrl url_for(song.album.photo)
             end
         end
     end

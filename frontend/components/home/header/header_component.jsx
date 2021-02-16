@@ -12,6 +12,7 @@ class HeaderComponent extends React.Component{
         this.userProfile = "header_users_div";
         this.handleDropDown = this.handleDropDown.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     handleDropDown(){
@@ -26,7 +27,8 @@ class HeaderComponent extends React.Component{
 
     handleSearch(e){
         e.preventDefault();
-        this.props.search(this.state.search);   
+        this.props.search(this.state.search);
+        this.props.history.push(`/search/${this.state.search}`)  
     }
 
     handleChange(e){
@@ -37,10 +39,12 @@ class HeaderComponent extends React.Component{
         return(
             <div id="header_component">
                 <div className="header_buttons_and_search">
-                    <button className="header_history" id="header_back_button">
+                    <button className="header_history" id="header_back_button" 
+                        onClick={() => this.props.history.goBack()}>
                         <FontAwesomeIcon icon={faChevronLeft} className="history_icon" />
                     </button>
-                    <button className="header_history"id="header_forward_button">
+                    <button className="header_history"id="header_forward_button"
+                        onClick={() => this.props.history.goForward()}>
                         <FontAwesomeIcon icon={faChevronRight} className="history_icon" />
                     </button>
                     <form id="header_search_bar" onSubmit={this.handleSearch}>

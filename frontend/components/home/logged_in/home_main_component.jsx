@@ -6,6 +6,7 @@ import SideBarMain from "../sidebar/sidebar_main_component";
 class HomeMainComponent extends React.Component{
     constructor(props){
         super(props);
+        debugger
     }
 
     render(){
@@ -28,6 +29,7 @@ class HomeMainComponent extends React.Component{
                     <div className="header_component">
                         <HeaderComponent currentUser={this.props.currentUser.username} 
                             logout={this.props.logout} search={this.props.search}
+                            history={this.props.history}
                         />
                     </div>
                 </div>

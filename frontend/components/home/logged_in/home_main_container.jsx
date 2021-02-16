@@ -3,9 +3,11 @@ import { thunkFetchArtist } from "../../../actions/artist_actions"
 import { thunkSearch } from "../../../actions/search_actions"
 import { thunkLogout } from "../../../actions/session_actions"
 import HomeMainComponent from "./home_main_component"
+import { withRouter } from 'react-router-dom';
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+    debugger
     return{
         currentUser: state.entities.users[state.session.id],
         artists: Object.values(state.entities.artists)
@@ -22,4 +24,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeMainComponent)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeMainComponent));

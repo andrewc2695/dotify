@@ -55,7 +55,7 @@ class ArtistShowComponent extends React.Component{
                                                 <div>
                                                     {popOrder}
                                                 </div>
-                                                <img id="popular_songs" src={albums[0].photoUrl} />
+                                                <img id="popular_songs" src={song.photoUrl} />
                                                 <div>
                                                     {song.title}
                                                 </div>
