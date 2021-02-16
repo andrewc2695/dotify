@@ -5,7 +5,7 @@ class SongComponent extends React.Component{
 
     render(){
         return(
-            <div className="song_component_div">
+            <div className="song_component_div" id="song_search_div">
                 <div className="song_component_left">
                     <div className="ord_div">
                         {this.props.song.ORD}

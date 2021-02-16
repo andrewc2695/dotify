@@ -1,14 +1,83 @@
 .main_search_window{
-    margin-top: 60px;
+  margin-top: 70px;
 }
+
 #search_main_window{
-    background-color: #131313;
     height: 100vh;
+    top: 0px;
+    border: 1px #131313 solid;
+    background-color: #131313;
+    color: azure;
 }
 .main_search_window{
-    
+    margin-right: 15px;
+    margin-left: 5px;
 }
 
 #song_search_div{
-    border: 1px solid blue;
+
+}
+
+.search_song_component{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.search_song_component:hover{
+    background-color: #2e2e2e;
+}
+
+.search_result_title{
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search_result_title > *:hover{
+    text-decoration: underline;
+}
+
+#search_song_image{
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    object-fit: cover;
+}
+
+#song_search_div{
+    width: inherit;
+}
+
+#search_result_title_right{
+    font-size: 13px;
+    color: #B3B3B3;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.index_object_div{
+    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#artist_search_div{
+    width: min-content;
+}
+
+.search_results_row{
+    display: flex;
+    flex-direction: row;
+}
+
+.search_results_row > *{
+    margin-right: px;
+    margin-left: 5px;
 }
