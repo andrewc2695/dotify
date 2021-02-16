@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import { thunkFetchArtist } from "../../../actions/artist_actions"
-import { thunkSearch } from "../../../actions/search_actions"
+import { removeSearch, thunkSearch } from "../../../actions/search_actions"
 import { thunkLogout } from "../../../actions/session_actions"
 import HomeMainComponent from "./home_main_component"
 import { withRouter } from 'react-router-dom';
@@ -19,6 +19,7 @@ const mapDispatchToProps = dispatch => {
         fetchArtist: artistId => dispatch(thunkFetchArtist(artistId)),
         fetchArtists: () => dispatch(thunkFetchArtists()),
         search: searchTerm => dispatch(thunkSearch(searchTerm)),
+        removeSearch: () => dispatch(removeSearch()),
 
     }
 }

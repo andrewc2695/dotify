@@ -1,4 +1,4 @@
-import { RECEIVE_SEARCH } from "../actions/search_actions";
+import { RECEIVE_SEARCH, REMOVE_SEARCH } from "../actions/search_actions";
 
 const searchesReducer = (oldState = {songs: {}, artists: {}, albums: {}}, action) => {
     Object.freeze(oldState)
@@ -19,6 +19,8 @@ const searchesReducer = (oldState = {songs: {}, artists: {}, albums: {}}, action
                 newState.songs = {};
             }
             return newState
+        case REMOVE_SEARCH:
+            return { songs: {}, artists: {}, albums: {} }
         default:
             return oldState;
     }

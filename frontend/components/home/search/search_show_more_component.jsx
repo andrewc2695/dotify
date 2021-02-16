@@ -4,29 +4,28 @@ import { Link } from "react-router-dom"
 import ArtistIndexObject from "../music/artists/artist_index_object";
 import AlbumComponent from "../music/albums/albums_component";
 
-class SearchComponent extends React.Component{
+class SearchShowMore extends React.Component{
 
     componentDidMount(){
         this.props.search(this.props.match.params.searchTerm)
     }
 
+
     render(){
-        // if(this.props.searchRes === undefined) return null
         const { songs, albums, artists } = this.props;
-        let songsHidden = ""
-        let albumsHidden = ""
-        let artistsHidden= ""
-        if(songs.length === 0){
-            songsHidden = "hidden"
+        let songsHidden = "hidden"
+        let albumsHidden = "hidden"
+        let artistsHidden = "hidden"
+        if (this.props.match.params.type === "songs") {
+            songsHidden = ""
         }
-        if (albums.length === 0) {
-            albumsHidden = "hidden"
+        if (this.props.match.params.type === "albums") {
+            albumsHidden = ""
         }
-        if (artists.length === 0) {
-            artistsHidden = "hidden"
+        if (this.props.match.params.type === "artists") {
+            artistsHidden = ""
         }
-        debugger
-        return(
+        return (
             <div className="main_content_window" id="search_main_window">
                 <div className="main_search_window">
 
@@ -38,14 +37,11 @@ class SearchComponent extends React.Component{
                                 </Link>
                             </div>
                             <div id="search_result_title_right">
-                                <Link to={`/search/${this.props.match.params.searchTerm}/songs`}>
-                                    See All
-                                </Link>
                             </div>
                         </div>
                         <div>
-                            {songs.slice(0, 5).map(song => {
-                                return(
+                            {songs.map(song => {
+                                return (
                                     <div className="search_song_component">
                                         <img id="search_song_image" src={song.photoUrl} />
                                         <SongComponent artist={song.artist} song={song} />
@@ -63,13 +59,10 @@ class SearchComponent extends React.Component{
                                 </Link>
                             </div>
                             <div id="search_result_title_right">
-                                <Link to={`/search/${this.props.match.params.searchTerm}/albums`}>
-                                    See All
-                                </Link>
                             </div>
                         </div>
                         <div className="search_results_row">
-                            {albums.slice(0, 5).map(album => {
+                            {albums.map(album => {
                                 return <div><AlbumComponent album={album} /></div>
                             })}
                         </div>
@@ -83,13 +76,10 @@ class SearchComponent extends React.Component{
                                 </Link>
                             </div>
                             <div id="search_result_title_right">
-                                <Link to={`/search/${this.props.match.params.searchTerm}/artists`}>
-                                    See All
-                                </Link>
                             </div>
                         </div>
                         <div className="search_results_row">
-                            {artists.slice(0, 5).map(artist => {
+                            {artists.map(artist => {
                                 return <div id="artist_object_div"><ArtistIndexObject artist={artist} /></div>
                             })}
                         </div>
@@ -98,6 +88,6 @@ class SearchComponent extends React.Component{
             </div>
         )
     }
-} 
+}
 
-export default SearchComponent;
+export default SearchShowMore;

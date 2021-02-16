@@ -9,6 +9,7 @@ import ArtistIndexContainer from "./home/music/artists/artists_index_container"
 import ArtistShowContainer from "./home/music/artists/artist_show_container"
 import AlbumShowContainer from "./home/music/albums/album_show_container"
 import SearchContainer from "./home/search/search_container";
+import SearchShowMore from "./home/search/search_show_more_container"
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
                 <ProtcRoute path="/home/" component={ArtistIndexContainer} />
                 <ProtcRoute path="/artist/:artistId" component={ArtistShowContainer} />
                 <ProtcRoute path="/album/:albumId" component={AlbumShowContainer}/>
+                <ProtcRoute path="/search/:searchTerm/:type" component={SearchShowMore} />
                 <ProtcRoute path="/search/:searchTerm" component={SearchContainer}/>
                 <Route exact path="/" component={homeComponentContainer} />
                 <Route path="*">

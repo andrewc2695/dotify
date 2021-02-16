@@ -50,6 +50,9 @@
     width: inherit;
     height: inherit
 }
+#header_search:focus{
+    background-color: rbga(0,0,0,0);
+}
 
 
 #header_users_div{

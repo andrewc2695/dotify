@@ -1,11 +1,18 @@
 import * as SearchAPIUtil from "../util/search_api_util"
 
 export const RECEIVE_SEARCH = "RECIEVE_SEARCH"
+export const REMOVE_SEARCH = "REMOVE_SEARCH"
 
 const receiveSearch = (searchRes) => {
     return{
         type: RECEIVE_SEARCH,
         searchRes
+    }
+}
+
+export const removeSearch = () => {
+    return{
+        type: REMOVE_SEARCH
     }
 }
 

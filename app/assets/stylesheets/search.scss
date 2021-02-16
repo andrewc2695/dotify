@@ -1,5 +1,7 @@
 .main_search_window{
-  margin-top: 70px;
+    margin-top: 70px;
+    background-color: #131313;
+    height: max-content;
 }
 
 #search_main_window{
@@ -18,8 +20,6 @@
     margin-bottom: 35px;
 }
 
-#search_index_object_div{
-}
 
 .search_song_component{
     display: flex;
@@ -72,9 +72,14 @@
 }
 
 .search_results_row{
+    min-width: 1300px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-left: 25px;
+}
+.search_results_row > * {
+    margin-bottom: 32px;
 }
 
 #artist_object_div{
