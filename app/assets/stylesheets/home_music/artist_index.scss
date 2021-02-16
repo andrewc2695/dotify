@@ -33,7 +33,7 @@
 
 .profile_object{
     // border: 1px solid red;
-    border-radius: 5px;
+    border-radius: 10px;
     color: azure;
     height: 287px;
     width: 210px;
@@ -44,7 +44,7 @@
     justify-content: space-around;
     transition-property: background-color,border-color,color,box-shadow,filter;
     transition-duration: .3s; 
-    background-color: #191919;
+    background-color: #222222;
 }
 
 .profile_object:hover{
@@ -72,4 +72,8 @@
     margin-top: 5px;
     font-size: 14px;
     color: #B1B1B1
+}
+
+.hidden{
+    display: none;
 }

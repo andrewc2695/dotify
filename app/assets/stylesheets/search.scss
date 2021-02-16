@@ -14,8 +14,11 @@
     margin-left: 5px;
 }
 
-#song_search_div{
+.main_search_window > *{
+    margin-bottom: 35px;
+}
 
+#search_index_object_div{
 }
 
 .search_song_component{
@@ -24,6 +27,7 @@
     align-items: center;
     width: 100%;
     border-radius: 12px;
+    margin-right: 15px;
 }
 
 .search_song_component:hover{
@@ -47,7 +51,7 @@
 #search_song_image{
     height: 40px;
     width: 40px;
-    margin-left: 10px;
+    margin-left: 50px;
     object-fit: cover;
 }
 
@@ -62,11 +66,6 @@
     margin-right: 20px;
 }
 
-.index_object_div{
-    margin-bottom: 25px;
-    margin-top: 10px;
-    margin-left: 20px;
-}
 
 #artist_search_div{
     width: min-content;
@@ -75,9 +74,9 @@
 .search_results_row{
     display: flex;
     flex-direction: row;
+    margin-left: 25px;
 }
 
-.search_results_row > *{
-    margin-right: px;
-    margin-left: 5px;
+#artist_object_div{
+    margin-left: 25px;
 }
