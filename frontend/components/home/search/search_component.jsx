@@ -25,7 +25,6 @@ class SearchComponent extends React.Component{
         if (artists.length === 0) {
             artistsHidden = "hidden"
         }
-        debugger
         return(
             <div className="main_content_window" id="search_main_window">
                 <div className="main_search_window">

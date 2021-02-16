@@ -5,7 +5,6 @@ class AlbumComponent extends React.Component{
 
     render(){
         const { album } = this.props;
-        debugger
         return(
             <Link to={`/album/${album.id}`} className="album_object_div">
                 <div className="album_cover_pic">

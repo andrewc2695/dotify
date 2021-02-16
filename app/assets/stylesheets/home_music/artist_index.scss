@@ -28,7 +28,9 @@
     max-height: max-content;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-width: 1370px;
 }
 
 .profile_object{
@@ -37,6 +39,7 @@
     color: azure;
     height: 287px;
     width: 210px;
+    margin-right: 25px;
     overflow: hidden;
     display: flex;
     flex-direction: column;

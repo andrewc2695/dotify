@@ -8,6 +8,7 @@ import ArtistIndexComponent from "./artist_index_component"
 const mapStateToProps = state => {
     return {
         artists: Object.values(state.entities.artists),
+        playlists: Object.values(state.entities.playlists),
         currentUser: state.session.id
     }
 }

@@ -1,6 +1,7 @@
 import React from "react"
 
 import ArtistIndexObject from "./artist_index_object";
+import PlaylistIndexComponent from "../playlists/playlist_index_component";
 
 class ArtistIndexComponent extends React.Component{
     constructor(props){
@@ -13,31 +14,31 @@ class ArtistIndexComponent extends React.Component{
     }
 
     render(){
-        debugger
-       const { artists } = this.props;
-       if (artists === {}) return null
+       const { artists, playlists } = this.props;
+        if (artists === {} || playlists === {}) return null
         return(
-            <div>
-                <div className="index_objects_div">
-                    <div className="index_title">Artists</div>
-                    <div className="artist_profile_pic_div">
-                        {artists.map(artist => {
-                            if(this.counter <= 5){
-                                return <ArtistIndexObject artist={artist} />
-                            }
-                        })}
-                    </div>
-                </div>
             <div className="artist_index_div">
-                <div className="index_objects_div">
-                    <div className="index_title">Artists</div>
-                    <div className="artist_profile_pic_div">
-                        {artists.map(artist => {
-                                return <ArtistIndexObject artist={artist} />
-                        })}
+                <div>
+                    <div className="index_objects_div">
+                        <div className="index_title">Playlists</div>
+                        <div className="artist_profile_pic_div">
+                            {playlists.map(playlist => {
+                                return <PlaylistIndexComponent playlist={playlist} />
+                                // return <ArtistIndexObject artist={artist} />
+                            })}
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div>
+                    <div className="index_objects_div" id="artist_index_div">
+                        <div className="index_title">Artists</div>
+                        <div className="artist_profile_pic_div">
+                            {artists.map(artist => {
+                                    return <ArtistIndexObject artist={artist} />
+                            })}
+                        </div>
+                    </div>
+                </div>
         </div>
         )
     }

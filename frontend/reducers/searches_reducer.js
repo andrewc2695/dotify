@@ -5,7 +5,6 @@ const searchesReducer = (oldState = {songs: {}, artists: {}, albums: {}}, action
     const newState = Object.assign({}, oldState)
     switch(action.type){
         case RECEIVE_SEARCH:
-            debugger
             newState.songs = action.searchRes.search.songs;
             newState.artists = action.searchRes.search.artists;
             newState.albums = action.searchRes.search.albums;
