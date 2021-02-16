@@ -52,7 +52,7 @@ class HeaderComponent extends React.Component{
                         <div id="search_icon">
                             <FontAwesomeIcon icon={faSearch} className="search_icon" />
                         </div>
-                            <input type="text" placeholder="Search" 
+                            <input type="text" placeholder="Search" autoComplete="off"
                                 value={this.state.search} id="header_search"
                                 onChange={this.handleChange}
                             />

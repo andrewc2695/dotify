@@ -6,7 +6,8 @@
 
 .main_content_window{
     // border: solid 1px rgba(0,0,0,0);
-    height: 100vw;
+    // min-height: 100vw;
+    margin-bottom: 65px;
     overflow: scroll;
     margin-left: 280px;
 }
@@ -20,11 +21,6 @@
     height: 100%;
 }
 
-
-.main_component{
-    width: 100%;
-    background-color: #b39595;
-}
 
 .playbar_component{
     position: fixed;

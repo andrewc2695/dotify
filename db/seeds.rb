@@ -13,6 +13,8 @@ Artist.destroy_all
 User.destroy_all
 Album.destroy_all
 Song.destroy_all
+Playlist.destroy_all
+SongsOnPlaylist.destroy_all
 
 
 demo = User.create!({username: "Demo", password: "123456"})
@@ -127,6 +129,47 @@ song46 = Song.create!({title: "song6", album_id: album10.id, ORD: 1})
 song47 = Song.create!({title: "song7", album_id: album10.id, ORD: 2})
 song48 = Song.create!({title: "song8", album_id: album10.id, ORD: 3})
 song49 = Song.create!({title: "song9", album_id: album10.id, ORD: 4})
-song90 = Song.create!({title: "song10", album_id: album10.id, ORD: 5})
+song50 = Song.create!({title: "song10", album_id: album10.id, ORD: 5})
+
+
+#playlists
+playlist1 = Playlist.create!({user_id: demo.id, title: "my first playlist"})
+playlist2 = Playlist.create!({user_id: demo.id, title: "chill stuff"})
+playlist3 = Playlist.create!({user_id: demo.id, title: "=("})
+playlist4 = Playlist.create!({user_id: demo.id, title: "woqipqwdopqwnd"})
+playlist5 = Playlist.create!({user_id: demo.id, title: "turnip"})
+playlist6 = Playlist.create!({user_id: demo.id, title: "playlist6"})
+
+#songs_on_playlist
+sop1 = SongsOnPlaylist.create!({playlist_id: playlist1.id, song_id: song1.id})
+sop2 = SongsOnPlaylist.create!({playlist_id: playlist1.id, song_id: song6.id})
+sop3 = SongsOnPlaylist.create!({playlist_id: playlist1.id, song_id: song11.id})
+sop4 = SongsOnPlaylist.create!({playlist_id: playlist1.id, song_id: song16.id})
+
+sop5 = SongsOnPlaylist.create!({playlist_id: playlist2.id, song_id: song2.id})
+sop6 = SongsOnPlaylist.create!({playlist_id: playlist2.id, song_id: song7.id})
+sop7 = SongsOnPlaylist.create!({playlist_id: playlist2.id, song_id: song12.id})
+sop8 = SongsOnPlaylist.create!({playlist_id: playlist2.id, song_id: song17.id})
+
+sop9 = SongsOnPlaylist.create!({playlist_id: playlist3.id, song_id: song3.id})
+sop10 = SongsOnPlaylist.create!({playlist_id: playlist3.id, song_id: song8.id})
+sop11 = SongsOnPlaylist.create!({playlist_id: playlist3.id, song_id: song13.id})
+sop12 = SongsOnPlaylist.create!({playlist_id: playlist3.id, song_id: song18.id})
+
+sop13 = SongsOnPlaylist.create!({playlist_id: playlist4.id, song_id: song35.id})
+sop14 = SongsOnPlaylist.create!({playlist_id: playlist4.id, song_id: song40.id})
+sop15 = SongsOnPlaylist.create!({playlist_id: playlist4.id, song_id: song45.id})
+sop16 = SongsOnPlaylist.create!({playlist_id: playlist4.id, song_id: song50.id})
+
+sop17 = SongsOnPlaylist.create!({playlist_id: playlist5.id, song_id: song23.id})
+sop18 = SongsOnPlaylist.create!({playlist_id: playlist5.id, song_id: song34.id})
+
+sop19 = SongsOnPlaylist.create!({playlist_id: playlist1.id, song_id: song41.id})
+sop20 = SongsOnPlaylist.create!({playlist_id: playlist1.id, song_id: song5.id})
+
+
+
+
+
 
 

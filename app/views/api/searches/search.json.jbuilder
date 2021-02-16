@@ -1,4 +1,4 @@
-json.search do 
+json.search do   
     json.songs do 
         @songs.each do |song|
             artist = song.artist.name
@@ -11,9 +11,9 @@ json.search do
 
     json.albums do 
         @albums.each do |album|
+            artist = album.artist.name
             json.set! album.id do
-                json.extract! album, :id, :title, :year 
-                album.artist.name
+                json.extract! album, :id, :title, :year, :artist 
                 json.photoUrl url_for(album.photo)
             end
         end

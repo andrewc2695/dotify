@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :albums, only: [:show]
     resources :searches, only: []
+    resources :playlists, only: [:show, :create, :destroy, :update]
 
+    get '/playlists/user/:id', to: 'playlists#show_user', as: 'show_user'
     get '/searches/:search', to: 'searches#search', as: 'search_term'
   end
   

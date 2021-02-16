@@ -9,6 +9,10 @@ class Song < ApplicationRecord
         through: :album,
         source: :artist
 
+    has_many :songs_on_playlist,
+    foreign_key: :song_id,
+    class_name: :SongsOnPlaylist
+
     has_one_attached :song
 
     

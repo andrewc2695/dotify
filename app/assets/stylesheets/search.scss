@@ -11,6 +11,10 @@
     background-color: #131313;
     color: azure;
 }
+
+input:-internal-autofill-selected{
+    background-color: black !important;
+}
 .main_search_window{
     margin-right: 15px;
     margin-left: 5px;
