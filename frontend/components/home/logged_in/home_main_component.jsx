@@ -27,7 +27,7 @@ class HomeMainComponent extends React.Component{
                     </div>
                     <div className="header_component">
                         <HeaderComponent currentUser={this.props.currentUser.username} 
-                            logout={this.props.logout}
+                            logout={this.props.logout} search={this.props.search}
                         />
                     </div>
                 </div>

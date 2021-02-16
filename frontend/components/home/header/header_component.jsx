@@ -8,9 +8,10 @@ import { faChevronLeft, faChevronRight, faSearch, faGrin,
 class HeaderComponent extends React.Component{
     constructor(props){
         super(props);
-        this.state = { dropdownButton: "header_dropdown_button_down", sort: faSortDown};
+        this.state = {dropdownButton: "header_dropdown_button_down", sort: faSortDown, search: ""};
         this.userProfile = "header_users_div";
         this.handleDropDown = this.handleDropDown.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleDropDown(){
@@ -23,6 +24,15 @@ class HeaderComponent extends React.Component{
         }
     }
 
+    handleSearch(e){
+        e.preventDefault();
+        this.props.search(this.state.search);   
+    }
+
+    handleChange(e){
+        this.setState({search: e.currentTarget.value});
+    }
+
     render(){
         return(
             <div id="header_component">
@@ -33,12 +43,15 @@ class HeaderComponent extends React.Component{
                     <button className="header_history"id="header_forward_button">
                         <FontAwesomeIcon icon={faChevronRight} className="history_icon" />
                     </button>
-                    <div id="header_search_bar">
+                    <form id="header_search_bar" onSubmit={this.handleSearch}>
                         <div id="search_icon">
                             <FontAwesomeIcon icon={faSearch} className="search_icon" />
                         </div>
-                        <input type="text" placeholder="Search" id="header_search"/>
-                    </div>
+                            <input type="text" placeholder="Search" 
+                                value={this.state.search} id="header_search"
+                                onChange={this.handleChange}
+                            />
+                    </form>
                 </div>
                 <div id={`${this.userProfile}`}>
                     <div id="header_profile">

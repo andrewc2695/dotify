@@ -6,6 +6,8 @@ import { login, logout, signup } from "./util/session_api_util";
 import { thunkLogin, thunkLogout, thunkSignup } from "./actions/session_actions";
 import { thunkFetchArtist, thunkFetchArtists } from "./actions/artist_actions";
 import { thunkFetchAlbum } from "./actions/album_actions";
+import { search } from "./util/search_api_util";
+import { thunkSearch } from "./actions/search_actions";
 
 
 
@@ -39,6 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+
+    window.search = search;
+    window.thunkSearch = thunkSearch;
 
     window.thunkLogin = thunkLogin;
     window.thunkSignup = thunkSignup;

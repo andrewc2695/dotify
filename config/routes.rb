@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :artists, only: [:index, :show]
     resource :session, only: [:create, :destroy]
     resources :albums, only: [:show]
+    resources :searches, only: []
+
+    get '/searches/:search', to: 'searches#search', as: 'search_term'
   end
   
   root to: 'static_pages#root'
