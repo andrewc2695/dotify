@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return{
         currentUser: state.entities.users[state.session.id],
         artists: Object.values(state.entities.artists)

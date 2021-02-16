@@ -18,7 +18,7 @@ class ArtistIndexComponent extends React.Component{
        this.counter = 0;
         return(
             <div className="artist_index_div">
-                <div className="artist_index_objects_div">
+                <div className="index_objects_div">
                     <div className="index_title">Artists</div>
                     <div className="artist_profile_pic_div">
                         {artists.map(artist => {

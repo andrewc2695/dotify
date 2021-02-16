@@ -6,7 +6,6 @@ import SideBarMain from "../sidebar/sidebar_main_component";
 class HomeMainComponent extends React.Component{
     constructor(props){
         super(props);
-        debugger
     }
 
     render(){
