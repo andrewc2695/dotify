@@ -13,7 +13,6 @@ class PlaylistShowComponent extends React.Component {
     }
 
     render() {
-        debugger
         let count = 0;
         if (this.props.playlist === undefined) return null;
         const { playlist } = this.props;
@@ -36,7 +35,7 @@ class PlaylistShowComponent extends React.Component {
             <div className="main_content_window" id="album_show_main_window">
                 <div className="album_show_top">
                     <div className="playlis_cover_pic">
-                        <div className="playlist_cover" className="not_four" id={`${not_four}`}>
+                        <div className="playlist_cover_basic"  id={`${not_four}`}>
                             <FontAwesomeIcon icon={faMusic} />
                         </div>
                         <div className="playlist_show_cover" id={`${four}`}>

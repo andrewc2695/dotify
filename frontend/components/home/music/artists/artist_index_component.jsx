@@ -17,7 +17,6 @@ class ArtistIndexComponent extends React.Component{
     render(){
        const { artists, playlists } = this.props;
         if (artists === {} || playlists === {}) return null
-        debugger
         return(
             <div className="artist_index_div">
                 <div>
