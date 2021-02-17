@@ -10,8 +10,9 @@ class Api::PlaylistsController < ApplicationController
         render :show
     end
 
-    def post
+    def create
         @playlist = Playlist.new(playlist_params)
+        @songs = @playlist.songs
         if @playlist.save!
             render :show
         end
@@ -19,6 +20,6 @@ class Api::PlaylistsController < ApplicationController
 
     private
     def playlist_params
-        params.require(:param).permit(:title, :user_id)
+        params.require(:playlist).permit(:title, :user_id)
     end
 end

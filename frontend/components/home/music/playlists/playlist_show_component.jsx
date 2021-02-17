@@ -6,14 +6,27 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons'
 
 
 class PlaylistShowComponent extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = { dropdownButton: "playlist_dropdown_button_down" }
+        this.handleDropDown = this.handleDropDown.bind(this);
+    }
 
     componentDidMount() {
         window.scrollTo(0, 0)
         this.props.fetchPlaylist(this.props.match.params.playlistId)
     }
 
+    handleDropDown() {
+        console.log("hi")
+        if (this.state.dropdownButton === "playlist_dropdown_button_down") {
+            this.setState({ dropdownButton: "playlist_dropdown_button_up"});
+        } else {
+            this.setState({ dropdownButton: "playlist_dropdown_button_down"});
+        }
+    }
+
     render() {
-        debugger
         let count = 0;
         if (this.props.playlist === undefined) return null;
         const { playlist } = this.props;
@@ -56,9 +69,24 @@ class PlaylistShowComponent extends React.Component {
                     </div>
                 </div>
                 <div className="album_show_bottom">
-                    <button className="green_play_button">
-                        <FontAwesomeIcon icon={faPlay} />
-                    </button>
+                    <div className="playlist_top">
+                        <button className="green_play_button">
+                            <FontAwesomeIcon icon={faPlay} />
+                        </button>
+                        <div>
+                            <button className="playlist_dots" onClick={() => this.handleDropDown()}>
+                                ...
+                            </button>
+                            <div className={`${this.state.dropdownButton}`}>
+                                <button>
+                                    Rename Playlist
+                                </button>
+                                <button>
+                                    Delete Playlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div className="album_show_song_div">
                         <div className="song_component_left" id="hash_and_title">
                             <div className="ord_div">

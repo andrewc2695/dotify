@@ -8,14 +8,15 @@ class HomeMainComponent extends React.Component{
         super(props);
     }
     componentDidMount(){
-        this.props.fetchPlaylists(this.props.currentUser.id)
+        
     }
 
     render(){
         if(this.props.currentUser === undefined){
             return null;
         }
-        const { playlists } = this.props;
+        if(this.props.playlists === {}) return null;
+        const { playlists, createPlaylist, currentUser, fetchPlaylists } = this.props;
         return(
             <div className="main_div">
                 <div className="playbar_component">
@@ -23,7 +24,9 @@ class HomeMainComponent extends React.Component{
                 </div>
                 <div className="main_and_side_div">
                     <div className="side_component">
-                        <SideBarMain playlists={playlists}/>
+                        <SideBarMain createPlaylist={createPlaylist} playlists={playlists}
+                            currentUser={currentUser} history={this.props.history}
+                            fetchPlaylists={fetchPlaylists}/>
                     </div>
                     <div className="main_component">
             

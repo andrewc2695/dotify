@@ -20,3 +20,4 @@ export const createPlaylist = playlist => {
         data:  { playlist }
     });
 }
+

@@ -1,16 +1,29 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeadphones, faPlusSquare, faHome, faSearch, faBookOpen } from '@fortawesome/free-solid-svg-icons'
 
 
 class SideBarTop extends React.Component {
     constructor(props){
-        super(props)
+        super(props);
+        this.createPlaylist = this.createPlaylist.bind(this);
+        this.state = {create: false}
     }
 
     createPlaylist(){
-        
+        const num = this.props.playlists.length + 1
+        this.props.createPlaylist({title: `My Playlist #${num}`,
+                                         user_id: this.props.currentUser.id});
+    }
+
+    componentDidMount(){
+        this.props.fetchPlaylists(this.props.currentUser.id)
+        console.log("hi")
+        // if(this.state.create === true){
+        //     const playlistId = this.props.playlists[this.props.playlists.length - 1].id
+        //     this.props.history.push(`/playlists/${playlistId}`)
+        // }
     }
 
     render(){
@@ -35,19 +48,19 @@ class SideBarTop extends React.Component {
                         </button>
                     </div>
                     <div className="sidebar_link">
-                        <button className="sidebar_content" onClick={this.createPlaylist}>
+                        <button className="sidebar_content">
                             <FontAwesomeIcon icon={faBookOpen} className="sidebar_link_icon"/> 
                             Library
                         </button>
                     </div>
                 </div>
-                <div id="sidebar_top_playlists">
+                <button id="sidebar_top_playlists" onClick={() => this.createPlaylist()}>
                     <div className="sidebar_static">PLAYLISTS</div>
                     <div className="sidebar_content" id="playlist_create">
                         <FontAwesomeIcon icon={faPlusSquare} id="playlist_create_icon"/> 
                         Create Playlist
                     </div>
-                </div>
+                </button>
             </div>
         )
     }

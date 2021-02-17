@@ -6,11 +6,13 @@ class SideBarMain extends React.Component{
     
 
     render(){
-        const { playlists } = this.props
+        const { playlists, createPlaylist, currentUser, history, fetchPlaylists } = this.props
         return(
             <div className="sidebar_comp">
                 <div  id="sidebar_top">
-                    <SideBarTop />
+                    <SideBarTop createPlaylist={createPlaylist} 
+                        currentUser={currentUser} playlists={playlists}
+                        history={history} fetchPlaylists={fetchPlaylists}/>
                 </div>
                 <div  id="sidebar_bottom">
                     <SidebarBottom playlists={playlists}/>

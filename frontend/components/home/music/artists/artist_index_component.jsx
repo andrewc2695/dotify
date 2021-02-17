@@ -11,7 +11,7 @@ class ArtistIndexComponent extends React.Component{
     componentDidMount(){
         window.scrollTo(0, 0)
         this.props.fetchArtists();
-        this.props.fetchPlaylists(this.props.currentUser)
+        // this.props.fetchPlaylists(this.props.currentUser)
     }
 
     render(){

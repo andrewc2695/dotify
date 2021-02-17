@@ -4,7 +4,7 @@ import { removeSearch, thunkSearch } from "../../../actions/search_actions"
 import { resetState, thunkLogout } from "../../../actions/session_actions"
 import HomeMainComponent from "./home_main_component"
 import { withRouter } from 'react-router-dom';
-import { thunkFetchUsersPlaylist } from "../../../actions/playlist_actions"
+import { thunkCreatePlaylist, thunkFetchUsersPlaylist } from "../../../actions/playlist_actions"
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,8 +23,8 @@ const mapDispatchToProps = dispatch => {
         search: searchTerm => dispatch(thunkSearch(searchTerm)),
         removeSearch: () => dispatch(removeSearch()),
         resetState: () => dispatch(resetState()),
-        fetchPlaylists: userId => dispatch(thunkFetchUsersPlaylist(userId))
-
+        fetchPlaylists: userId => dispatch(thunkFetchUsersPlaylist(userId)),
+        createPlaylist: playlist => dispatch(thunkCreatePlaylist(playlist)),
     }
 }
 
