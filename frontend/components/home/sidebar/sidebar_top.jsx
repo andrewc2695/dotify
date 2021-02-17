@@ -42,10 +42,10 @@ class SideBarTop extends React.Component {
                         </Link>
                     </div>
                     <div className="sidebar_link">
-                        <button className="sidebar_content">
+                        <Link to="/search/a" className="sidebar_content">
                             <FontAwesomeIcon icon={faSearch} className="sidebar_link_icon"/> 
                             Search
-                        </button>
+                        </Link>
                     </div>
                     <div className="sidebar_link">
                         <button className="sidebar_content">
