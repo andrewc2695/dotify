@@ -1,5 +1,5 @@
 class Song < ApplicationRecord
-    validates :title, :album_id, :ORD, presence: true
+    validates :title, :album_id, :ORD, :audio_id, presence: true
 
     belongs_to :album,
         foreign_key: :album_id,
@@ -13,7 +13,9 @@ class Song < ApplicationRecord
     foreign_key: :song_id,
     class_name: :SongsOnPlaylist
 
-    has_one_attached :audio
+    belongs_to :audio,
+    foreign_key: :audio_id,
+    class_name: :AudioFile
 
     
 end
