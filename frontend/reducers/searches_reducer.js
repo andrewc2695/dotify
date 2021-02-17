@@ -1,4 +1,5 @@
 import { RECEIVE_SEARCH, REMOVE_SEARCH } from "../actions/search_actions";
+import { RESET_STATE } from "../actions/session_actions"
 
 const searchesReducer = (oldState = {songs: {}, artists: {}, albums: {}}, action) => {
     Object.freeze(oldState)
@@ -20,6 +21,8 @@ const searchesReducer = (oldState = {songs: {}, artists: {}, albums: {}}, action
             return newState
         case REMOVE_SEARCH:
             return { songs: {}, artists: {}, albums: {} }
+        case RESET_STATE:
+            return { songs: {}, artists: {}, albums: {} };
         default:
             return oldState;
     }

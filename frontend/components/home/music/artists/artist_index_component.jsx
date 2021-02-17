@@ -18,7 +18,6 @@ class ArtistIndexComponent extends React.Component{
        const { artists, playlists } = this.props;
         if (artists === {}) return null
         let noPlaylists = ""
-        debugger
         if (playlists.length === 0){
             noPlaylists = "hidden"
         }

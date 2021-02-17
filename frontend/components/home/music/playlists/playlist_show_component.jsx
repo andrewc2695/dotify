@@ -13,10 +13,14 @@ class PlaylistShowComponent extends React.Component {
     }
 
     render() {
+        debugger
         let count = 0;
         if (this.props.playlist === undefined) return null;
         const { playlist } = this.props;
-        const songs = Object.values(playlist.songs)
+        let songs= [] 
+        if(playlist.songs !== undefined){
+            songs = Object.values(playlist.songs)
+        }
         let four = "hidden"
         let not_four = ""
         let song1 = ""

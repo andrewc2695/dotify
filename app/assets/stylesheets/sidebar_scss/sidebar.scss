@@ -76,8 +76,6 @@
     background-color: #282828;
 }
 
-
-
 #sidebar_top_playlists{
     height: 80px;
     display: flex;
@@ -98,9 +96,35 @@
     margin-right: 18px;
 }
 
-
 .sidebar_link_icon{
     margin-left: 17px;
     margin-right: 18px;
     font-size: 25px;
+}
+
+#sidebar_bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar_bottom{
+    border-top: 1px solid #B3B3B3;
+    width: 95%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#sidebar_playlist{
+    margin-top: 10px;
+    margin-left: 18px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #B3B3B3;
+    transition-property: color;
+    transition-duration: .3s;
+}
+
+#sidebar_playlist:hover{
+    color: azure;
 }

@@ -1,0 +1,49 @@
+.playbar_component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playbar_main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.playbar_top_buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playbar_mid{
+    border: 1px solid red;
+    width: 575px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playbar_play_button{
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#playbar_play{
+    margin-left: 5px;
+}
+
+.the_playbar{
+    width: 575px;
+    border-bottom: 1px solid white;
+}

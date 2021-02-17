@@ -3,6 +3,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER"
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER"
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
 export const REMOVE_ERRORS = "REMOVE_ERRORS"
+export const RESET_STATE = "RESET_STATE"
 
 const receiveCurrentUser = user => {
     return{
@@ -27,6 +28,12 @@ const receiveErrors = (errorsArr) => {
 export const removeErrors = () => {
     return{
         type: REMOVE_ERRORS,
+    }
+}
+
+export const resetState = () => {
+    return{
+        type: RESET_STATE,
     }
 }
 

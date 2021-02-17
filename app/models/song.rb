@@ -13,7 +13,7 @@ class Song < ApplicationRecord
     foreign_key: :song_id,
     class_name: :SongsOnPlaylist
 
-    has_one_attached :song
+    has_one_attached :audio
 
     
 end

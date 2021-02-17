@@ -1,4 +1,5 @@
 import { RECEIVE_ARTIST, RECEIVE_ARTISTS } from "../actions/artist_actions";
+import { RESET_STATE } from "../actions/session_actions";
 
 
 const artistsReducer = (oldState = {}, action) => {
@@ -10,6 +11,8 @@ const artistsReducer = (oldState = {}, action) => {
             const newState = Object.assign({}, oldState);
             newState[action.artist.artist.id] = action.artist.artist;
             return newState;
+        case RESET_STATE:
+            return {};
         default:
             return oldState;
     };

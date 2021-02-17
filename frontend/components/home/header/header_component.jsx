@@ -38,6 +38,7 @@ class HeaderComponent extends React.Component{
     }
 
     handleLogout(){
+        this.props.resetState();
         this.props.logout();
     }
 

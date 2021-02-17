@@ -9,6 +9,10 @@ class SideBarTop extends React.Component {
         super(props)
     }
 
+    createPlaylist(){
+        
+    }
+
     render(){
         return(
             <div id="sidebar_top_items">
@@ -31,7 +35,7 @@ class SideBarTop extends React.Component {
                         </button>
                     </div>
                     <div className="sidebar_link">
-                        <button className="sidebar_content">
+                        <button className="sidebar_content" onClick={this.createPlaylist}>
                             <FontAwesomeIcon icon={faBookOpen} className="sidebar_link_icon"/> 
                             Library
                         </button>
