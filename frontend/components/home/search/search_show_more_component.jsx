@@ -44,7 +44,7 @@ class SearchShowMore extends React.Component{
                             {songs.map(song => {
                                 return (
                                     <div className="search_song_component">
-                                        <img id="search_song_image" src={song.photoUrl} />
+                                        <img id="search_song_image" loading="lazy" src={song.photoUrl} />
                                         <SongComponent key={song.id} artist={song.artist} song={song} />
                                     </div>
                                 )

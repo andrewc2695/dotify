@@ -9,7 +9,7 @@ class ArtistIndexObject extends React.Component{
         return(
             <Link to={`/artist/${artist.id}`} className="profile_object" >
                 <div>
-                    <img className="profile_pic" src={artist.photoUrl} />
+                    <img className="profile_pic" loading="lazy" src={artist.photoUrl} />
                 </div>
                 <div className="profile_name">
                     <div>{artist.name}</div>

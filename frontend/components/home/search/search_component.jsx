@@ -47,7 +47,7 @@ class SearchComponent extends React.Component{
                             {songs.slice(0, 5).map(song => {
                                 return(
                                     <div className="search_song_component">
-                                        <img id="search_song_image" src={song.photoUrl} />
+                                        <img id="search_song_image" src={song.photoUrl} loading="lazy" />
                                         <SongComponent key={song.id} artist={song.artist} song={song} />
                                     </div>
                                 )

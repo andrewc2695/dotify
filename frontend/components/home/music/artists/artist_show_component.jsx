@@ -30,7 +30,7 @@ class ArtistShowComponent extends React.Component{
         return(
             <div className="main_content_window">
                 <div className="artist_show_pic">
-                    <img id="show_profile_pic" src={artist.photoUrl} /> 
+                    <img id="show_profile_pic" loading="lazy" src={artist.photoUrl} /> 
                     
                 </div>
                 <div className="artist_show_div">
@@ -56,7 +56,7 @@ class ArtistShowComponent extends React.Component{
                                                 <div>
                                                     {popOrder}
                                                 </div>
-                                                <img id="popular_songs" src={song.photoUrl} />
+                                                <img id="popular_songs" loading="lazy" src={song.photoUrl} />
                                                 <div>
                                                     {song.title}
                                                 </div>

@@ -77,10 +77,10 @@ class PlaylistShowComponent extends React.Component {
                             <FontAwesomeIcon icon={faMusic} />
                         </div>
                         <div className="playlist_show_cover" id={`${four}`}>
-                            <img className="playlist_show_image" src={`${song1}`} />
-                            <img className="playlist_show_image" src={`${song2}`} />
-                            <img className="playlist_show_image" src={`${song3}`} />
-                            <img className="playlist_show_image" src={`${song4}`} />
+                            <img className="playlist_show_image" loading="lazy" src={`${song1}`} />
+                            <img className="playlist_show_image" loading="lazy" src={`${song2}`} />
+                            <img className="playlist_show_image" loading="lazy" src={`${song3}`} />
+                            <img className="playlist_show_image" loading="lazy" src={`${song4}`} />
                         </div>
                     </div>
                     <div className="album_show_info">

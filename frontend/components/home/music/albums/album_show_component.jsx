@@ -24,7 +24,7 @@ class AlbumShowComponent extends React.Component{
             <div className="main_content_window" id="album_show_main_window">
                 <div className="album_show_top">
                     <div className="album_show_pic">
-                        <img id="album_show_pic" src={album.photoUrl}/>
+                        <img id="album_show_pic" loading="lazy" src={album.photoUrl}/>
                     </div>
                     <div className="album_show_info">
                         <div id="album_show_album">
