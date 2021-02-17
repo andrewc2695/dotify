@@ -26,6 +26,11 @@ class PlaylistShowComponent extends React.Component {
         }
     }
 
+    deletePlaylist(){
+        this.props.deletePlaylist(this.props.match.params.playlistId);
+        this.props.history.push("/");
+    }
+
     render() {
         let count = 0;
         if (this.props.playlist === undefined) return null;
@@ -81,7 +86,7 @@ class PlaylistShowComponent extends React.Component {
                                 <button>
                                     Rename Playlist
                                 </button>
-                                <button>
+                                <button onClick={() => this.deletePlaylist()}>
                                     Delete Playlist
                                 </button>
                             </div>

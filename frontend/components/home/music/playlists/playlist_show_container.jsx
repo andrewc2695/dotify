@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { thunkFetchPlaylist } from "../../../../actions/playlist_actions"
+import { thunkDeletePlaylist, thunkFetchPlaylist } from "../../../../actions/playlist_actions"
 import PlaylistShowComponent from "./playlist_show_component"
 
 const mapStateToProps = (state, ownProps) => {
@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        fetchPlaylist : playlistId => dispatch(thunkFetchPlaylist(playlistId))
+        fetchPlaylist : playlistId => dispatch(thunkFetchPlaylist(playlistId)),
+        deletePlaylist: playlistId => dispatch(thunkDeletePlaylist(playlistId))
     }
 }
 
