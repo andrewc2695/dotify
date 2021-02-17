@@ -8,6 +8,7 @@ class PlaybarComponent extends React.Component{
     }
 
     render(){
+        console.log("playbar_component")
         return(
             <div className="playbar_main">
                 <div className="playbar_left">

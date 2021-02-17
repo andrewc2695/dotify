@@ -23,6 +23,13 @@ class Api::PlaylistsController < ApplicationController
         @playlist.destroy
     end
 
+    def update
+        @playlist = Playlist.find(params[:id])
+        if @playlist.update!(playlist_params[:title])
+            render :show
+        end
+    end
+
     private
     def playlist_params
         params.require(:playlist).permit(:title, :user_id)

@@ -38,3 +38,6 @@ export const thunkCreatePlaylist = playlist => dispatch => PlaylistsAPIUtil.crea
 
 export const thunkDeletePlaylist = playlistId => dispatch => PlaylistsAPIUtil.deletePlaylist(playlistId)
     .then(() => dispatch(removePlaylist(playlistId)));
+
+export const thunkUpdatePlaylist = playlist => dispatch => PlaylistsAPIUtil.updatePlaylist(playlist)
+    .then((playlist) => dispatch(receivePlaylist(playlist)));

@@ -7,7 +7,7 @@ class SidebarBottom extends React.Component{
         return(
             <div className="sidebar_bottom">
                 {playlists.map(playlist => {
-                    return <Link to={`/playlist/${playlist.id}`} id="sidebar_playlist">{playlist.title}</Link> 
+                    return <Link key={playlist.id} to={`/playlist/${playlist.id}`} id="sidebar_playlist">{playlist.title}</Link> 
                 })}
             </div>
         )

@@ -45,7 +45,7 @@ class SearchShowMore extends React.Component{
                                 return (
                                     <div className="search_song_component">
                                         <img id="search_song_image" src={song.photoUrl} />
-                                        <SongComponent artist={song.artist} song={song} />
+                                        <SongComponent key={song.id} artist={song.artist} song={song} />
                                     </div>
                                 )
                             })}
@@ -64,7 +64,7 @@ class SearchShowMore extends React.Component{
                         </div>
                         <div className="search_results_row">
                             {albums.map(album => {
-                                return <div><AlbumComponent album={album} /></div>
+                                return <div><AlbumComponent key={album.id} album={album} /></div>
                             })}
                         </div>
                     </div>
@@ -81,7 +81,7 @@ class SearchShowMore extends React.Component{
                         </div>
                         <div className="search_results_row">
                             {artists.map(artist => {
-                                return <div id="artist_object_div"><ArtistIndexObject artist={artist} /></div>
+                                return <div id="artist_object_div"><ArtistIndexObject key={artist.id} artist={artist} /></div>
                             })}
                         </div>
                     </div>

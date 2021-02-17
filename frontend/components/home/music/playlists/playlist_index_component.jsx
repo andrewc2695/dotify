@@ -9,6 +9,7 @@ class PlaylistIndexComponent extends React.Component {
         // const colors = ["red", "orange", "green", "yellow", "blue", "pink", "purple"]
         // const color = colors[Math.floor(Math.random() * colors.length)]
         const { playlist } = this.props;
+        console.log(`playlist render-${playlist.title}`)
         let songs = ""
         let four= "hidden"
         let not_four = ""

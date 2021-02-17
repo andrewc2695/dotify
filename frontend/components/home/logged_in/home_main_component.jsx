@@ -12,10 +12,10 @@ class HomeMainComponent extends React.Component{
     }
 
     render(){
+        console.log("home_main_comp")
         if(this.props.currentUser === undefined){
             return null;
         }
-        if(this.props.playlists === {}) return null;
         const { playlists, createPlaylist, currentUser, fetchPlaylists } = this.props;
         return(
             <div className="main_div">

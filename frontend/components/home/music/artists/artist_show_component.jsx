@@ -51,7 +51,7 @@ class ArtistShowComponent extends React.Component{
                                 {popular.map(song => {
                                     popOrder += 1;
                                     return(
-                                        <div className="popular_song_component">
+                                        <div key={song.id} className="popular_song_component">
                                             <div className="popular_song_component_left">
                                                 <div>
                                                     {popOrder}
@@ -77,7 +77,7 @@ class ArtistShowComponent extends React.Component{
                             <div id="aritst_album_div_album">
                                 {albums.map(album => {
                                     return (
-                                        <AlbumComponent album={album} />
+                                        <AlbumComponent key={album.id} album={album} />
                                     )
                                 })}
                             </div>

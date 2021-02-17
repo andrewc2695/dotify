@@ -52,7 +52,7 @@ class AlbumShowComponent extends React.Component{
                             </div>
                         </div>
                         {songs.map(song => {
-                            return <SongComponent artist={artist[album.artist_id]} song={song}/>
+                            return <SongComponent key={song.id} artist={artist[album.artist_id]} song={song}/>
                         })}
                     </div>
 

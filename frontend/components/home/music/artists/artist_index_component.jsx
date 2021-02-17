@@ -28,7 +28,7 @@ class ArtistIndexComponent extends React.Component{
                         <div className="index_title">Playlists</div>
                         <div className="artist_profile_pic_div">
                             {playlists.map(playlist => {
-                                return <PlaylistIndexComponent playlist={playlist} />
+                                return <PlaylistIndexComponent key={playlist.id} playlist={playlist} />
                                 // return <ArtistIndexObject artist={artist} />
                             })}
                         </div>
@@ -40,7 +40,7 @@ class ArtistIndexComponent extends React.Component{
                         <div className="artist_profile_pic_div">
                             <div id="aritst_profile_pic_div_div">
                                 {artists.map(artist => {
-                                    return <ArtistIndexObject artist={artist} />
+                                    return <ArtistIndexObject key={artist.id} artist={artist} />
                                 })}
                             </div>
                         </div>

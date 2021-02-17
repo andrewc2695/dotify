@@ -8,8 +8,10 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons'
 class PlaylistShowComponent extends React.Component {
     constructor(props){
         super(props)
-        this.state = { dropdownButton: "playlist_dropdown_button_down" }
+        this.state = { dropdownButton: "playlist_dropdown_button_down", modal: "playlist_modal_hidden" }
         this.handleDropDown = this.handleDropDown.bind(this);
+        this.handleModal = this.handleModal.bind(this);
+        this.playlistModal = "playlist_modal_hidden"
     }
 
     componentDidMount() {
@@ -18,7 +20,6 @@ class PlaylistShowComponent extends React.Component {
     }
 
     handleDropDown() {
-        console.log("hi")
         if (this.state.dropdownButton === "playlist_dropdown_button_down") {
             this.setState({ dropdownButton: "playlist_dropdown_button_up"});
         } else {
@@ -26,9 +27,24 @@ class PlaylistShowComponent extends React.Component {
         }
     }
 
+    handleModal() {
+        console.log("hi")
+        if (this.state.modal === "playlist_modal_hidden") {
+            this.setState({ modal: "playlist_modal" })
+            this.playlistModal = "playlist_modal_content"
+        } else {
+            this.setState({ modal: "playlist_modal_hidden" })
+            this.playlistModal = "playlist_modal_hidden"
+        }
+    }
+
     deletePlaylist(){
         this.props.deletePlaylist(this.props.match.params.playlistId);
         this.props.history.push("/");
+    }
+
+    renamePlaylist(){
+        this.props.updatePlaylist()
     }
 
     render() {
@@ -71,6 +87,16 @@ class PlaylistShowComponent extends React.Component {
                         <div id="album_show_title">
                             {playlist.title}
                         </div>
+                        <div className={`${this.playlistModal}`}>
+                            New Playlist Name
+                            <input type="text" className="rename_input"/>
+                        </div>
+                        <div className="rename_playlist" onClick={() => this.handleModal()}>
+                            Rename Playlist
+                        </div>
+                        <div className={`${this.state.modal}`} onClick={() => this.handleModal()}>
+
+                        </div>
                     </div>
                 </div>
                 <div className="album_show_bottom">
@@ -83,7 +109,7 @@ class PlaylistShowComponent extends React.Component {
                                 ...
                             </button>
                             <div className={`${this.state.dropdownButton}`}>
-                                <button>
+                                <button onClick={() => this.handleModal()}>
                                     Rename Playlist
                                 </button>
                                 <button onClick={() => this.deletePlaylist()}>
@@ -107,7 +133,7 @@ class PlaylistShowComponent extends React.Component {
                             <div className="search_song_component">
                                 <div>{count}</div>
                                 <img id="search_song_image" src={song.photoUrl} />
-                                <SongComponent artist={song.artist} song={song} />
+                                <SongComponent key={song.id} artist={song.artist} song={song} />
                             </div>
                             )
                         })}

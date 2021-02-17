@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return{
         fetchPlaylist : playlistId => dispatch(thunkFetchPlaylist(playlistId)),
-        deletePlaylist: playlistId => dispatch(thunkDeletePlaylist(playlistId))
+        deletePlaylist: playlistId => dispatch(thunkDeletePlaylist(playlistId)),
+        updatePlaylist: playlist => dispatch(thunkUpdatePlaylist(playlist))
     }
 }
 
