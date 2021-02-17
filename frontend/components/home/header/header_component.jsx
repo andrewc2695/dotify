@@ -13,6 +13,7 @@ class HeaderComponent extends React.Component{
         this.handleDropDown = this.handleDropDown.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     handleDropDown(){
@@ -34,6 +35,10 @@ class HeaderComponent extends React.Component{
 
     handleChange(e){
         this.setState({search: e.currentTarget.value});
+    }
+
+    handleLogout(){
+        this.props.logout();
     }
 
     render(){
@@ -71,9 +76,9 @@ class HeaderComponent extends React.Component{
                     </button>
                 </div>
                 <div id={this.state.dropdownButton}>
-                    <Link to="" className="drop_down_div"></Link>
-                    <Link to="" className="drop_down_div"></Link>
-                    <button className="drop_down_div" onClick={() => this.props.logout()}>
+                    <a className="drop_down_div" href="https://github.com/andrewc2695">Github</a>
+                    <a className="drop_down_div" href="https://www.linkedin.com/in/andrew-curd-054997b1/">LinkedIn</a>
+                    <button className="drop_down_div" onClick={() => this.handleLogout()}>
                         Log Out
                     </button>
                 </div>

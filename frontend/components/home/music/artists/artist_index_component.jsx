@@ -16,10 +16,15 @@ class ArtistIndexComponent extends React.Component{
 
     render(){
        const { artists, playlists } = this.props;
-        if (artists === {} || playlists === {}) return null
+        if (artists === {}) return null
+        let noPlaylists = ""
+        debugger
+        if (playlists.length === 0){
+            noPlaylists = "hidden"
+        }
         return(
-            <div className="artist_index_div">
-                <div>
+            <div className="artist_index_div" id="playlists">
+                <div className={`${noPlaylists}`}>
                     <div className="index_objects_div">
                         <div className="index_title">Playlists</div>
                         <div className="artist_profile_pic_div">
