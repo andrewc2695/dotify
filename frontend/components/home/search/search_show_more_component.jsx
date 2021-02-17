@@ -7,6 +7,7 @@ import AlbumComponent from "../music/albums/albums_component";
 class SearchShowMore extends React.Component{
 
     componentDidMount(){
+        window.scrollTo(0, 0)
         this.props.search(this.props.match.params.searchTerm)
     }
 

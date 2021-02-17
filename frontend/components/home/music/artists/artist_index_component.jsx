@@ -9,6 +9,7 @@ class ArtistIndexComponent extends React.Component{
         this.counter = 0;
     }
     componentDidMount(){
+        window.scrollTo(0, 0)
         this.props.fetchArtists();
         this.props.fetchPlaylists(this.props.currentUser)
     }
@@ -16,6 +17,7 @@ class ArtistIndexComponent extends React.Component{
     render(){
        const { artists, playlists } = this.props;
         if (artists === {} || playlists === {}) return null
+        debugger
         return(
             <div className="artist_index_div">
                 <div>
@@ -33,9 +35,11 @@ class ArtistIndexComponent extends React.Component{
                     <div className="index_objects_div" id="artist_index_div">
                         <div className="index_title">Artists</div>
                         <div className="artist_profile_pic_div">
-                            {artists.map(artist => {
+                            <div id="aritst_profile_pic_div_div">
+                                {artists.map(artist => {
                                     return <ArtistIndexObject artist={artist} />
-                            })}
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>

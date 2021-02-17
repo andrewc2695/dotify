@@ -8,6 +8,7 @@ import { thunkFetchArtist, thunkFetchArtists } from "./actions/artist_actions";
 import { thunkFetchAlbum } from "./actions/album_actions";
 import { search } from "./util/search_api_util";
 import { thunkSearch } from "./actions/search_actions";
+import { thunkFetchPlaylist } from "./actions/playlist_actions";
 
 
 
@@ -44,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.search = search;
     window.thunkSearch = thunkSearch;
+
+    window.thunkFetchPlaylist = thunkFetchPlaylist;
 
     window.thunkLogin = thunkLogin;
     window.thunkSignup = thunkSignup;

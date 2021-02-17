@@ -7,6 +7,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 class AlbumShowComponent extends React.Component{
 
     componentDidMount(){
+        window.scrollTo(0, 0)
         this.props.fetchAlbum(this.props.match.params.albumId)
     }
 

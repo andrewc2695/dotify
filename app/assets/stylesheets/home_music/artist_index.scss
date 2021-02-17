@@ -3,6 +3,7 @@
     background: linear-gradient(#181818, #131313 );
     overflow: scroll;
     min-height: 100vh;
+    margin-bottom: 90px;
 }
 
 .index_title{
@@ -28,9 +29,10 @@
     max-height: max-content;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    min-width: 1370px;
+    min-width: 1250px;
 }
 
 .profile_object{
@@ -79,4 +81,11 @@
 
 .hidden{
     display: none;
+}
+
+#aritst_profile_pic_div_div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 25px
 }

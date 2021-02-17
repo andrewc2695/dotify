@@ -10,7 +10,7 @@ import ArtistShowContainer from "./home/music/artists/artist_show_container"
 import AlbumShowContainer from "./home/music/albums/album_show_container"
 import SearchContainer from "./home/search/search_container";
 import SearchShowMore from "./home/search/search_show_more_container"
-
+import PlaylistShowContainer from "./home/music/playlists/playlist_show_container"
 
 const App = () => {
     return (
@@ -20,6 +20,7 @@ const App = () => {
                 <AuthRoute exact path="/signup" component={signUpContainer} />
                 <AuthRoute exact path="/login" component={logInContainer} />
                 <ProtcRoute path="/home/" component={ArtistIndexContainer} />
+                <ProtcRoute path="/playlist/:playlistId" component={PlaylistShowContainer}/>
                 <ProtcRoute path="/artist/:artistId" component={ArtistShowContainer} />
                 <ProtcRoute path="/album/:albumId" component={AlbumShowContainer}/>
                 <ProtcRoute path="/search/:searchTerm/:type" component={SearchShowMore} />

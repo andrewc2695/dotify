@@ -1,0 +1,39 @@
+#playlist_index_object{
+    margin-bottom: 20px;
+    color: azure;
+}
+
+.not_four{
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    border: 1px solid #444444
+}
+
+.playlist_cover{
+    // border: 1px solid white;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+}
+
+#hidden{
+    display: none
+}
+
+.playlist_cover{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.playlist_cover_image{
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+}

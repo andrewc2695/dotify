@@ -7,6 +7,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 class ArtistShowComponent extends React.Component{
 
     componentDidMount(){
+        window.scrollTo(0, 0)
         this.props.fetchArtist(this.props.match.params.artistId);
     }
 
