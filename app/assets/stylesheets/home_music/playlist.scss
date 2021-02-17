@@ -21,6 +21,28 @@
     font-size: 70px;
 }
 
+.playlist_show_cover{
+    width: 235px;
+    height: 235px;
+    margin-left: 35px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.playlist_cover_pic{
+    height: 235px;
+    width: 235px;
+    margin-left: 35px;
+}
+
+.playlist_show_image{
+    height: 117px;
+    width: 117px;
+    object-fit: cover;
+}
+
+
 #hidden{
     display: none
 }
@@ -36,4 +58,8 @@
     height: 90px;
     width: 90px;
     object-fit: cover;
+}
+
+#playlist_song_title{
+    margin-left: 89px;
 }
