@@ -2,10 +2,26 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 class SongComponent extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {play: false}
+        this.audio = new Audio(this.props.song.audioUrl)
+    }
+
+    playAudio(){
+        // if(this.state.play === false){
+        //     this.audio.play();
+        //     this.setState({play: true});
+        // }else{
+        //     this.audio.pause();
+        //     this.setState({play: false})
+        // }
+    }
 
     render(){
+        debugger
         return(
-            <div className="song_component_div" id="song_search_div">
+            <div className="song_component_div" id="song_search_div" onClick={() => this.playAudio()} >
                 <div className="song_component_left">
                     <div className="ord_div">
                         {this.props.song.ORD}

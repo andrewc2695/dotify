@@ -1,5 +1,5 @@
 import React from "react"
-import SongComponent from "../songs/song_component"
+import SongContainer from "../songs/song_container"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faMusic } from '@fortawesome/free-solid-svg-icons'
@@ -16,7 +16,7 @@ class PlaylistShowComponent extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
-        this.props.fetchPlaylist(this.props.match.params.playlistId)
+        setTimeout(() => {this.props.fetchPlaylist(this.props.match.params.playlistId)}, 400);
     }
 
     handleDropDown() {
@@ -133,7 +133,7 @@ class PlaylistShowComponent extends React.Component {
                             <div className="search_song_component">
                                 <div>{count}</div>
                                 <img id="search_song_image" src={song.photoUrl} />
-                                <SongComponent key={song.id} artist={song.artist} song={song} />
+                                <SongContainer key={song.id} artist={song.artist} song={song} />
                             </div>
                             )
                         })}

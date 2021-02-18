@@ -1,5 +1,5 @@
 import React from "react"
-import SongComponent from "../songs/song_component"
+import SongContainer from "../songs/song_container"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
@@ -20,6 +20,7 @@ class AlbumShowComponent extends React.Component{
             songs = Object.values(this.props.album.songs)
         }
         const artist = this.props.album.artist;
+        debugger
         return(
             <div className="main_content_window" id="album_show_main_window">
                 <div className="album_show_top">
@@ -52,7 +53,7 @@ class AlbumShowComponent extends React.Component{
                             </div>
                         </div>
                         {songs.map(song => {
-                            return <SongComponent key={song.id} artist={artist[album.artist_id]} song={song}/>
+                            return <SongContainer key={song.id} artist={artist[album.artist_id]} song={song}/>
                         })}
                     </div>
 

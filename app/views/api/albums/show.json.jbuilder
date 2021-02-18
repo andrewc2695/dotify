@@ -8,6 +8,7 @@ json.songs do
     @album.songs_on_album.each do |song|
         json.set! song.id do
             json.extract! song, :id, :title, :album_id, :ORD
+            json.audioUrl url_for(song.audio.audio)
         end
     end
 end

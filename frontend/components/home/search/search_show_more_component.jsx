@@ -1,5 +1,5 @@
 import React from "react"
-import SongComponent from "../music/songs/song_component";
+import SongContainer from "../music/songs/song_container"
 import { Link } from "react-router-dom"
 import ArtistIndexObject from "../music/artists/artist_index_object";
 import AlbumComponent from "../music/albums/albums_component";
@@ -45,7 +45,7 @@ class SearchShowMore extends React.Component{
                                 return (
                                     <div className="search_song_component">
                                         <img id="search_song_image" loading="lazy" src={song.photoUrl} />
-                                        <SongComponent key={song.id} artist={song.artist} song={song} />
+                                        <SongContainer key={song.id} artist={song.artist} song={song} />
                                     </div>
                                 )
                             })}

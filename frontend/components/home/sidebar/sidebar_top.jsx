@@ -18,8 +18,9 @@ class SideBarTop extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchPlaylists(this.props.currentUser.id)
-        console.log("hi")
+        if(this.props.playlists.length === 0 ){
+            this.props.fetchPlaylists(this.props.currentUser.id)
+        }
         // if(this.state.create === true){
         //     const playlistId = this.props.playlists[this.props.playlists.length - 1].id
         //     this.props.history.push(`/playlists/${playlistId}`)
