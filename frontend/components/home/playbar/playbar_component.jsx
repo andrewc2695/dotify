@@ -8,23 +8,30 @@ class PlaybarComponent extends React.Component{
         this.playAudio = this.playAudio.bind(this);
         this.pauseAudio = this.pauseAudio.bind(this);
         this.handleToggle = this.handleToggle.bind(this);
-        this.state = { playing: true}
+        this.state = { playing: true, time: 0}
     }
 
     componentDidUpdate(previousProps){
-        debugger
+        //double clicking song cause couter to go twice
         if(this.props.currentSong !== undefined){
             if(previousProps.currentSong !== this.props.currentSong){
-                this.setState({playing: true});
+                this.setState({playing: true, time: 0});
+            }else if(this.state.playing === true){
+                    if(this.state.time){
+                    this.playAudio(this.props.currentSong);
+                    }
+                    console.log(this.state.time)
+                    let newTime = this.state.time + 1;
+                    setTimeout(() => {
+                        if(newTime - this.state.time === 1){
+                            this.setState({ time: newTime });
+                        }
+                    }, 1000)
+                }
             }
-            if(this.state.playing === true){
-                this.playAudio(this.props.currentSong);
-            }
-            if(this.state.playing === false && this.props.currentSong !== undefined){
-                debugger
-                this.pauseAudio(this.props.currentSong);
-            }
-        };
+        if(this.state.playing === false && this.props.currentSong !== undefined){
+            this.pauseAudio(this.props.currentSong);
+        }
     }
 
     playAudio(currentSong){
@@ -45,7 +52,11 @@ class PlaybarComponent extends React.Component{
     }
 
     render(){
-        console.log("playbar_component")
+        const timePercent = this.state.time/128;
+        const widthPercent = (575 * timePercent);
+        const myStyle = {
+            width: widthPercent
+        }
         return(
             <div className="playbar_main">
                 <div className="playbar_left">
@@ -57,7 +68,10 @@ class PlaybarComponent extends React.Component{
                             <FontAwesomeIcon id="playbar_play" icon={faPlay} />
                         </button>
                         <div className="the_playbar">
-                                
+                                {this.state.time}
+                                <div id="the_playbar" style={myStyle}>
+
+                                </div>
                         </div>
                     </div>
                 </div>

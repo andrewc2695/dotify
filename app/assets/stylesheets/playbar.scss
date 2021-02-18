@@ -45,5 +45,10 @@
 
 .the_playbar{
     width: 575px;
-    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#the_playbar{
+    border: 1px solid blue;
 }
