@@ -9,6 +9,7 @@ class PlaybarComponent extends React.Component{
         this.pauseAudio = this.pauseAudio.bind(this);
         this.handleToggle = this.handleToggle.bind(this);
         this.state = { playing: true, time: 0}
+        this.duration = "";
     }
 
     componentDidUpdate(previousProps){
@@ -20,11 +21,15 @@ class PlaybarComponent extends React.Component{
                     if(this.state.time){
                     this.playAudio(this.props.currentSong);
                     }
-                    console.log(this.state.time)
                     let newTime = this.state.time + 1;
                     setTimeout(() => {
                         if(newTime - this.state.time === 1){
                             this.setState({ time: newTime });
+                        }
+                        if (this.state.time === Math.floor(this.duration)) {
+                            console.log("hi")
+                            this.setState({ playing: false, time: 0})
+                            this.pauseAudio(this.props.currentSong)
                         }
                     }, 1000)
                 }
@@ -35,6 +40,9 @@ class PlaybarComponent extends React.Component{
     }
 
     playAudio(currentSong){
+        if(this.duration !== currentSong.duration){
+            this.duration = currentSong.duration;
+        }
         currentSong.play();
     }
 
@@ -51,11 +59,27 @@ class PlaybarComponent extends React.Component{
         }
     }
 
+    convertTime(time){
+        let minutes = Math.floor(time/60);
+        let seconds = time - (minutes * 60)
+        if(seconds < 10){
+            seconds = '0' + seconds
+        }
+        return minutes + ':' + seconds
+    }
+
     render(){
-        const timePercent = this.state.time/128;
+        let duration = this.convertTime(Math.floor(this.duration))
+        const timePercent = (this.state.time/this.duration)
         const widthPercent = (575 * timePercent);
+        // debugger
+        const realTime = this.convertTime(this.state.time)
+        if(duration === "0:00"){
+            duration = ""
+        }
+        console.log(widthPercent)
         const myStyle = {
-            width: widthPercent
+            width: widthPercent,
         }
         return(
             <div className="playbar_main">
@@ -68,10 +92,15 @@ class PlaybarComponent extends React.Component{
                             <FontAwesomeIcon id="playbar_play" icon={faPlay} />
                         </button>
                         <div className="the_playbar">
-                                {this.state.time}
-                                <div id="the_playbar" style={myStyle}>
+                            <div className="left_progress">
+                                {realTime}
+                                <div id="the_playbar_container">
+                                    <div className="progress" style={myStyle}>
 
+                                    </div>
                                 </div>
+                            </div>
+                                {duration}
                         </div>
                     </div>
                 </div>

@@ -21,21 +21,23 @@
 
 .playbar_mid{
     // border: 1px solid red;
-    width: 575px;
+    width: 750px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid yellow;
 }
 
 .playbar_play_button{
     height: 33px;
     width: 33px;
     border-radius: 50%;
-    // background-color: white;
+    background-color: azure;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 5px;
     margin-bottom: 10px;
 }
 
@@ -44,11 +46,33 @@
 }
 
 .the_playbar{
-    width: 575px;
+    width: 700px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    color: azure;
+    align-items: center;
+    border: 1px solid blue;
 }
 
 #the_playbar{
-    border: 1px solid blue;
+    width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+.progress{
+    height: 5px;
+    background-color: azure;
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.left_progress{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: azure
+}
+
