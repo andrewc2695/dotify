@@ -12,6 +12,10 @@
     color: azure;
 }
 
+#basic{
+    margin-left: 350px;
+}
+
 input:-internal-autofill-selected{
     background-color: black !important;
 }
@@ -88,4 +92,11 @@ input:-internal-autofill-selected{
 
 #artist_object_div{
     margin-left: 25px;
+}
+
+#no_results_found{
+    font-size: 50px;
+    margin-left: 100px;
+    margin-top: 100px;
+
 }

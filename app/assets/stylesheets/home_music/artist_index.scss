@@ -4,7 +4,7 @@
     overflow: scroll;
     min-height: 100vh;
     height: max-content;
-    margin-bottom: 90px;
+    padding-bottom: 150px;
 }
 
 .index_title{
@@ -63,6 +63,7 @@
     border-radius: 50%;
     overflow: hidden;
     margin-top: 10px;
+    object-fit: cover;
 }
 
 .profile_name{

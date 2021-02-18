@@ -59,7 +59,7 @@ class SongComponent extends React.Component{
                     </div>
                 </div>
                 <div className="song_component_right">
-                    1:00
+                    2:08
                     {/* time will go here eventually */}
                 </div>
             </div>

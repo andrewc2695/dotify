@@ -22,7 +22,7 @@ class ArtistIndexComponent extends React.Component{
             noPlaylists = "hidden"
         }
         return(
-            <div className="artist_index_div" id="playlists">
+            <div className="artist_index_div" id="playlists" >
                 <div className={`${noPlaylists}`}>
                     <div className="index_objects_div">
                         <div className="index_title">Playlists</div>

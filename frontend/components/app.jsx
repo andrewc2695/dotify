@@ -11,6 +11,7 @@ import AlbumShowContainer from "./home/music/albums/album_show_container"
 import SearchContainer from "./home/search/search_container";
 import SearchShowMore from "./home/search/search_show_more_container"
 import PlaylistShowContainer from "./home/music/playlists/playlist_show_container"
+import BasicSearch from "./home/search/basic_search";
 
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
                 <ProtcRoute path="/albums/:albumId" component={AlbumShowContainer}/>
                 <ProtcRoute path="/searches/:searchTerm/:type" component={SearchShowMore} />
                 <ProtcRoute path="/searches/:searchTerm" component={SearchContainer}/>
+                <ProtcRoute path="/searches" component={BasicSearch}/>
                 <Route exact path="/" component={homeComponentContainer} />
                 <Route path="*">
                     <Redirect to="/" />

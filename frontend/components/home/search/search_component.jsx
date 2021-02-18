@@ -5,6 +5,10 @@ import ArtistIndexObject from "../music/artists/artist_index_object";
 import AlbumComponent from "../music/albums/albums_component";
 
 class SearchComponent extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = { noResults: "hidden" }
+    }
 
     componentDidMount(){
         window.scrollTo(0, 0)
@@ -26,6 +30,15 @@ class SearchComponent extends React.Component{
         if (artists.length === 0) {
             artistsHidden = "hidden"
         }
+        setTimeout(() => {
+            if (songs.length + albums.length + artists.length === 0) {
+                this.setState({noResults: "no_results_found"})
+            }else{
+                this.setState({noResults: "hidden"})
+            }
+        }, 1000);
+
+        debugger
         return(
             <div className="main_content_window" id="search_main_window">
                 <div className="main_search_window">
@@ -94,6 +107,12 @@ class SearchComponent extends React.Component{
                             })}
                         </div>
                     </div>
+
+                    <div className="index_object_div" id={`${this.state.noResults}`}>
+                            <div>
+                                No Results found =(
+                            </div>
+                    </div>  
                 </div>
             </div>
         )
