@@ -16,10 +16,11 @@ class SongComponent extends React.Component{
         //     this.audio.pause();
         //     this.setState({play: false})
         // }
+        
     }
 
+
     render(){
-        debugger
         return(
             <div className="song_component_div" id="song_search_div" onClick={() => this.playAudio()} >
                 <div className="song_component_left">
@@ -30,7 +31,7 @@ class SongComponent extends React.Component{
                         <div className="song_component_title_div">
                             {this.props.song.title}
                         </div>
-                        <Link to={`/artist/${this.props.artist.id}`} id="song_artist_name">
+                        <Link to={`/artists/${this.props.artist.id}`} id="song_artist_name">
                             {this.props.artist.name}
                         </Link>
                     </div>

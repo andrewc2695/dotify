@@ -6,7 +6,7 @@ class AlbumComponent extends React.Component{
     render(){
         const { album } = this.props;
         return(
-            <Link to={`/album/${album.id}`} className="album_object_div">
+            <Link to={`/albums/${album.id}`} className="album_object_div">
                 <div className="album_cover_pic">
                     <img className="album_image" loading="lazy" src={this.props.album.photoUrl} />
                 </div>

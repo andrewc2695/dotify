@@ -33,12 +33,12 @@ class SearchComponent extends React.Component{
                     <div className="search_index_object_div" id="song_search_div" className={`${songsHidden}`}>
                         <div className="search_result_title">
                             <div id="search_result_title_left">
-                                <Link to={`/search/${this.props.match.params.searchTerm}/songs`}>
+                                <Link to={`/searches/${this.props.match.params.searchTerm}/songs`}>
                                     Songs
                                 </Link>
                             </div>
                             <div id="search_result_title_right">
-                                <Link to={`/search/${this.props.match.params.searchTerm}/songs`}>
+                                <Link to={`/searches/${this.props.match.params.searchTerm}/songs`}>
                                     See All
                                 </Link>
                             </div>
@@ -58,12 +58,12 @@ class SearchComponent extends React.Component{
                     <div className="index_object_div" id="artist_search_div" className={`${albumsHidden}`}>
                         <div className="search_result_title">
                             <div id="search_result_title_left">
-                                <Link to={`/search/${this.props.match.params.searchTerm}/albums`}>
+                                <Link to={`/searches/${this.props.match.params.searchTerm}/albums`}>
                                     Albums
                                 </Link>
                             </div>
                             <div id="search_result_title_right">
-                                <Link to={`/search/${this.props.match.params.searchTerm}/albums`}>
+                                <Link to={`/searches/${this.props.match.params.searchTerm}/albums`}>
                                     See All
                                 </Link>
                             </div>
@@ -78,12 +78,12 @@ class SearchComponent extends React.Component{
                     <div className="index_object_div" id="artist_search_div" className={`${artistsHidden}`}>
                         <div className="search_result_title">
                             <div id="search_result_title_left">
-                                <Link to={`/search/${this.props.match.params.searchTerm}/artists`}>
+                                <Link to={`/searches/${this.props.match.params.searchTerm}/artists`}>
                                     Artists
                                 </Link>
                             </div>
                             <div id="search_result_title_right">
-                                <Link to={`/search/${this.props.match.params.searchTerm}/artists`}>
+                                <Link to={`/searches/${this.props.match.params.searchTerm}/artists`}>
                                     See All
                                 </Link>
                             </div>

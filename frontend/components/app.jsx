@@ -20,11 +20,11 @@ const App = () => {
                 <AuthRoute exact path="/signup" component={signUpContainer} />
                 <AuthRoute exact path="/login" component={logInContainer} />
                 <ProtcRoute path="/home/" component={ArtistIndexContainer} />
-                <ProtcRoute path="/playlist/:playlistId" component={PlaylistShowContainer}/>
-                <ProtcRoute path="/artist/:artistId" component={ArtistShowContainer} />
-                <ProtcRoute path="/album/:albumId" component={AlbumShowContainer}/>
-                <ProtcRoute path="/search/:searchTerm/:type" component={SearchShowMore} />
-                <ProtcRoute path="/search/:searchTerm" component={SearchContainer}/>
+                <ProtcRoute path="/playlists/:playlistId" component={PlaylistShowContainer}/>
+                <ProtcRoute path="/artists/:artistId" component={ArtistShowContainer} />
+                <ProtcRoute path="/albums/:albumId" component={AlbumShowContainer}/>
+                <ProtcRoute path="/searches/:searchTerm/:type" component={SearchShowMore} />
+                <ProtcRoute path="/searches/:searchTerm" component={SearchContainer}/>
                 <Route exact path="/" component={homeComponentContainer} />
                 <Route path="*">
                     <Redirect to="/" />

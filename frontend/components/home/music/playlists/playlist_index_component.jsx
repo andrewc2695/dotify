@@ -29,7 +29,7 @@ class PlaylistIndexComponent extends React.Component {
             }
         }
         return (
-            <Link to={`playlist/${playlist.id}`} className="album_object_div" id="playlist_index_object">
+            <Link to={`playlists/${playlist.id}`} className="album_object_div" id="playlist_index_object">
                 <div className="album_cover_pic">
                     <div className="playlist_cover" className="not_four" id={`${not_four}`}>
                         <FontAwesomeIcon icon={faMusic} />
