@@ -14,6 +14,7 @@ class PlaybarComponent extends React.Component{
     }
 
     componentDidUpdate(previousProps){
+        debugger
         //double clicking song cause couter to go twice
         if(this.props.currentSong !== undefined){
             if(previousProps.currentSong !== this.props.currentSong){
@@ -74,11 +75,11 @@ class PlaybarComponent extends React.Component{
         let duration = this.convertTime(Math.floor(this.duration));
         const timePercent = (this.state.time/this.duration);
         const widthPercent = (575 * timePercent);
-        const playingSong = this.props.location[this.props.locationId].songs[this.props.songId];
+        // const playingSong = this.props.location[this.props.locationId].songs[this.props.songId];
+        const playingSong = this.props.song;
         const imgPic = playingSong.photoUrl;
         const songTitle = playingSong.title;
         const songArtist = this.props.artist;
-        debugger
         let realTime = this.convertTime(this.state.time)
         if(realTime === "0:00"){
             realTime = "";
@@ -90,7 +91,6 @@ class PlaybarComponent extends React.Component{
         const myStyle = {
             width: widthPercent,
         }
-        debugger
         return(
             <div className="playbar_main">
                 <div className="playbar_left">

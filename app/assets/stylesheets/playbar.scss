@@ -80,7 +80,7 @@
     width: 200px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
 }
 
@@ -88,7 +88,6 @@
     width: 65px;
     height: 65px;
     object-fit: cover;
-    border: 1px solid green;
 }
 
 .current_song_info{

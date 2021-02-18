@@ -7,9 +7,13 @@ class SongComponent extends React.Component{
         this.state = {play: false};
         // this.audio = new Audio(this.props.song.audioUrl);
         this.playAudio = this.playAudio.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.location = "";
+        this.locationId = "";
     }
 
     playAudio(songInfo){
+        debugger
         // if(this.state.play === false){
         //     this.audio.play();
         //     this.setState({play: true});
@@ -18,20 +22,29 @@ class SongComponent extends React.Component{
         //     this.setState({play: false})
         // }
         const audio = new Audio(this.props.song.audioUrl);
+        songInfo.song = this.props.song
         songInfo.currentSong = audio;
         songInfo.artist = this.props.artist;
         this.props.receiveSong(songInfo)
         
     }
+// { location: location, locationId: locationId, song: this.props.song.id })
 
+    handleClick(e){
+        if (e.target.id === "song_search_div"){
+            this.playAudio({ location: this.location, locationId: this.locationId, song: this.props.song.id })
+        }else{
+
+        }
+    }
 
     render(){
         const info = this.props.location.pathname.split("/");
-        const location = info[1];
-        const locationId = Number(info[2]);
+        this.location = info[1];
+        this.locationId = Number(info[2]);
         return(
             <div className="song_component_div" id="song_search_div" 
-            onClick={() => this.playAudio({location: location, locationId: locationId, song: this.props.song.id})} >
+                onClick={this.handleClick}>
                 <div className="song_component_left">
                     <div className="ord_div">
                         {this.props.song.ORD}

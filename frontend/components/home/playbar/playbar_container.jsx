@@ -7,7 +7,8 @@ const mapStateToProps = state =>{
         locationId: state.currentSong.songInfo.locationId,
         songId: state.currentSong.songInfo.song,
         currentSong: state.currentSong.songInfo.currentSong,
-        artist: state.currentSong.songInfo.artist,  
+        artist: state.currentSong.songInfo.artist,
+        song: state.currentSong.songInfo.song  
     }
 }
 
