@@ -1,9 +1,9 @@
 import { connect } from "react-redux"
 import { withRouter } from 'react-router-dom';
+import { receiveCurrentSong } from "../../../../actions/song_actions";
 import SongComponent from "./song_component"
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return{
     
     }
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-
+        receiveSong: songInfo => dispatch(receiveCurrentSong(songInfo))
     }
 }
 

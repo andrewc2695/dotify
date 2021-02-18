@@ -5,6 +5,19 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 class PlaybarComponent extends React.Component{
     constructor(props){
         super(props)
+        this.playAudio = this.playAudio.bind(this);
+    }
+
+    componentDidUpdate(){
+        debugger
+        if(this.props.songId !== undefined){
+            let currentSong = new Audio(this.props.location[this.props.locationId].songs[this.props.songId].audioUrl);
+            this.playAudio(currentSong);
+        }
+    }
+
+    playAudio(currentSong){
+        currentSong.play();
     }
 
     render(){
