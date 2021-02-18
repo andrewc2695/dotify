@@ -26,7 +26,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid yellow;
 }
 
 .playbar_play_button{
@@ -51,7 +50,6 @@
     justify-content: space-between;
     color: azure;
     align-items: center;
-    border: 1px solid blue;
 }
 
 #the_playbar{
@@ -75,4 +73,50 @@
     align-items: center;
     color: azure
 }
+
+.playbar_left{
+    margin-left: 20px;    
+    height: 65px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current_song_pic{
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border: 1px solid green;
+}
+
+.current_song_info{
+    color: azure;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+
+#song_title{
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+#song_artist{
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+#song_artist:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.playbar_right{
+    width: 200px;
+    margin-right: 20px;
+}
+
 

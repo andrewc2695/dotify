@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
     return{
         currentUser: state.entities.users[state.session.id],
         artists: Object.values(state.entities.artists),
-        playlists: Object.values(state.entities.playlists)
+        playlists: Object.values(state.entities.playlists),
+        currentSong: state.currentSong.songInfo.currentSong,  
     }
 }
 

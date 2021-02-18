@@ -35,7 +35,7 @@ class HomeMainComponent extends React.Component{
                         <HeaderComponent currentUser={this.props.currentUser.username} 
                             logout={this.props.logout} search={this.props.search}
                             history={this.props.history} removeSearch={this.props.removeSearch}
-                            resetState={this.props.resetState}
+                            resetState={this.props.resetState} currentSong={this.props.currentSong}
                         />
                     </div>
                 </div>

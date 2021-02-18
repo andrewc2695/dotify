@@ -38,11 +38,16 @@ class HeaderComponent extends React.Component{
     }
 
     handleLogout(){
+        debugger
+        if(this.props.currentSong !== undefined){
+            this.props.currentSong.pause();
+        }
         this.props.resetState();
         this.props.logout();
     }
 
     render(){
+        debugger
         return(
             <div id="header_component">
                 <div className="header_buttons_and_search">

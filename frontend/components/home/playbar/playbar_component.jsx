@@ -1,6 +1,7 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 
 class PlaybarComponent extends React.Component{
     constructor(props){
@@ -27,7 +28,6 @@ class PlaybarComponent extends React.Component{
                             this.setState({ time: newTime });
                         }
                         if (this.state.time === Math.floor(this.duration)) {
-                            console.log("hi")
                             this.setState({ playing: false, time: 0})
                             this.pauseAudio(this.props.currentSong)
                         }
@@ -69,11 +69,20 @@ class PlaybarComponent extends React.Component{
     }
 
     render(){
-        let duration = this.convertTime(Math.floor(this.duration))
-        const timePercent = (this.state.time/this.duration)
+    
+        if(this.props.currentSong === undefined) return null
+        let duration = this.convertTime(Math.floor(this.duration));
+        const timePercent = (this.state.time/this.duration);
         const widthPercent = (575 * timePercent);
-        // debugger
-        const realTime = this.convertTime(this.state.time)
+        const playingSong = this.props.location[this.props.locationId].songs[this.props.songId];
+        const imgPic = playingSong.photoUrl;
+        const songTitle = playingSong.title;
+        const songArtist = this.props.artist;
+        debugger
+        let realTime = this.convertTime(this.state.time)
+        if(realTime === "0:00"){
+            realTime = "";
+        }
         if(duration === "0:00"){
             duration = ""
         }
@@ -81,10 +90,15 @@ class PlaybarComponent extends React.Component{
         const myStyle = {
             width: widthPercent,
         }
+        debugger
         return(
             <div className="playbar_main">
                 <div className="playbar_left">
-
+                    <img className="current_song_pic" src={imgPic}/>
+                    <div className="current_song_info">
+                        <div id="song_title">{songTitle}</div>
+                        <Link to={`/artists/${songArtist.id}`} id="song_artist">{songArtist.name}</Link> 
+                    </div>
                 </div>
                 <div className="playbar_mid">
                     <div className="playbar_top_buttons">
@@ -107,7 +121,6 @@ class PlaybarComponent extends React.Component{
                 <div className="playbar_right">
 
                 </div>
-
             </div>
         )
     }
