@@ -17,6 +17,7 @@ class SongComponent extends React.Component{
         //     this.audio.pause();
         //     this.setState({play: false})
         // }
+        songInfo.currentSong = new Audio(this.props.song.audioUrl)
         this.props.receiveSong(songInfo)
         
     }

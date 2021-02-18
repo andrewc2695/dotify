@@ -6,9 +6,12 @@ export const songsReducer = (oldState = {songInfo: {}}, action) => {
     Object.freeze(oldState);
     switch(action.type){
         case RECEIVE_CURRENT_SONG:
+            if (oldState.songInfo.currentSong !== undefined){
+                oldState.songInfo.currentSong.pause();
+            }
             return {songInfo: action.songInfo};
         case RESET_STATE:
-            return { songInfo: {} };
+            return { songInfo: {}};
         default:
             return oldState;
     }

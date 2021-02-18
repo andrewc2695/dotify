@@ -6,18 +6,42 @@ class PlaybarComponent extends React.Component{
     constructor(props){
         super(props)
         this.playAudio = this.playAudio.bind(this);
+        this.pauseAudio = this.pauseAudio.bind(this);
+        this.handleToggle = this.handleToggle.bind(this);
+        this.state = { playing: true}
     }
 
-    componentDidUpdate(){
+    componentDidUpdate(previousProps){
         debugger
-        if(this.props.songId !== undefined){
-            let currentSong = new Audio(this.props.location[this.props.locationId].songs[this.props.songId].audioUrl);
-            this.playAudio(currentSong);
-        }
+        if(this.props.currentSong !== undefined){
+            if(previousProps.currentSong !== this.props.currentSong){
+                this.setState({playing: true});
+            }
+            if(this.state.playing === true){
+                this.playAudio(this.props.currentSong);
+            }
+            if(this.state.playing === false && this.props.currentSong !== undefined){
+                debugger
+                this.pauseAudio(this.props.currentSong);
+            }
+        };
     }
 
     playAudio(currentSong){
         currentSong.play();
+    }
+
+    pauseAudio(currentSong){
+        // debugger
+        currentSong.pause();
+    }
+
+    handleToggle(){
+        if(this.state.playing){
+            this.setState({playing: false})
+        }else{
+            this.setState({playing: true})
+        }
     }
 
     render(){
@@ -29,7 +53,7 @@ class PlaybarComponent extends React.Component{
                 </div>
                 <div className="playbar_mid">
                     <div className="playbar_top_buttons">
-                        <button className="playbar_play_button">
+                        <button className="playbar_play_button" onClick={() => this.handleToggle()}>
                             <FontAwesomeIcon id="playbar_play" icon={faPlay} />
                         </button>
                         <div className="the_playbar">
