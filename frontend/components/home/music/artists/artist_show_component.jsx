@@ -2,6 +2,7 @@ import React from "react"
 import AlbumComponent from "../albums/albums_component"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import SongContainer from "../songs/song_container"
 
 
 class ArtistShowComponent extends React.Component{
@@ -51,21 +52,11 @@ class ArtistShowComponent extends React.Component{
                                 {popular.map(song => {
                                     popOrder += 1;
                                     return(
-                                        <div key={song.id} className="popular_song_component">
-                                            <div className="popular_song_component_left">
-                                                <div>
-                                                    {popOrder}
-                                                </div>
-                                                <img id="popular_songs" loading="lazy" src={song.photoUrl} />
-                                                <div>
-                                                    {song.title}
-                                                </div>
-                                            </div>
-                                            <div>
-                                                1:00
-                                            </div>
+                                        <div className="search_song_component">
+                                            <div>{popOrder}</div>
+                                            <img id="search_song_image" src={song.photoUrl} />
+                                            <SongContainer key={song.id} artist={artist} song={song} />
                                         </div>
-                                        
                                     )
                                 })}
                             </div>
