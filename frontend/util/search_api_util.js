@@ -6,3 +6,10 @@ export const search = (searchTerm) => {
         method: 'GET'
     });
 }
+
+export const searchAll = () => {
+    return $.ajax({
+        url: 'api/searches_all',
+        method: 'GET'
+    })
+}

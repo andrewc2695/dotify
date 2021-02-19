@@ -5,4 +5,11 @@ class Api::SearchesController < ApplicationController
         @albums = Album.where("title LIKE ?", "%#{search_term}%")
         @artists = Artist.where("name LIKE ?", "%#{search_term}%")
     end
+
+    def all
+        @songs = Song.all
+        @albums = Album.all
+        @artists = Artist.all
+        render :search
+    end
 end

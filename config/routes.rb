@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
     get '/playlists/user/:id', to: 'playlists#show_user', as: 'show_user'
     get '/searches/:search', to: 'searches#search', as: 'search_term'
+    get '/searches_all/', to: 'searches#all', as: 'search_all'
   end
   
   root to: 'static_pages#root'

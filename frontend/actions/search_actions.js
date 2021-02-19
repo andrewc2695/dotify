@@ -18,3 +18,7 @@ export const removeSearch = () => {
 
 export const thunkSearch = (searchTerm) => dispatch => SearchAPIUtil.search(searchTerm)
     .then(searchRes => dispatch(receiveSearch(searchRes)));
+
+export const thunkSearchAll = () => dispatch => SearchAPIUtil.searchAll()
+    .then(searchRes => dispatch(receiveSearch(searchRes)));
+

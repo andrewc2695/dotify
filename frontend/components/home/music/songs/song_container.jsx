@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import { withRouter } from 'react-router-dom';
 import { receiveCurrentSong } from "../../../../actions/song_actions";
-import { addSongToPlaylist, thunkAddSongToPlaylist } from "../../../../actions/songs_on_playlists_action";
+import { thunkAddSongToPlaylist } from "../../../../actions/songs_on_playlists_action";
 import SongComponent from "./song_component"
 
 const mapStateToProps = (state, ownProps) => {
