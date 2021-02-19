@@ -4,17 +4,16 @@ import { Link } from "react-router-dom"
 class SongComponent extends React.Component{
     constructor(props){
         super(props)
-        this.state = {play: false};
         // this.audio = new Audio(this.props.song.audioUrl);
         this.playAudio = this.playAudio.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handlePlaylist = this.handlePlaylist.bind(this)
         this.state = ({dropdown: "song_dropdown_false", playlistDropDown: "playlist_drop_false"})
         this.location = "";
         this.locationId = "";
     }
 
     playAudio(songInfo){
-        debugger
         // if(this.state.play === false){
         //     this.audio.play();
         //     this.setState({play: true});
@@ -29,10 +28,7 @@ class SongComponent extends React.Component{
         this.props.receiveSong(songInfo)
         
     }
-// { location: location, locationId: locationId, song: this.props.song.id })
-
     handleClick(e){
-        debugger
         if (e.target.id === "song_search_div"){
             this.playAudio({ location: this.location, locationId: this.locationId, song: this.props.song.id })
         } else if (e.target.id === "song_options" || e.target.id === "modal"){
@@ -46,11 +42,24 @@ class SongComponent extends React.Component{
         }
     }
 
+    handlePlaylist(pId, type){
+        console.log("hi")
+        debugger
+        if(type === "add"){
+            this.props.addSongToPlaylist({playlist_id: pId, song_id: this.props.song.id})
+            this.setState({ dropdown: "song_dropdown_false" })
+            console.log("bye")
+        }
+    }
+
     render(){
         const info = this.props.location.pathname.split("/");
         this.location = info[1];
         this.locationId = Number(info[2]);
-        debugger
+        let options = "add"
+        // if(this.props.playlist !== undefined){
+        //     options = "delete"
+        // }
         return(
             <div className="song_component_div" id="song_search_div" 
                 onClick={this.handleClick}>
@@ -70,17 +79,17 @@ class SongComponent extends React.Component{
                 <div className="song_component_right">
                     <button id="song_options">...</button>
                     <div id={this.state.dropdown}>
-                        <div id="add_to_playlists">Add to playlist</div>
+                        <div className={options} id="add_to_playlists">Add to playlist
                         {this.props.playlists.map(playlist => {
-                            return (<button id="add_to_playlist_list">
+                            return (<button id="add_to_playlist_list" onClick={() => this.handlePlaylist(playlist.id, "add")}>
                                 {playlist.title}
                             </button>)
                         })}
+                        </div>
                     </div>
-
-                    <div>2:08</div>
+                    <div>2:07</div>
                 </div>
-                <div class={this.state.dropdown} id="modal" onClick={this.handleClick}>
+                <div className={this.state.dropdown} id="modal" onClick={this.handleClick}>
                     
                 </div>
             </div>

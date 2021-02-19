@@ -58,7 +58,17 @@ class PlaylistShowComponent extends React.Component {
 
     render() {
         let count = 0;
-        if (this.props.playlist === undefined) return null;
+        if (this.props.playlist === undefined){
+            return (
+                <div className="null_content_window">
+                    <div id="null_results">
+                        <div id="null_words">
+
+                        </div>
+                    </div>
+                </div>
+            )
+        };
         const { playlist } = this.props;
         let songs= [] 
         if(playlist.songs !== undefined){
@@ -144,7 +154,8 @@ class PlaylistShowComponent extends React.Component {
                             <div className="search_song_component">
                                 <div>{count}</div>
                                 <img id="search_song_image" src={song.photoUrl} />
-                                <SongContainer key={song.id} artist={song.artist} song={song} />
+                                <SongContainer key={song.id} artist={song.artist} song={song} 
+                                    playlist={this.props.playlist.id}/>
                             </div>
                             )
                         })}

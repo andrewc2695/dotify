@@ -12,14 +12,39 @@ class AlbumShowComponent extends React.Component{
     }
 
     render(){
-        if(this.props.album === undefined) return null;
-        if(this.props.album.album === undefined) return null
+        if(this.props.album === undefined){
+            return(
+            <div className="null_content_window">
+                <div id="null_results">
+                    <div id="null_words">
+                        
+                    </div>
+                </div> 
+            </div> 
+            )
+        };
+        if(this.props.album.album === undefined){
+            return (
+            <div>
+                <div >
+                    <div id="null_results">
+                        
+                    </div>
+                </div> 
+            </div > 
+            )
+        };
+
         const album = this.props.album.album;
         let songs = ""
         if (this.props.album.songs !== undefined){
             songs = Object.values(this.props.album.songs)
         }
         const artist = this.props.album.artist;
+        let artistName = ""
+        if(artist !== undefined){
+            artistName = artist[album.artist_id].name
+        }
         return(
             <div className="main_content_window" id="album_show_main_window">
                 <div className="album_show_top">
@@ -34,7 +59,7 @@ class AlbumShowComponent extends React.Component{
                             {album.title}
                         </div>
                         <div id="album_show_info">
-                            {artist.name}{album.year}
+                            {artistName} - {album.year}
                         </div>
                     </div>
                 </div>

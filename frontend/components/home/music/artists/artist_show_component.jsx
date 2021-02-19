@@ -18,8 +18,16 @@ class ArtistShowComponent extends React.Component{
 
     render(){
         if (this.props.artist === undefined){
-            return null;
-        }
+            return (
+                <div className="null_content_window">
+                    <div id="null_results">
+                        <div id="null_words">
+
+                        </div>
+                    </div>
+                </div>
+            )
+        };
         const  artist  = this.props.artist;
         const albums = this.props.albums;
         let popular = []

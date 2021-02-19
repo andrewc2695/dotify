@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :albums, only: [:show]
     resources :searches, only: []
     resources :playlists, only: [:show, :create, :destroy, :update]
+    resources :songs_on_playlists, only: [:create, :destroy]
 
     get '/playlists/user/:id', to: 'playlists#show_user', as: 'show_user'
     get '/searches/:search', to: 'searches#search', as: 'search_term'
