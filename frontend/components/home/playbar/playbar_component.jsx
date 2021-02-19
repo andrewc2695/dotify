@@ -13,10 +13,10 @@ class PlaybarComponent extends React.Component{
         this.handleToggle = this.handleToggle.bind(this);
         this.state = { playing: true, time: 0}
         this.duration = "";
+        this.button = faPlay;
     }
 
     componentDidUpdate(previousProps){
-        debugger
         //double clicking song cause couter to go twice
         if(this.props.currentSong !== undefined){
             if(previousProps.currentSong !== this.props.currentSong){
@@ -46,11 +46,13 @@ class PlaybarComponent extends React.Component{
         if(this.duration !== currentSong.duration){
             this.duration = currentSong.duration;
         }
+        this.button = faPause;
         currentSong.play();
     }
 
     pauseAudio(currentSong){
         // debugger
+        this.button = faPlay;
         currentSong.pause();
     }
 
@@ -73,7 +75,20 @@ class PlaybarComponent extends React.Component{
 
     render(){
     
-        if(this.props.currentSong === undefined) return null
+        if(this.props.currentSong === undefined){
+            return(
+                <div className="playbar_mid">
+                    <div className="playbar_top_buttons">
+                        <button className="playbar_play_button" onClick={() => this.handleToggle()}>
+                            <FontAwesomeIcon id="playbar_play" className={`${this.button}`} icon={this.button} />
+                        </button>
+                    </div>
+                    <div className="the_playbar" id="no_playing">
+
+                    </div>
+                </div>
+            )
+        }
         let duration = this.convertTime(Math.floor(this.duration));
         const timePercent = (this.state.time/this.duration);
         const widthPercent = (575 * timePercent);
@@ -105,7 +120,7 @@ class PlaybarComponent extends React.Component{
                 <div className="playbar_mid">
                     <div className="playbar_top_buttons">
                         <button className="playbar_play_button" onClick={() => this.handleToggle()}>
-                            <FontAwesomeIcon id="playbar_play" icon={faPlay} />
+                            <FontAwesomeIcon id="playbar_play" className={`${this.button}`} icon={this.button}/>
                         </button>
                         <div className="the_playbar">
                             <div className="left_progress">
