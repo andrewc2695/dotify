@@ -36,7 +36,7 @@ class SearchComponent extends React.Component{
             }else{
                 this.setState({noResults: "hidden"})
             }
-        }, 1000);
+        }, 500);
 
         debugger
         return(

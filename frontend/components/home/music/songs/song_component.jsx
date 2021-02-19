@@ -8,6 +8,7 @@ class SongComponent extends React.Component{
         // this.audio = new Audio(this.props.song.audioUrl);
         this.playAudio = this.playAudio.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.state = ({dropdown: "song_dropdown_false", playlistDropDown: "playlist_drop_false"})
         this.location = "";
         this.locationId = "";
     }
@@ -31,10 +32,17 @@ class SongComponent extends React.Component{
 // { location: location, locationId: locationId, song: this.props.song.id })
 
     handleClick(e){
+        debugger
         if (e.target.id === "song_search_div"){
             this.playAudio({ location: this.location, locationId: this.locationId, song: this.props.song.id })
+        } else if (e.target.id === "song_options" || e.target.id === "modal"){
+            if (this.state.dropdown === "song_dropdown_false"){
+                this.setState({ dropdown: "song_dropdown_true"})
+            } else{
+                this.setState({ dropdown: "song_dropdown_false"})
+            }
         }else{
-
+            
         }
     }
 
@@ -42,6 +50,7 @@ class SongComponent extends React.Component{
         const info = this.props.location.pathname.split("/");
         this.location = info[1];
         this.locationId = Number(info[2]);
+        debugger
         return(
             <div className="song_component_div" id="song_search_div" 
                 onClick={this.handleClick}>
@@ -59,8 +68,20 @@ class SongComponent extends React.Component{
                     </div>
                 </div>
                 <div className="song_component_right">
-                    2:08
-                    {/* time will go here eventually */}
+                    <button id="song_options">...</button>
+                    <div id={this.state.dropdown}>
+                        <div id="add_to_playlists">Add to playlist</div>
+                        {this.props.playlists.map(playlist => {
+                            return (<button id="add_to_playlist_list">
+                                {playlist.title}
+                            </button>)
+                        })}
+                    </div>
+
+                    <div>2:08</div>
+                </div>
+                <div class={this.state.dropdown} id="modal" onClick={this.handleClick}>
+                    
                 </div>
             </div>
         )

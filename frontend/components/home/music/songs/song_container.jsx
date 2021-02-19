@@ -5,7 +5,7 @@ import SongComponent from "./song_component"
 
 const mapStateToProps = (state, ownProps) => {
     return{
-    
+        playlists: Object.values(state.entities.playlists)
     }
 }
 

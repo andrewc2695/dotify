@@ -141,23 +141,25 @@
 }
 
 .playlist_modal_content{
-    background-color: #B2B2B2;
-    position: relative; 
+    background-color: #131313;
+    position: absolute; 
     padding: 20px;
     width: 200px;
-    height: 250px;
+    height: 100px;
     font-size: 12px;
     color: azure;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 10px;
     z-index: 2;
 }
 
 .rename_input{
+    color: black;
     background-color: white;
+    font-size: 15px;
 }
 
 .rename_playlist{
@@ -169,4 +171,24 @@
 .rename_playlist:hover{
     cursor: pointer;
     text-decoration: underline;
+}
+
+.rename_playlist_button{
+    margin-top: 10px;
+    border: 2px solid azure;
+    border-radius: 25px;
+    width: 145px;
+    display: flex;
+    justify-content: center;
+}
+
+.rename_playlist_button:hover{
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+}
+
+#new_playlist_name{
+    font-weight: 700;
+    font-size: 17px;
 }

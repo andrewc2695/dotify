@@ -8,9 +8,11 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons'
 class PlaylistShowComponent extends React.Component {
     constructor(props){
         super(props)
-        this.state = { dropdownButton: "playlist_dropdown_button_down", modal: "playlist_modal_hidden" }
+        this.state = { dropdownButton: "playlist_dropdown_button_down", modal: "playlist_modal_hidden", playlistName: ""}
         this.handleDropDown = this.handleDropDown.bind(this);
         this.handleModal = this.handleModal.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.playlistModal = "playlist_modal_hidden"
     }
 
@@ -43,8 +45,15 @@ class PlaylistShowComponent extends React.Component {
         this.props.history.push("/");
     }
 
-    renamePlaylist(){
-        this.props.updatePlaylist()
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.updatePlaylist({ title: this.state.playlistName, id: this.props.playlist.id})
+        this.playlistModal = "playlist_modal_hidden"
+        this.setState({ modal: "playlist_modal_hidden"})
+    }
+
+    handleChange(e){
+        this.setState({playlistName: e.currentTarget.value});
     }
 
     render() {
@@ -87,10 +96,12 @@ class PlaylistShowComponent extends React.Component {
                         <div id="album_show_title">
                             {playlist.title}
                         </div>
-                        <div className={`${this.playlistModal}`}>
-                            New Playlist Name
-                            <input type="text" className="rename_input"/>
-                        </div>
+                        <form className={`${this.playlistModal}`} onSubmit={this.handleSubmit}>
+                            <div id="new_playlist_name">New Playlist Name</div> 
+                            <input type="text" className="rename_input" value={this.state.playlistName} 
+                                onChange={this.handleChange}/>
+                            <button className="rename_playlist_button" type="submit">Rename Playlist</button>
+                        </form>
                         <div className="rename_playlist" onClick={() => this.handleModal()}>
                             Rename Playlist
                         </div>

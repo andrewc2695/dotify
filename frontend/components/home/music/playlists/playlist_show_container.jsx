@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { thunkDeletePlaylist, thunkFetchPlaylist } from "../../../../actions/playlist_actions"
+import { thunkDeletePlaylist, thunkFetchPlaylist, thunkUpdatePlaylist } from "../../../../actions/playlist_actions"
 import PlaylistShowComponent from "./playlist_show_component"
 
 const mapStateToProps = (state, ownProps) => {
