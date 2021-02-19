@@ -1,7 +1,7 @@
 import React from "react"
 import SongContainer from "../songs/song_container"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faDice, faPlay } from '@fortawesome/free-solid-svg-icons'
 
 
 class AlbumShowComponent extends React.Component{
@@ -94,7 +94,7 @@ class AlbumShowComponent extends React.Component{
                             </div>
                         </div>
                         {songs.map(song => {
-                            return <SongContainer key={song.id} artist={artist[album.artist_id]} song={song}/>
+                            return <div id="album_show_song"><SongContainer key={song.id} artist={artist[album.artist_id]} song={song}/></div>
                         })}
                     </div>
 
