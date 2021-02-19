@@ -91,3 +91,23 @@
     flex-wrap: wrap;
     margin-left: 25px
 }
+
+#artist_index_title_see_all{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+#artist_index_see_all{
+    font-size: 13px;
+    color: #B3B3B3;
+    font-weight: 400;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#artist_index_see_all:hover{
+    text-decoration: underline;
+}

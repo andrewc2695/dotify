@@ -79,7 +79,8 @@ class SongComponent extends React.Component{
                 <div className="song_component_right">
                     <button id="song_options">...</button>
                     <div id={this.state.dropdown}>
-                        <div className={options} id="add_to_playlists">Add to playlist
+                        <div className={options} id="add_to_playlists">
+                            <div id="add_playlist_header"> Add to playlist</div>
                         {this.props.playlists.map(playlist => {
                             return (<button id="add_to_playlist_list" onClick={() => this.handlePlaylist(playlist.id, "add")}>
                                 {playlist.title}

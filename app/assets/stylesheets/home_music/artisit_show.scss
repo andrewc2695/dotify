@@ -1,5 +1,6 @@
 .artist_show_pic{
     height: 385px;
+    width: 100%;
     object-fit: cover;
     overflow: hidden;
     position: fixed;
@@ -7,10 +8,9 @@
     z-index: -99;
 }
 
-// #show_profile_pic{
-//     position: fixed;
-//     z-index: -99;
-// }
+#show_profile_pic{
+    object-fit: cover;
+}
 
 .artist_show_div{
     margin-top: 220px;

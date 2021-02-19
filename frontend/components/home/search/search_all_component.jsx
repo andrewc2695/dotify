@@ -46,12 +46,12 @@ class SearchAllComponent extends React.Component {
                     <div className="search_index_object_div" id="song_search_div" className={`${songsHidden}`}>
                         <div className="search_result_title">
                             <div id="search_result_title_left">
-                                <Link to={`/searches/all/songs`}>
+                                <Link to={`/searches/undefined/songs`}>
                                     Songs
                                 </Link>
                             </div>
                             <div id="search_result_title_right">
-                                <Link to={`/searches/all/songs`}>
+                                <Link to={`/searches/undefined/songs`}>
                                     See All
                                 </Link>
                             </div>

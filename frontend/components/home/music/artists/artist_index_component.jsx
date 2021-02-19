@@ -2,6 +2,7 @@ import React from "react"
 
 import ArtistIndexObject from "./artist_index_object";
 import PlaylistIndexComponent from "../playlists/playlist_index_component";
+import { Link } from "react-router-dom";
 
 class ArtistIndexComponent extends React.Component{
     constructor(props){
@@ -36,10 +37,15 @@ class ArtistIndexComponent extends React.Component{
                 </div>
                 <div>
                     <div className="index_objects_div" id="artist_index_div">
+                        <div id="artist_index_title_see_all">
                         <div className="index_title">Artists</div>
+                        <div id="artist_index_see_all">
+                            <Link to="/searches/undefined/artists">See All</Link>
+                        </div>
+                        </div>
                         <div className="artist_profile_pic_div">
                             <div id="aritst_profile_pic_div_div">
-                                {artists.map(artist => {
+                                {artists.slice(1,6).map(artist => {
                                     return <ArtistIndexObject key={artist.id} artist={artist} />
                                 })}
                             </div>

@@ -49,10 +49,10 @@ class SideBarTop extends React.Component {
                         </Link>
                     </div>
                     <div className="sidebar_link">
-                        <button className="sidebar_content">
+                        <Link to="/" className="sidebar_content">
                             <FontAwesomeIcon icon={faBookOpen} className="sidebar_link_icon"/> 
                             Library
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 <button id="sidebar_top_playlists" onClick={() => this.createPlaylist()}>

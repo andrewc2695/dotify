@@ -5,7 +5,7 @@
 #song_dropdown_true{
     position: absolute;
     z-index: 2;
-    width: 130px;
+    width: 160px;
     height: 175px;
     overflow: scroll;
     right: 155px;
@@ -21,6 +21,9 @@
 #add_to_playlist_list{
     width: 120px;
     margin-bottom: 8px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
 }
 
 #add_to_playlist_list:hover{
@@ -37,7 +40,12 @@
     align-items: center;
 }
 
-#add_to_playlists{
+// #add_to_playlists:first-child{
+//     margin-bottom: 10px;
+//     border-bottom: 1px solid #b3b3b3;
+// }
+
+#add_playlist_header{
     margin-bottom: 10px;
     border-bottom: 1px solid #b3b3b3;
 }

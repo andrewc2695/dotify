@@ -19,7 +19,7 @@ class PlaylistShowComponent extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
-        setTimeout(() => {this.props.fetchPlaylist(this.props.match.params.playlistId)}, 400);
+        setTimeout(() => {this.props.fetchPlaylist(this.props.match.params.playlistId)}, 1000);
     }
 
     handleDropDown() {

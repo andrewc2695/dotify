@@ -26,6 +26,7 @@ class SearchShowMore extends React.Component{
         if (this.props.match.params.type === "artists") {
             artistsHidden = ""
         }
+        debugger
         return (
             <div className="main_content_window" id="search_main_window">
                 <div className="main_search_window">
