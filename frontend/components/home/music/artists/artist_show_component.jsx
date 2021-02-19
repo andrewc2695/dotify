@@ -6,6 +6,10 @@ import SongContainer from "../songs/song_container"
 
 
 class ArtistShowComponent extends React.Component{
+    constructor(props){
+        super(props)
+        this.buttonPush = this.buttonPush.bind(this);
+    }
 
     componentDidMount(){
         window.scrollTo(0, 0)
@@ -14,6 +18,19 @@ class ArtistShowComponent extends React.Component{
 
     componentWillUnmount(){
         this.props.removeAlbums();
+    }
+
+    buttonPush() {
+        const info = this.props.location.pathname.split("/");
+        const location = info[1];
+        const locationId = Number(info[2]);
+        const song = Object.values(this.props.artist.popular)[0]
+        const songInfo = { location: location, locationId: locationId, song: song.id }
+        const audio = new Audio(song.audioUrl);
+        songInfo.song = song
+        songInfo.currentSong = audio;
+        songInfo.artist = this.props.artist;
+        this.props.receiveSong(songInfo)
     }
 
     render(){
@@ -48,7 +65,7 @@ class ArtistShowComponent extends React.Component{
                     </div>
                     <div className="artist_music_div">
                         <div>
-                            <button className="green_play_button">
+                            <button className="green_play_button" onClick={() => this.buttonPush()}>
                                 <FontAwesomeIcon icon={faPlay} />
                             </button>
                         </div>

@@ -5,10 +5,28 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 
 class AlbumShowComponent extends React.Component{
+    constructor(props){
+        super(props)
+        this.buttonPush = this.buttonPush.bind(this)
+    }
 
     componentDidMount(){
         window.scrollTo(0, 0)
         this.props.fetchAlbum(this.props.match.params.albumId)
+    }
+
+    buttonPush(){
+        const info = this.props.location.pathname.split("/");
+        const location = info[1];
+        const locationId = Number(info[2]);
+        const song = Object.values(this.props.album.songs)[0]
+        const songInfo = { location: location, locationId: locationId, song: song.id }
+        const audio = new Audio(song.audioUrl);
+        songInfo.song = song
+        songInfo.currentSong = audio;
+        songInfo.artist = this.props.album.artist;
+        debugger
+        this.props.receiveSong(songInfo)
     }
 
     render(){
@@ -64,7 +82,7 @@ class AlbumShowComponent extends React.Component{
                     </div>
                 </div>
                 <div className="album_show_bottom">
-                    <button className="green_play_button">
+                    <button className="green_play_button" onClick={() => this.buttonPush()}>
                         <FontAwesomeIcon icon={faPlay} />
                     </button>
                     <div className="album_show_song_div">

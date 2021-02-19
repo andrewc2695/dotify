@@ -1,7 +1,8 @@
 class Api::SearchesController < ApplicationController
     def search
-        @songs = Song.where("title LIKE ?", "%#{params[:search]}%")
-        @albums = Album.where("title LIKE ?", "%#{params[:search]}%")
-        @artists = Artist.where("name LIKE ?", "%#{params[:search]}%")
+        search_term = params[:search].downcase
+        @songs = Song.where("title LIKE ?", "%#{search_term}%")
+        @albums = Album.where("title LIKE ?", "%#{search_term}%")
+        @artists = Artist.where("name LIKE ?", "%#{search_term}%")
     end
 end

@@ -13,6 +13,7 @@ class PlaylistShowComponent extends React.Component {
         this.handleModal = this.handleModal.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.buttonPush = this.buttonPush.bind(this);
         this.playlistModal = "playlist_modal_hidden"
     }
 
@@ -54,6 +55,19 @@ class PlaylistShowComponent extends React.Component {
 
     handleChange(e){
         this.setState({playlistName: e.currentTarget.value});
+    }
+
+    buttonPush() {
+        const info = this.props.location.pathname.split("/");
+        const location = info[1];
+        const locationId = Number(info[2]);
+        const song = Object.values(this.props.playlist.songs)[0]
+        const songInfo = { location: location, locationId: locationId, song: song.id }
+        const audio = new Audio(song.audioUrl);
+        songInfo.song = song
+        songInfo.currentSong = audio;
+        songInfo.artist = song.artist;
+        this.props.receiveSong(songInfo)
     }
 
     render() {
@@ -122,7 +136,7 @@ class PlaylistShowComponent extends React.Component {
                 </div>
                 <div className="album_show_bottom">
                     <div className="playlist_top">
-                        <button className="green_play_button">
+                        <button className="green_play_button" onClick={() => this.buttonPush()}>
                             <FontAwesomeIcon icon={faPlay} />
                         </button>
                         <div>

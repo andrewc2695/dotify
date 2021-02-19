@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { removeAlbums } from "../../../../actions/album_actions";
+import { receiveCurrentSong } from "../../../../actions/song_actions";
 import ArtistShowComponent from "./artist_show_component";
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,6 +14,7 @@ const mapDispatchToProps = (dispatch) => {
     return{
         fetchArtist: artistId => dispatch(thunkFetchArtist(artistId)),
         removeAlbums: () => dispatch(removeAlbums()),
+        receiveSong: songInfo => dispatch(receiveCurrentSong(songInfo)),
     }
 }
 
