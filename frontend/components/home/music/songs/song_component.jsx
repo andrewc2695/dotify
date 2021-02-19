@@ -43,12 +43,9 @@ class SongComponent extends React.Component{
     }
 
     handlePlaylist(pId, type){
-        console.log("hi")
-        debugger
         if(type === "add"){
             this.props.addSongToPlaylist({playlist_id: pId, song_id: this.props.song.id})
             this.setState({ dropdown: "song_dropdown_false" })
-            console.log("bye")
         }
     }
 
@@ -82,7 +79,7 @@ class SongComponent extends React.Component{
                         <div className={options} id="add_to_playlists">
                             <div id="add_playlist_header"> Add to playlist</div>
                         {this.props.playlists.map(playlist => {
-                            return (<button id="add_to_playlist_list" onClick={() => this.handlePlaylist(playlist.id, "add")}>
+                            return (<button key={playlist.id} id="add_to_playlist_list" onClick={() => this.handlePlaylist(playlist.id, "add")}>
                                 {playlist.title}
                             </button>)
                         })}

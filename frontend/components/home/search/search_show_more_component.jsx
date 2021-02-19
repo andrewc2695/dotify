@@ -26,7 +26,7 @@ class SearchShowMore extends React.Component{
         if (this.props.match.params.type === "artists") {
             artistsHidden = ""
         }
-        debugger
+
         return (
             <div className="main_content_window" id="search_main_window">
                 <div className="main_search_window">
@@ -45,7 +45,7 @@ class SearchShowMore extends React.Component{
                             {songs.map(song => {
                                 return (
                                     <div className="search_song_component">
-                                        <img id="search_song_image" loading="lazy" src={song.photoUrl} />
+                                        <img id="search_song_image"  src={song.photoUrl} />
                                         <SongContainer key={song.id} artist={song.artist} song={song} />
                                     </div>
                                 )

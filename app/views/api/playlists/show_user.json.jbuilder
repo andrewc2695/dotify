@@ -1,6 +1,6 @@
 json.playlist do 
     @playlists.each do |playlist|
-        songs = playlist.songs.limit(4)
+        songs = playlist.songs
         json.set! playlist.id do
             json.extract! playlist, :title, :id
             json.songs do 

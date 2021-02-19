@@ -51,7 +51,6 @@ class PlaybarComponent extends React.Component{
     }
 
     pauseAudio(currentSong){
-        // debugger
         this.button = faPlay;
         currentSong.pause();
     }
@@ -104,7 +103,6 @@ class PlaybarComponent extends React.Component{
         if(duration === "0:00"){
             duration = ""
         }
-        console.log(widthPercent)
         const myStyle = {
             width: widthPercent,
         }

@@ -38,7 +38,6 @@ class SearchAllComponent extends React.Component {
             }
         }, 5000);
 
-        debugger
         return (
             <div className="main_content_window" id="search_main_window">
                 <div className="main_search_window">
@@ -60,7 +59,7 @@ class SearchAllComponent extends React.Component {
                             {songs.slice(0, 5).map(song => {
                                 return (
                                     <div className="search_song_component">
-                                        <img id="search_song_image" src={song.photoUrl} loading="lazy" />
+                                        <img id="search_song_image" src={song.photoUrl} />
                                         <SongContainer key={song.id} artist={song.artist} song={song} />
                                     </div>
                                 )

@@ -12,7 +12,6 @@ class HomeMainComponent extends React.Component{
     }
 
     render(){
-        console.log("home_main_comp")
         if(this.props.currentUser === undefined){
             return null;
         }

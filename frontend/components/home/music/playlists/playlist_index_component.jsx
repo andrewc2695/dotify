@@ -9,7 +9,6 @@ class PlaylistIndexComponent extends React.Component {
         // const colors = ["red", "orange", "green", "yellow", "blue", "pink", "purple"]
         // const color = colors[Math.floor(Math.random() * colors.length)]
         const { playlist } = this.props;
-        console.log(`playlist render-${playlist.title}`)
         let songs = ""
         let four= "hidden"
         let not_four = ""
@@ -35,10 +34,10 @@ class PlaylistIndexComponent extends React.Component {
                         <FontAwesomeIcon icon={faMusic} />
                     </div>
                     <div className="playlist_cover" id={`${four}`}>
-                        <img className="playlist_cover_image" loading="lazy"  src={`${song1}`}/>
-                        <img className="playlist_cover_image" loading="lazy" src={`${song2}`} />
-                        <img className="playlist_cover_image" loading="lazy" src={`${song3}`} />
-                        <img className="playlist_cover_image" loading="lazy" src={`${song4}`} />
+                        <img className="playlist_cover_image"  src={`${song1}`}/>
+                        <img className="playlist_cover_image" src={`${song2}`} />
+                        <img className="playlist_cover_image" src={`${song3}`} />
+                        <img className="playlist_cover_image" src={`${song4}`} />
                     </div>
                 </div>
                 <div className="album_title_div">

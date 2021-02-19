@@ -31,7 +31,6 @@ class PlaylistShowComponent extends React.Component {
     }
 
     handleModal() {
-        console.log("hi")
         if (this.state.modal === "playlist_modal_hidden") {
             this.setState({ modal: "playlist_modal" })
             this.playlistModal = "playlist_modal_content"
@@ -110,10 +109,10 @@ class PlaylistShowComponent extends React.Component {
                             <FontAwesomeIcon icon={faMusic} />
                         </div>
                         <div className="playlist_show_cover" id={`${four}`}>
-                            <img className="playlist_show_image" loading="lazy" src={`${song1}`} />
-                            <img className="playlist_show_image" loading="lazy" src={`${song2}`} />
-                            <img className="playlist_show_image" loading="lazy" src={`${song3}`} />
-                            <img className="playlist_show_image" loading="lazy" src={`${song4}`} />
+                            <img className="playlist_show_image"  src={`${song1}`} />
+                            <img className="playlist_show_image"  src={`${song2}`} />
+                            <img className="playlist_show_image"  src={`${song3}`} />
+                            <img className="playlist_show_image"  src={`${song4}`} />
                         </div>
                     </div>
                     <div className="album_show_info">
@@ -165,10 +164,10 @@ class PlaylistShowComponent extends React.Component {
                         {songs.map(song => {
                             count += 1
                             return( 
-                            <div className="search_song_component">
-                                <div>{count}</div>
+                                <div key={song.id} className="search_song_component">
+                                    <div>{count}</div>
                                 <img id="search_song_image" src={song.photoUrl} />
-                                <SongContainer key={song.id} artist={song.artist} song={song} 
+                                    <SongContainer artist={song.artist} song={song} 
                                     playlist={this.props.playlist.id}/>
                             </div>
                             )

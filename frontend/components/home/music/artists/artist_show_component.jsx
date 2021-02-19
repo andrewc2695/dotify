@@ -56,7 +56,7 @@ class ArtistShowComponent extends React.Component{
         return(
             <div className="main_content_window" id="artist_main_div">
                 <div className="artist_show_pic">
-                    <img id="show_profile_pic" loading="lazy" src={artist.photoUrl} /> 
+                    <img id="show_profile_pic" src={artist.photoUrl} /> 
                     
                 </div>
                 <div className="artist_show_div">
