@@ -8,7 +8,7 @@ class SearchShowMore extends React.Component{
 
     componentDidMount(){
         window.scrollTo(0, 0)
-        this.props.search(this.props.match.params.searchTerm)
+        // this.props.search(undefined)
     }
 
 
@@ -44,9 +44,9 @@ class SearchShowMore extends React.Component{
                         <div>
                             {songs.map(song => {
                                 return (
-                                    <div className="search_song_component">
+                                    <div key={song.id} className="search_song_component">
                                         <img id="search_song_image"  src={song.photoUrl} />
-                                        <SongContainer key={song.id} artist={song.artist} song={song} />
+                                        <SongContainer artist={song.artist} song={song} />
                                     </div>
                                 )
                             })}
@@ -65,7 +65,7 @@ class SearchShowMore extends React.Component{
                         </div>
                         <div className="search_results_row">
                             {albums.map(album => {
-                                return <div><AlbumComponent key={album.id} album={album} /></div>
+                                return <div><AlbumComponent key={album.id}album={album} /></div>
                             })}
                         </div>
                     </div>
