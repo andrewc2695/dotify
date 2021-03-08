@@ -1,16 +1,16 @@
 json.playlist do 
     @playlists.each do |playlist|
-        songs = playlist.songs
+        songs = playlist.songs_on_playlist
         json.set! playlist.id do
             json.extract! playlist, :title, :id
             json.songs do 
                 songs.each do |song|
-                    artist = song.artist.name
-                    album = song.album.title
+                    artist = song.song.artist.name
+                    album = song.song.album.title
                     json.set! song.id  do
-                        json.extract! song, :artist, :album
-                        json.photoUrl url_for(song.album.photo)
-                        json.audioUrl url_for(song.audio.audio)
+                        json.extract! song.song, :artist, :album
+                        json.photoUrl url_for(song.song.album.photo)
+                        json.audioUrl url_for(song.song.audio.audio)
                     end
                 end
             end
