@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 class SongComponent extends React.Component{
     constructor(props){
         super(props)
-        // this.audio = new Audio(this.props.song.audioUrl);
         this.playAudio = this.playAudio.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handlePlaylist = this.handlePlaylist.bind(this)
@@ -14,20 +13,13 @@ class SongComponent extends React.Component{
     }
 
     playAudio(songInfo){
-        // if(this.state.play === false){
-        //     this.audio.play();
-        //     this.setState({play: true});
-        // }else{
-        //     this.audio.pause();
-        //     this.setState({play: false})
-        // }
         const audio = new Audio(this.props.song.audioUrl);
         songInfo.song = this.props.song
         songInfo.currentSong = audio;
         songInfo.artist = this.props.artist;
-        this.props.receiveSong(songInfo)
-        
+        this.props.receiveSong(songInfo)  
     }
+
     handleClick(e){
         if (e.target.id === "song_search_div"){
             this.playAudio({ location: this.location, locationId: this.locationId, song: this.props.song.id })
@@ -49,14 +41,22 @@ class SongComponent extends React.Component{
         }
     }
 
+    titleizeName(){
+        let titleName = "";
+        let splitName = this.props.artist.name.split(" ");
+        splitName.forEach(word => {
+            titleName += word[0].toUpperCase() + word.slice(1) + " ";
+        })
+        return titleName;
+    }
+
     render(){
         const info = this.props.location.pathname.split("/");
         this.location = info[1];
         this.locationId = Number(info[2]);
         let options = "add"
-        // if(this.props.playlist !== undefined){
-        //     options = "delete"
-        // }
+        
+        let titleName = this.titleizeName();
         return(
             <div className="song_component_div" id="song_search_div" 
                 onClick={this.handleClick}>
@@ -69,7 +69,7 @@ class SongComponent extends React.Component{
                             {this.props.song.title}
                         </div>
                         <Link to={`/artists/${this.props.artist.id}`} id="song_artist_name">
-                            {this.props.artist.name}
+                            {titleName}
                         </Link>
                     </div>
                 </div>

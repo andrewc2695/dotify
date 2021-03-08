@@ -3,8 +3,18 @@ import { Link } from "react-router-dom"
 
 class AlbumComponent extends React.Component{
 
+    titleizeName() {
+        let titleName = "";
+        let splitName = this.props.album.artist.name.split(" ");
+        splitName.forEach(word => {
+            titleName += word[0].toUpperCase() + word.slice(1) + " ";
+        })
+        return titleName;
+    }
+
     render(){
         const { album } = this.props;
+        let titleName = this.titleizeName();
         return(
             <Link to={`/albums/${album.id}`} className="album_object_div">
                 <div className="album_cover_pic">
@@ -15,7 +25,7 @@ class AlbumComponent extends React.Component{
                         {album.title}
                     </div>
                     <div id="album_year">   
-                        {album.artist.name}
+                        {titleName}
                         <br/>
                         {album.year} 
                     </div>
