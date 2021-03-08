@@ -5,31 +5,37 @@
 #song_dropdown_true{
     position: absolute;
     z-index: 2;
-    width: 160px;
-    height: 175px;
+    width: 200px;
+    // max-height: 175px;
     overflow: scroll;
     right: 155px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     background-color: #282828;
     border-radius: 5px;
 }
 
 #add_to_playlist_list{
-    width: 120px;
-    margin-bottom: 8px;
+    height: 30px;
+    width: 200px;
     display: flex;
     justify-content: flex-start;
-    font-size: 12px;
+    align-items: center;
+    font-size: 13px;
+    color: #b1b1b1
 }
 
 #add_to_playlist_list:hover{
     background-color: #b3b3b3;
     border-radius: 5px;
     color:black;
+}
+
+.add_playlist_title{
+    margin-left: 20px;
 }
 
 .song_component_right{
@@ -40,14 +46,17 @@
     align-items: center;
 }
 
-// #add_to_playlists:first-child{
-//     margin-bottom: 10px;
-//     border-bottom: 1px solid #b3b3b3;
-// }
-
 #add_playlist_header{
+    height: 50px;
     margin-bottom: 10px;
     border-bottom: 1px solid #b3b3b3;
+    color: #b1b1b1;
+    display: flex;
+    align-items: center;
+}
+
+#add_playlist_header_div{
+    margin-left: 20px;
 }
 
 .song_dropdown_true{

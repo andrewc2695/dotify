@@ -77,10 +77,10 @@ class SongComponent extends React.Component{
                     <button id="song_options">...</button>
                     <div id={this.state.dropdown}>
                         <div className={options} id="add_to_playlists">
-                            <div id="add_playlist_header"> Add to playlist</div>
+                            <div id="add_playlist_header"> <div id="add_playlist_header_div">Add to playlist</div></div>
                         {this.props.playlists.map(playlist => {
                             return (<button key={playlist.id} id="add_to_playlist_list" onClick={() => this.handlePlaylist(playlist.id, "add")}>
-                                {playlist.title}
+                                <div className ="add_playlist_title">{playlist.title}</div>
                             </button>)
                         })}
                         </div>
