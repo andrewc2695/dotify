@@ -14,7 +14,11 @@ class AlbumComponent extends React.Component{
 
     render(){
         const { album } = this.props;
-        let titleName = this.titleizeName();
+        
+        let titleName = "";
+        if(album.artist.name !== undefined){
+            this.titleizeName();
+        }
         return(
             <Link to={`/albums/${album.id}`} className="album_object_div">
                 <div className="album_cover_pic">
