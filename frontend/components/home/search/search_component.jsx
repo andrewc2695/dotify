@@ -15,8 +15,15 @@ class SearchComponent extends React.Component{
         this.props.search(this.props.match.params.searchTerm)
     }
 
+    componentDidUpdate(prevProps) {
+        if(prevProps.match.params.searchTerm !== this.props.match.params.searchTerm){
+            this.props.search(this.props.match.params.searchTerm)
+
+        }
+    }
+
+
     render(){
-        // if(this.props.searchRes === undefined) return null
         const { songs, albums, artists } = this.props;
         let songsHidden = ""
         let albumsHidden = ""
@@ -33,7 +40,7 @@ class SearchComponent extends React.Component{
         setTimeout(() => {
             if (songs.length + albums.length + artists.length === 0) {
                 this.setState({noResults: "no_results_found"})
-            }else{
+            }else if(this.state.noResults === "no_results_found"){
                 this.setState({noResults: "hidden"})
             }
         }, 500);

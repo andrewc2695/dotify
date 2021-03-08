@@ -2,11 +2,12 @@ import { removeSearch, thunkSearch } from "../../../actions/search_actions"
 import { connect } from "react-redux";
 import SearchComponent from "./search_component";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return{
         songs: Object.values(state.searches.songs),
         albums: Object.values(state.searches.albums),
         artists: Object.values(state.searches.artists),
+        searchTerm: ownProps.match.params.searchTerm
     };
 }
 
