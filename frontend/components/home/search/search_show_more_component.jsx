@@ -8,7 +8,11 @@ class SearchShowMore extends React.Component{
 
     componentDidMount(){
         window.scrollTo(0, 0)
-        // this.props.search(undefined)
+        if(this.props.match.params.searchTerm === "undefined"){
+            this.props.searchAll();
+        }else{
+            this.props.search(this.props.match.params.searchTerm);
+        }
     }
 
 
@@ -65,7 +69,7 @@ class SearchShowMore extends React.Component{
                         </div>
                         <div className="search_results_row">
                             {albums.map(album => {
-                                return <div><AlbumComponent key={album.id}album={album} /></div>
+                                return <div key={album.id}><AlbumComponent album={album} /></div>
                             })}
                         </div>
                     </div>
@@ -82,7 +86,7 @@ class SearchShowMore extends React.Component{
                         </div>
                         <div className="search_results_row">
                             {artists.map(artist => {
-                                return <div id="artist_object_div"><ArtistIndexObject key={artist.id} artist={artist} /></div>
+                                return <div id="artist_object_div" key={artist.id}><ArtistIndexObject artist={artist} /></div>
                             })}
                         </div>
                     </div>

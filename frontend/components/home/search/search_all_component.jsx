@@ -58,9 +58,9 @@ class SearchAllComponent extends React.Component {
                         <div>
                             {songs.slice(0, 5).map(song => {
                                 return (
-                                    <div className="search_song_component">
+                                    <div key={song.id} className="search_song_component">
                                         <img id="search_song_image" src={song.photoUrl} />
-                                        <SongContainer key={song.id} artist={song.artist} song={song} />
+                                        <SongContainer artist={song.artist} song={song} />
                                     </div>
                                 )
                             })}
@@ -82,7 +82,7 @@ class SearchAllComponent extends React.Component {
                         </div>
                         <div className="search_results_row">
                             {albums.slice(0, 5).map(album => {
-                                return <div><AlbumComponent key={album.id} album={album} /></div>
+                                return <div key={album.id}><AlbumComponent album={album} /></div>
                             })}
                         </div>
                     </div>
@@ -102,7 +102,7 @@ class SearchAllComponent extends React.Component {
                         </div>
                         <div className="search_results_row">
                             {artists.slice(0, 5).map(artist => {
-                                return <div id="artist_object_div"><ArtistIndexObject key={artist.id} artist={artist} /></div>
+                                return <div id="artist_object_div" key={artist.id}><ArtistIndexObject key={artist.id} artist={artist} /></div>
                             })}
                         </div>
                     </div>

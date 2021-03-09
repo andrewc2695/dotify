@@ -170,12 +170,12 @@ class PlaylistShowComponent extends React.Component {
                         {songs.map(song => {
                             count += 1
                             return( 
-                                <div key={song.id} className="search_song_component">
+                                <div key={count}  className="search_song_component">
                                     <div>{count}</div>
-                                <img id="search_song_image" src={song.photoUrl} />
-                                    <SongContainer artist={song.artist} song={song} 
-                                    sapId={song.sapId} playlistId={playlist.id}/>
-                            </div>
+                                    <img  id="search_song_image" src={song.photoUrl} />
+                                        <SongContainer artist={song.artist} song={song} 
+                                        sapId={song.sapId} playlistId={playlist.id}/>
+                                </div>
                             )
                         })}
                     </div>

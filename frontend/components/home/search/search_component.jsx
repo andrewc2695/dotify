@@ -44,7 +44,7 @@ class SearchComponent extends React.Component{
                 this.setState({noResults: "hidden"})
             }
         }, 500);
-
+        let count = 0;
         return(
             <div className="main_content_window" id="search_main_window">
                 <div className="main_search_window">
@@ -65,9 +65,9 @@ class SearchComponent extends React.Component{
                         <div>
                             {songs.slice(0, 5).map(song => {
                                 return(
-                                    <div className="search_song_component">
+                                    <div className="search_song_component" key={song.id}>
                                         <img id="search_song_image" src={song.photoUrl} />
-                                        <SongContainer key={song.id} artist={song.artist} song={song} />
+                                        <SongContainer  artist={song.artist} song={song} />
                                     </div>
                                 )
                             })}
@@ -89,7 +89,7 @@ class SearchComponent extends React.Component{
                         </div>
                         <div className="search_results_row">
                             {albums.slice(0, 5).map(album => {
-                                return <div><AlbumComponent key={album.id} album={album} /></div>
+                                return <div key={album.id}><AlbumComponent album={album} /></div>
                             })}
                         </div>
                     </div>
@@ -109,7 +109,7 @@ class SearchComponent extends React.Component{
                         </div>
                         <div className="search_results_row">
                             {artists.slice(0, 5).map(artist => {
-                                return <div id="artist_object_div"><ArtistIndexObject key={artist.id} artist={artist} /></div>
+                                return <span id="artist_object_div" key={artist.id} ><ArtistIndexObject artist={artist} /></span>
                             })}
                         </div>
                     </div>

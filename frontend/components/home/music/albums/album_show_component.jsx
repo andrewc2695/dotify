@@ -29,6 +29,7 @@ class AlbumShowComponent extends React.Component{
     }
 
     render(){
+        let count = 0;
         if(this.props.album === undefined){
             return(
             <div className="null_content_window">
@@ -94,7 +95,8 @@ class AlbumShowComponent extends React.Component{
                             </div>
                         </div>
                         {songs.map(song => {
-                            return <div id="album_show_song"><SongContainer key={song.id} artist={artist[album.artist_id]} song={song}/></div>
+                            count += 1;
+                            return <div key={count} id="album_show_song"><SongContainer artist={artist[album.artist_id]} song={song}/></div>
                         })}
                     </div>
 
