@@ -168,7 +168,7 @@ class PlaylistShowComponent extends React.Component {
                                     <div>{count}</div>
                                 <img id="search_song_image" src={song.photoUrl} />
                                     <SongContainer artist={song.artist} song={song} 
-                                    playlist={this.props.playlist.id}/>
+                                    sapId={song.sapId} playlist={this.props.playlist.id}/>
                             </div>
                             )
                         })}

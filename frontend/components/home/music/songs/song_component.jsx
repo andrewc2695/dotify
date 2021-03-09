@@ -10,6 +10,8 @@ class SongComponent extends React.Component{
         this.state = ({dropdown: "song_dropdown_false", playlistDropDown: "playlist_drop_false"})
         this.location = "";
         this.locationId = "";
+        this.add = "";
+        this.delete = "";
     }
 
     playAudio(songInfo){
@@ -38,6 +40,9 @@ class SongComponent extends React.Component{
         if(type === "add"){
             this.props.addSongToPlaylist({playlist_id: pId, song_id: this.props.song.id})
             this.setState({ dropdown: "song_dropdown_false" })
+        }else{
+            this.props.removeSong(this.props.sapId)
+            this.setState({ dropdown: "song_dropdown_false" })
         }
     }
 
@@ -54,8 +59,14 @@ class SongComponent extends React.Component{
         const info = this.props.location.pathname.split("/");
         this.location = info[1];
         this.locationId = Number(info[2]);
-        let options = "add"
-        
+
+        if(this.props.sapId === undefined){
+            this.add = "add"
+            this.delete = "hidden"
+        }else{
+            this.delete = "delete"
+            this.add = "hidden"
+        }
         let titleName = this.titleizeName();
         return(
             <div className="song_component_div" id="song_search_div" 
@@ -76,13 +87,16 @@ class SongComponent extends React.Component{
                 <div className="song_component_right">
                     <button id="song_options">...</button>
                     <div id={this.state.dropdown}>
-                        <div className={options} id="add_to_playlists">
+                       <div className={this.add} id="add_to_playlists">
                             <div id="add_playlist_header"> <div id="add_playlist_header_div">Add to playlist</div></div>
-                        {this.props.playlists.map(playlist => {
-                            return (<button key={playlist.id} id="add_to_playlist_list" onClick={() => this.handlePlaylist(playlist.id, "add")}>
-                                <div className ="add_playlist_title">{playlist.title}</div>
-                            </button>)
-                        })}
+                            {this.props.playlists.map(playlist => {
+                                return (<button key={playlist.id} id="add_to_playlist_list" onClick={() => this.handlePlaylist(playlist.id, "add")}>
+                                    <div className="add_playlist_title">{playlist.title}</div>
+                                </button>)
+                            })}
+                        </div>
+                        <div className={this.delete}>
+                            <div onClick={() => this.handlePlaylist(null, "delete")}>Remove From Playlist</div>
                         </div>
                     </div>
                     <div>2:07</div>
