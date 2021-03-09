@@ -28,9 +28,11 @@ class HeaderComponent extends React.Component{
 
     handleSearch(e){
         e.preventDefault();
-        this.props.removeSearch();
-        this.props.search(this.state.search);
-        this.props.history.push(`/searches/${this.state.search}`)  
+        if(this.state.search !== ""){
+            this.props.removeSearch();
+            this.props.search(this.state.search);
+            this.props.history.push(`/searches/${this.state.search}`)  
+        }
     }
 
     handleChange(e){

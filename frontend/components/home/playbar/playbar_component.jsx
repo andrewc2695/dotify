@@ -18,6 +18,13 @@ class PlaybarComponent extends React.Component{
         this.button = faPlay;
     }
 
+    componentWillUnmount(){
+        if(this.playInterval !== undefined){
+            clearInterval(this.playInterval);
+            this.playInterval = undefined;
+        }
+    } 
+
     componentDidUpdate(previousProps){
         //double clicking song cause couter to go twice
         if(this.props.currentSong !== undefined){
