@@ -9,6 +9,9 @@ class SearchComponent extends React.Component{
         super(props)
         this.state = { noResults: "hidden" }
         this.timeout = undefined;
+        this.songsLength;
+        this.albumsLength;
+        this.artistsLength;
     }
 
     componentDidMount(){
@@ -40,6 +43,9 @@ class SearchComponent extends React.Component{
 
     render(){
         const { songs, albums, artists } = this.props;
+        this.songsLength = songs.length;
+        this.albumsLength = albums.length;
+        this.artistsLength = artists.length;
         let songsHidden = ""
         let albumsHidden = ""
         let artistsHidden= ""
@@ -53,12 +59,12 @@ class SearchComponent extends React.Component{
             artistsHidden = "hidden"
         }
         this.timeout = setTimeout(() => {
-            if (songs.length + albums.length + artists.length === 0) {
+            if (this.songsLength + this.albumsLength + this.artistsLength === 0) {
                 this.setState({noResults: "no_results_found"})
             }else if(this.state.noResults === "no_results_found"){
                 this.setState({noResults: "hidden"})
             }
-        }, 1000);
+        }, 2000);
         let count = 0;
         return(
             <div className="main_content_window" id="search_main_window">
