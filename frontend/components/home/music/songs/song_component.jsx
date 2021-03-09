@@ -95,7 +95,7 @@ class SongComponent extends React.Component{
                             })}
                         </div>
                         <div className={this.delete}>
-                            <div onClick={() => this.handlePlaylist(null, "delete")}>Remove From Playlist</div>
+                            <div onClick={() => this.handlePlaylist(null, "delete")}><div>Remove From Playlist</div></div>
                         </div>
                     </div>
                     <div>2:07</div>
