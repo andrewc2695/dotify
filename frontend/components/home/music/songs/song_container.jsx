@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
     return{
         receiveSong: songInfo => dispatch(receiveCurrentSong(songInfo)),
         addSongToPlaylist:  ids => dispatch(thunkAddSongToPlaylist(ids)),
-        removeSong: sapId => dispatch(thunkRemoveSongFromPlaylist(sapId))
+        removeSong: (sapId, playlistId) => dispatch(thunkRemoveSongFromPlaylist(sapId, playlistId))
     }
 }
 

@@ -9,15 +9,16 @@ const receivePlaylist = (playlist) => {
     };
 };
 
-const removeSong = (sapId) => {
+const removeSong = (payload) => {
     return {
         type: REMOVE_SONG,
-        sapId
+        payload
     };
 };
 
 export const thunkAddSongToPlaylist = (sapIds) => dispatch => SOPAPIutil.addSongToPlaylist(sapIds)
     .then(playlist => dispatch(receivePlaylist(playlist)));
 
-export const thunkRemoveSongFromPlaylist = sapId => dispatch => SOPAPIutil.deleteSongFromPlaylist(sapId)
-    .then(() => dispatch(removeSong(sapId)));
+export const thunkRemoveSongFromPlaylist = (sapId) => dispatch => SOPAPIutil.deleteSongFromPlaylist(sapId)
+    .then((playlist) => dispatch(receivePlaylist(playlist)));
+    // .then((res) => console.log(res));

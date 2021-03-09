@@ -19,7 +19,6 @@ class AlbumComponent extends React.Component{
         if(album.artist.name !== undefined){
             titleName = this.titleizeName();
         }
-        debugger
         return(
             <Link to={`/albums/${album.id}`} className="album_object_div">
                 <div className="album_cover_pic">

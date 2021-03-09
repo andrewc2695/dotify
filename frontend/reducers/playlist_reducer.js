@@ -14,8 +14,9 @@ export const playlistsReducer = (oldState = {}, action) => {
             delete newState[action.playlistId];
             return newState;
         case REMOVE_SONG:
-            debugger
-            delete newState[action.sapId.playlist_id].action.sapId.song_id;
+            const slice = Object.assign({}, oldState[action.payload.playlistId].songs);
+            delete slice[action.payload.sapId];
+            newState[action.payload.playlistId].songs = slice;
             return newState;
         case RESET_STATE:
             return {};
