@@ -12,13 +12,20 @@ class SearchComponent extends React.Component{
 
     componentDidMount(){
         window.scrollTo(0, 0)
-        this.props.search(this.props.match.params.searchTerm)
+        if(this.props.match.params.searchTerm === undefined){
+            this.props.searchAll();
+        }else{
+            this.props.search(this.props.match.params.searchTerm);
+        }
     }
 
     componentDidUpdate(prevProps) {
         if(prevProps.match.params.searchTerm !== this.props.match.params.searchTerm){
-            this.props.search(this.props.match.params.searchTerm)
-
+            if (this.props.match.params.searchTerm === undefined) {
+                this.props.searchAll();
+            } else {
+                this.props.search(this.props.match.params.searchTerm);
+            }
         }
     }
 

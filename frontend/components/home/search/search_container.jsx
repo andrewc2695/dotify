@@ -1,4 +1,4 @@
-import { removeSearch, thunkSearch } from "../../../actions/search_actions"
+import { removeSearch, thunkSearch, thunkSearchAll } from "../../../actions/search_actions"
 import { connect } from "react-redux";
 import SearchComponent from "./search_component";
 
@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return{
         search: searchTerm => dispatch(thunkSearch(searchTerm)),
+        searchAll: () => dispatch(thunkSearchAll()),
         removeSearches: () => dispatch(removeSearch()),
     };
 }

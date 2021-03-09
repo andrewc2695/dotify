@@ -24,7 +24,7 @@ const App = () => {
                 <ProtcRoute path="/playlists/:playlistId" component={PlaylistShowContainer}/>
                 <ProtcRoute path="/artists/:artistId" component={ArtistShowContainer} />
                 <ProtcRoute path="/albums/:albumId" component={AlbumShowContainer}/>
-                <ProtcRoute path="/searches_all" component={SearchAllContainer} />
+                <ProtcRoute path="/searches_all" component={SearchContainer} />
                 <ProtcRoute path="/searches/:searchTerm/:type" component={SearchShowMore} />
                 <ProtcRoute path="/searches/:searchTerm" component={SearchContainer}/>
                 <Route exact path="/" component={homeComponentContainer} />
