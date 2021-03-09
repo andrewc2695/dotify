@@ -23,16 +23,15 @@ class SongComponent extends React.Component{
     }
 
     handleClick(e){
-        if (e.target.id === "song_search_div"){
-            this.playAudio({ location: this.location, locationId: this.locationId, song: this.props.song.id })
-        } else if (e.target.id === "song_options" || e.target.id === "modal"){
+        debugger
+        if(e.target.id === "song_options" || e.target.id === "modal"){
             if (this.state.dropdown === "song_dropdown_false"){
                 this.setState({ dropdown: "song_dropdown_true"})
             } else{
                 this.setState({ dropdown: "song_dropdown_false"})
             }
-        }else{
-            
+        } else if (e.target.id !== "song_artist_name") {
+            this.playAudio({ location: this.location, locationId: this.locationId, song: this.props.song.id })
         }
     }
 

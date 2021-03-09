@@ -22,6 +22,12 @@ class PlaylistShowComponent extends React.Component {
         setTimeout(() => {this.props.fetchPlaylist(this.props.match.params.playlistId)}, 1000);
     }
 
+    componentDidUpdate(prevProps){
+        if(prevProps.match.params.playlistId !== this.props.match.params.playlistId){
+            this.props.fetchPlaylist(this.props.match.params.playlistId);
+        }
+    }
+
     handleDropDown() {
         if (this.state.dropdownButton === "playlist_dropdown_button_down") {
             this.setState({ dropdownButton: "playlist_dropdown_button_up"});
