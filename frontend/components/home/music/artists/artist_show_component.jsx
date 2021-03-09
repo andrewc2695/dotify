@@ -77,10 +77,10 @@ class ArtistShowComponent extends React.Component{
                                 {popular.map(song => {
                                     popOrder += 1;
                                     return(
-                                        <div className="search_song_component">
+                                        <div key={song.id} className="search_song_component">
                                             <div>{popOrder}</div>
                                             <img id="search_song_image" src={song.photoUrl} />
-                                            <SongContainer key={song.id} artist={artist} song={song} />
+                                            <SongContainer  artist={artist} song={song} />
                                         </div>
                                     )
                                 })}
