@@ -12,29 +12,36 @@ class PlaybarComponent extends React.Component{
         this.pauseAudio = this.pauseAudio.bind(this);
         this.handleToggle = this.handleToggle.bind(this);
         this.state = { playing: true, time: 0}
-        this.duration = "";
+        this.time = 0
+        this.playInterval = undefined;
+        this.duration
         this.button = faPlay;
     }
 
     componentDidUpdate(previousProps){
         //double clicking song cause couter to go twice
         if(this.props.currentSong !== undefined){
+            this.duration = this.props.currentSong.duration;
             if(previousProps.currentSong !== this.props.currentSong){
+                this.button = faPause;
                 this.setState({playing: true, time: 0});
+                this.time = 0;
             }else if(this.state.playing === true){
-                    if(this.state.time){
                     this.playAudio(this.props.currentSong);
+                    if(this.playInterval === undefined){
+                        this.playInterval = setInterval(() => {
+                            this.setState({ time: this.state.time + 100});
+                            if(this.state.time % 1000 === 0){
+                                this.time += 1
+                            }
+                            if (this.state.time === Math.floor(this.duration) * 1000) {
+                                this.setState({ playing: false, time: 0 });
+                                this.pauseAudio(this.props.currentSong);
+                                clearInterval(this.playInterval);
+                                this.playInterval = undefined;
+                            }
+                        }, 100)
                     }
-                    let newTime = this.state.time + 1;
-                    setTimeout(() => {
-                        if(newTime - this.state.time === 1){
-                            this.setState({ time: newTime });
-                        }
-                        if (this.state.time === Math.floor(this.duration)) {
-                            this.setState({ playing: false, time: 0})
-                            this.pauseAudio(this.props.currentSong)
-                        }
-                    }, 1000)
                 }
             }
         if(this.state.playing === false && this.props.currentSong !== undefined){
@@ -43,22 +50,21 @@ class PlaybarComponent extends React.Component{
     }
 
     playAudio(currentSong){
-        if(this.duration !== currentSong.duration){
-            this.duration = currentSong.duration;
-        }
-        this.button = faPause;
         currentSong.play();
     }
 
     pauseAudio(currentSong){
-        this.button = faPlay;
+        clearInterval(this.playInterval);
+        this.playInterval = undefined;
         currentSong.pause();
     }
 
     handleToggle(){
         if(this.state.playing){
+            this.button = faPlay;
             this.setState({playing: false})
         }else{
+            this.button = faPause;
             this.setState({playing: true})
         }
     }
@@ -88,18 +94,17 @@ class PlaybarComponent extends React.Component{
                 </div>
             )
         }
-        let duration = this.convertTime(Math.floor(this.duration));
-        const timePercent = (this.state.time/this.duration);
+        let duration = ""
+        if(this.duration > 0){
+            duration = this.convertTime(Math.floor(this.duration));
+        }
+        const timePercent = (this.state.time/(this.duration * 1000));
         const widthPercent = (575 * timePercent);
-        // const playingSong = this.props.location[this.props.locationId].songs[this.props.songId];
         const playingSong = this.props.song;
         const imgPic = playingSong.photoUrl;
         const songTitle = playingSong.title;
         const songArtist = this.props.artist;
-        let realTime = this.convertTime(this.state.time)
-        if(realTime === "0:00"){
-            realTime = "";
-        }
+        let realTime = this.convertTime(this.time);
         if(duration === "0:00"){
             duration = ""
         }

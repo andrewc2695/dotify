@@ -23,7 +23,6 @@ class SongComponent extends React.Component{
     }
 
     handleClick(e){
-        debugger
         if(e.target.id === "song_options" || e.target.id === "modal"){
             if (this.state.dropdown === "song_dropdown_false"){
                 this.setState({ dropdown: "song_dropdown_true"})
