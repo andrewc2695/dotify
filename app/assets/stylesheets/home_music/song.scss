@@ -77,3 +77,20 @@
 .hidden{
     display: none
 }
+
+.delete{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete > * {
+    height: 100%;
+    margin: 8px;
+}
+
+.delete > *:hover{
+    background-color: #b1b1b1;
+    color: black;
+}
