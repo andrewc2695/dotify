@@ -99,7 +99,10 @@ class PlaybarComponent extends React.Component{
             duration = this.convertTime(Math.floor(this.duration));
         }
         const timePercent = (this.state.time/(this.duration * 1000));
-        const widthPercent = (575 * timePercent);
+        let widthPercent = 0;
+        if(timePercent > 0){
+            widthPercent = (575 * timePercent);
+        };
         const playingSong = this.props.song;
         const imgPic = playingSong.photoUrl;
         const songTitle = playingSong.title;
