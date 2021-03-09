@@ -15,7 +15,6 @@ class SearchShowMore extends React.Component{
         }
     }
 
-
     render(){
         const { songs, albums, artists } = this.props;
         let songsHidden = "hidden"

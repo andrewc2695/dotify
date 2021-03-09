@@ -15,6 +15,16 @@ class SearchAllComponent extends React.Component {
         this.props.searchAll();
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.searchTerm !== this.props.match.params.searchTerm) {
+            if (this.props.match.params.searchTerm === undefined) {
+                this.props.searchAll();
+            } else {
+                this.props.search(this.props.match.params.searchTerm);
+            }
+        }
+    }
+
     render() {
         // if(this.props.searchRes === undefined) return null
         const { songs, albums, artists } = this.props;
@@ -36,7 +46,7 @@ class SearchAllComponent extends React.Component {
             } else {
                 this.setState({ noResults: "hidden" })
             }
-        }, 5000);
+        }, 500);
 
         return (
             <div className="main_content_window" id="search_main_window">
