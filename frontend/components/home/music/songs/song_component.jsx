@@ -23,13 +23,14 @@ class SongComponent extends React.Component{
     }
 
     handleClick(e){
+        debugger
         if(e.target.id === "song_options" || e.target.id === "modal"){
             if (this.state.dropdown === "song_dropdown_false"){
                 this.setState({ dropdown: "song_dropdown_true"})
             } else{
                 this.setState({ dropdown: "song_dropdown_false"})
             }
-        } else if (e.target.id !== "song_artist_name") {
+        }else if(e.target.id === "song_search_div" || e.target.id === "song_title_div") {
             this.playAudio({ location: this.location, locationId: this.locationId, song: this.props.song.id })
         }
     }
@@ -74,7 +75,7 @@ class SongComponent extends React.Component{
                         {this.props.song.ORD}
                     </div>
                     <div className="song_info">
-                        <div className="song_component_title_div">
+                        <div className="song_component_title_div" id="song_title_div">
                             {this.props.song.title}
                         </div>
                         <Link to={`/artists/${this.props.artist.id}`} id="song_artist_name">
@@ -94,7 +95,7 @@ class SongComponent extends React.Component{
                             })}
                         </div>
                         <div className={this.delete}>
-                            <div onClick={() => this.handlePlaylist(null, "delete")}><div>Remove From Playlist</div></div>
+                            <div onClick={() => this.handlePlaylist(null, "delete")}><div id="delete">Remove From Playlist</div></div>
                         </div>
                     </div>
                     <div>2:07</div>
