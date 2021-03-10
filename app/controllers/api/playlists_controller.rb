@@ -12,7 +12,7 @@ class Api::PlaylistsController < ApplicationController
 
     def create
         @playlist = Playlist.new(playlist_params)
-        @songs = @playlist.songs
+        @songs = @playlist.songs_on_playlist
         if @playlist.save!
             render :show
         end
@@ -25,7 +25,7 @@ class Api::PlaylistsController < ApplicationController
 
     def update
         @playlist = Playlist.find(params[:id])
-        @songs = @playlist.songs
+        @songs = @playlist.songs_on_playlist
         if @playlist.update!({title: playlist_params[:title]})
             render :show
         end
