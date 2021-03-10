@@ -20,14 +20,18 @@ class Api::PlaylistsController < ApplicationController
 
     def destroy
         @playlist = Playlist.find(params[:id])
-        @playlist.destroy
+        if(current_user.id == @playlist.user_id)
+            @playlist.destroy
+        end
     end
 
     def update
         @playlist = Playlist.find(params[:id])
-        @songs = @playlist.songs_on_playlist
-        if @playlist.update!({title: playlist_params[:title]})
-            render :show
+        if(current_user.id == @playlist.user_id)
+            @songs = @playlist.songs_on_playlist
+            if @playlist.update!({title: playlist_params[:title]})
+                render :show
+            end
         end
     end
 
