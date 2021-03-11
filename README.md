@@ -1,4 +1,4 @@
-# a spotify clone named dotify!
+# A spotify clone named dotify!
 
 ## Overfiew
 
@@ -15,7 +15,7 @@ music: https://www.bensound.com
 
 ### Updating Playbar
 
-Creating the scrolling playbar when a song is playing was an interesting challenge to do. My solution for this was to have a `state.time` variable and when a song started playing a `setInterval` was created for 100ms. this `setInterval` would add 100 to the `state.time` variable causong a rerender of the page. In the `render` method I had would divide the `state.time` by the `audio.duration` to figure out what percent the song was at. I would then multiply this percent by the pixel width of the playbars parent div to figure out how many pixels long the playbar should be. This was saved as a variable and used with inline styling to create the updating playabr.
+Creating the scrolling playbar when a song is playing was an interesting challenge to do. My solution for this was to have a `state.time` variable and when a song started playing a `setInterval` was created for 100ms. This `setInterval` would add 100 to the `state.time` variable causong a rerender of the page. In the `render` method I would divide the `state.time` by the `audio.duration` to figure out what percent the song was at. I would then multiply this percent by the pixel width of the playbars parent div to figure out how many pixels long the playbar should be. This was saved as a variable and used with inline styling to create the updating playabar.
 
 ```js
 //playbar_component.jsx
