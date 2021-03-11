@@ -7,17 +7,21 @@ class SongComponent extends React.Component{
         this.playAudio = this.playAudio.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handlePlaylist = this.handlePlaylist.bind(this)
-        this.state = ({dropdown: "song_dropdown_false", playlistDropDown: "playlist_drop_false"})
+        this.state = ({dropdown: "song_dropdown_false", playlistDropDown: "playlist_drop_false", duration: ""})
         this.location = "";
         this.locationId = "";
         this.add = "";
         this.delete = "";
+        this.audio = new Audio(this.props.song.audioUrl);
+        this.audio.addEventListener("canplaythrough", () => {
+            this.setState({duration: this.audio.duration});
+        });
     }
 
     playAudio(songInfo){
-        const audio = new Audio(this.props.song.audioUrl);
+        // const audio = new Audio(this.props.song.audioUrl);
         songInfo.song = this.props.song
-        songInfo.currentSong = audio;
+        songInfo.currentSong = this.audio;
         songInfo.artist = this.props.artist;
         this.props.receiveSong(songInfo)  
     }
@@ -54,6 +58,15 @@ class SongComponent extends React.Component{
         return titleName;
     }
 
+    convertTime(time) {
+        let minutes = Math.floor(time / 60);
+        let seconds = time - (minutes * 60)
+        if (seconds < 10) {
+            seconds = '0' + seconds
+        }
+        return minutes + ':' + seconds
+    }
+
     render(){
         const info = this.props.location.pathname.split("/");
         this.location = info[1];
@@ -67,6 +80,10 @@ class SongComponent extends React.Component{
             this.add = "hidden"
         }
         let titleName = this.titleizeName();
+        let duration = "";
+        if(this.state.duration !== ""){
+            duration = this.convertTime(Math.floor(this.state.duration));
+        }
         return(
             <div className="song_component_div" id="song_search_div" 
                 onClick={this.handleClick}>
@@ -98,7 +115,7 @@ class SongComponent extends React.Component{
                             <div onClick={() => this.handlePlaylist(null, "delete")}><div id="delete">Remove From Playlist</div></div>
                         </div>
                     </div>
-                    <div>2:07</div>
+                    <div>{duration}</div>
                 </div>
                 <div className={this.state.dropdown} id="modal" onClick={this.handleClick}>
                     
