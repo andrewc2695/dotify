@@ -53,6 +53,7 @@ class ArtistShowComponent extends React.Component{
         }
 
         let popOrder = 0
+        let albumOrder = 0
         return(
             <div className="main_content_window" id="artist_main_div">
                 <div className="artist_show_pic">
@@ -77,7 +78,7 @@ class ArtistShowComponent extends React.Component{
                                 {popular.map(song => {
                                     popOrder += 1;
                                     return(
-                                        <div key={popOrder} className="search_song_component">
+                                        <div key={song.id} className="search_song_component">
                                             <div>{popOrder}</div>
                                             <img id="search_song_image" src={song.photoUrl} />
                                             <SongContainer artist={artist} song={song} artistShow={true}/>
@@ -92,8 +93,9 @@ class ArtistShowComponent extends React.Component{
                             </div>
                             <div id="aritst_album_div_album">
                                 {albums.map(album => {
+                                    albumOrder += 1;
                                     return (
-                                        <AlbumComponent key={album.id} album={album} />
+                                        <AlbumComponent key={albumOrder} album={album} />
                                     )
                                 })}
                             </div>

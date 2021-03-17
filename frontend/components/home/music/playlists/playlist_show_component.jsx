@@ -8,7 +8,7 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons'
 class PlaylistShowComponent extends React.Component {
     constructor(props){
         super(props)
-        this.state = { dropdownButton: "playlist_dropdown_button_down", modal: "playlist_modal_hidden", playlistName: undefined}
+        this.state = { dropdownButton: "playlist_dropdown_button_down", modal: "playlist_modal_hidden", playlistName: ""}
         this.handleDropDown = this.handleDropDown.bind(this);
         this.handleModal = this.handleModal.bind(this);
         this.handleChange = this.handleChange.bind(this);
