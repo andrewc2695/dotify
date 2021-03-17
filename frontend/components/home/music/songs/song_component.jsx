@@ -95,9 +95,9 @@ class SongComponent extends React.Component{
                         <div className="song_component_title_div" id="song_title_div">
                             {this.props.song.title}
                         </div>
-                        <Link to={`/artists/${this.props.artist.id}`} id="song_artist_name">
+                        {this.props.artistShow === true ? "" : <Link to={`/artists/${this.props.artist.id}`} id="song_artist_name">
                             {titleName}
-                        </Link>
+                        </Link>}
                     </div>
                 </div>
                 <div className="song_component_right">

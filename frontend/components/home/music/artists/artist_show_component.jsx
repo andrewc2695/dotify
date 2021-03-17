@@ -80,7 +80,7 @@ class ArtistShowComponent extends React.Component{
                                         <div key={popOrder} className="search_song_component">
                                             <div>{popOrder}</div>
                                             <img id="search_song_image" src={song.photoUrl} />
-                                            <SongContainer  artist={artist} song={song} />
+                                            <SongContainer artist={artist} song={song} artistShow={true}/>
                                         </div>
                                     )
                                 })}

@@ -33,7 +33,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    min-width: 1250px;
+    // min-width: 1250px;
 }
 
 .profile_object{
@@ -43,6 +43,7 @@
     height: 287px;
     width: 210px;
     margin-right: 25px;
+    margin-bottom: 20px;
     overflow: hidden;
     display: flex;
     flex-direction: column;

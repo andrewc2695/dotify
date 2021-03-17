@@ -25,6 +25,7 @@ class PlaylistShowComponent extends React.Component {
     componentDidUpdate(prevProps){
         if(prevProps.match.params.playlistId !== this.props.match.params.playlistId){
             this.props.fetchPlaylist(this.props.match.params.playlistId);
+            this.setState({playlistName: this.props.playlist.title});
         }
     }
 
@@ -89,9 +90,6 @@ class PlaylistShowComponent extends React.Component {
             )
         };
         const { playlist } = this.props;
-        if(this.state.playlistName == undefined){
-            this.setState({playlistName: playlist.title})
-        }
         let songs= [] 
         if(playlist.songs !== undefined){
             songs = Object.values(playlist.songs)
@@ -126,7 +124,7 @@ class PlaylistShowComponent extends React.Component {
                     </div>
                     <div className="album_show_info">
                         <div id="album_show_title">
-                            {playlist.title.length >= 43 ? (playlist.title.slice(0, 40) + "...") : playlist.titel}
+                            {playlist.title.length >= 43 ? (playlist.title.slice(0, 40) + "...") : playlist.title}
                         </div>
                         <form className={`${this.playlistModal}`} onSubmit={this.handleSubmit}>
                             <div id="new_playlist_name">New Playlist Name</div> 
