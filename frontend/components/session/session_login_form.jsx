@@ -78,7 +78,7 @@ class SessionLoginForm extends React.Component{
                     {formType}
                 </button>
 
-                <button type="submit" id="session_submit" className="session_button"
+                <button type="submit" id="demo_submit" className="session_button"
                     onClick={() => this.setState({username: "Demo", password: '123456'})}>
                     DEMO LOG IN
                 </button>

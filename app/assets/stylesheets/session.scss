@@ -59,7 +59,7 @@
 
  }
 
-  #session_submit {
+  #session_submit, #demo_submit {
     background: #13893D;
     color: white;
  }
@@ -72,7 +72,7 @@
     background: white;
  }
 
- #session_submit:hover {
+ #session_submit:hover, #demo_submit:hover {
     background: #43B947;
  }
 

@@ -82,8 +82,8 @@ class HeaderComponent extends React.Component{
                     </button>
                 </div>
                 <div id={this.state.dropdownButton}>
-                    <a className="drop_down_div" href="https://github.com/andrewc2695">Github</a>
-                    <a className="drop_down_div" href="https://www.linkedin.com/in/andrew-curd-054997b1/">LinkedIn</a>
+                    <a className="drop_down_div" href="https://github.com/andrewc2695" target="_blank">Github</a>
+                    <a className="drop_down_div" href="https://www.linkedin.com/in/andrew-curd-054997b1/" target="_blank">LinkedIn</a>
                     <button className="drop_down_div" onClick={() => this.handleLogout()}>
                         Log Out
                     </button>
