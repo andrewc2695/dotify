@@ -8,7 +8,7 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons'
 class PlaylistShowComponent extends React.Component {
     constructor(props){
         super(props)
-        this.state = { dropdownButton: "playlist_dropdown_button_down", modal: "playlist_modal_hidden", playlistName: ""}
+        this.state = { dropdownButton: "playlist_dropdown_button_down", modal: "playlist_modal_hidden", playlistName: undefined}
         this.handleDropDown = this.handleDropDown.bind(this);
         this.handleModal = this.handleModal.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -89,6 +89,9 @@ class PlaylistShowComponent extends React.Component {
             )
         };
         const { playlist } = this.props;
+        if(this.state.playlistName == undefined){
+            this.setState({playlistName: playlist.title})
+        }
         let songs= [] 
         if(playlist.songs !== undefined){
             songs = Object.values(playlist.songs)
@@ -123,7 +126,7 @@ class PlaylistShowComponent extends React.Component {
                     </div>
                     <div className="album_show_info">
                         <div id="album_show_title">
-                            {playlist.title}
+                            {playlist.title.length >= 43 ? (playlist.title.slice(0, 40) + "...") : playlist.titel}
                         </div>
                         <form className={`${this.playlistModal}`} onSubmit={this.handleSubmit}>
                             <div id="new_playlist_name">New Playlist Name</div> 

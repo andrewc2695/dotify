@@ -27,7 +27,6 @@ class SongComponent extends React.Component{
     }
 
     handleClick(e){
-        debugger
         if(e.target.id === "song_options" || e.target.id === "modal"){
             if (this.state.dropdown === "song_dropdown_false"){
                 this.setState({ dropdown: "song_dropdown_true"})
@@ -84,6 +83,7 @@ class SongComponent extends React.Component{
         if(this.state.duration !== ""){
             duration = this.convertTime(Math.floor(this.state.duration));
         }
+
         return(
             <div className="song_component_div" id="song_search_div" 
                 onClick={this.handleClick}>
@@ -105,7 +105,7 @@ class SongComponent extends React.Component{
                     <div id={this.state.dropdown}>
                        <div className={this.add} id="add_to_playlists">
                             <div id="add_playlist_header"> <div id="add_playlist_header_div">Add to playlist</div></div>
-                            {this.props.playlists.map(playlist => {
+                            {this.props.playlists.length === 0 ? (<div id="no_playlists">Create a playlist to add songs!</div>) : this.props.playlists.map(playlist => {
                                 return (<button key={playlist.id} id="add_to_playlist_list" onClick={() => this.handlePlaylist(playlist.id, "add")}>
                                     <div className="add_playlist_title">{playlist.title}</div>
                                 </button>)

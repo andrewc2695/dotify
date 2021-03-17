@@ -18,14 +18,19 @@
     border-radius: 5px;
 }
 
-#add_to_playlist_list{
+#add_to_playlist_list, #no_playlists{
     height: 30px;
     width: 200px;
+    word-wrap: break-word;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-size: 13px;
     color: #b1b1b1
+}
+
+#no_playlists{
+   
 }
 
 #add_to_playlist_list:hover{
