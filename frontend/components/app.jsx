@@ -15,7 +15,7 @@ import SearchAllContainer from "./home/search/search_all_container";
 
 const App = () => {
     return (
-    <div>
+    <div id="root_div">
             <HomeMainContainer />
             <Switch >
                 <AuthRoute exact path="/signup" component={signUpContainer} />

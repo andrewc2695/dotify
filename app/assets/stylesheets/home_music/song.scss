@@ -6,8 +6,8 @@
     position: absolute;
     z-index: 2;
     width: 200px;
-    // max-height: 175px;
-    overflow: scroll;
+    max-height: 500px;
+    overflow-y: scroll;
     right: 155px;
     display: flex;
     flex-direction: column;
