@@ -9,22 +9,30 @@ class PlaylistIndexComponent extends React.Component {
         // const colors = ["red", "orange", "green", "yellow", "blue", "pink", "purple"]
         // const color = colors[Math.floor(Math.random() * colors.length)]
         const { playlist } = this.props;
-        let songs = ""
-        let four= "hidden"
-        let not_four = ""
-        let song1 = ""
-        let song2 = ""
-        let song3 = ""
-        let song4 = ""
+        let songs = "";
+        let one = "hidden";
+        let four= "hidden";
+        let not_four = "";
+        let song1 = "";
+        let song2 = "";
+        let song3 = "";
+        let song4 = "";
         if(playlist.songs !== undefined){
-            songs = Object.values(playlist.songs)
+            songs = Object.values(playlist.songs);
+            if (songs.length > 0 && songs.length < 4) {
+                song1 = songs[0].photoUrl;
+                one = "one";
+                four = "hidden";
+                not_four = "hidden";
+            }
             if(songs.length > 3){
-                song1 = songs[0].photoUrl
-                song2 = songs[1].photoUrl
-                song3 = songs[2].photoUrl
-                song4 = songs[3].photoUrl
-                four = ""
-                not_four = "hidden"
+                song1 = songs[0].photoUrl;
+                song2 = songs[1].photoUrl;
+                song3 = songs[2].photoUrl;
+                song4 = songs[3].photoUrl;
+                four = "";
+                one = "hidden";
+                not_four = "hidden";
             }
         }
         return (
@@ -32,6 +40,9 @@ class PlaylistIndexComponent extends React.Component {
                 <div className="album_cover_pic">
                     <div className="playlist_cover" className="not_four" id={`${not_four}`}>
                         <FontAwesomeIcon icon={faMusic} />
+                    </div>
+                    <div className="playlist_cover" id={`${one}`}>
+                        <img className="playlist_one_image" src={`${song1}`} />
                     </div>
                     <div className="playlist_cover" id={`${four}`}>
                         <img className="playlist_cover_image"  src={`${song1}`}/>
