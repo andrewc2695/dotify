@@ -124,7 +124,7 @@ class PlaylistShowComponent extends React.Component {
                             <FontAwesomeIcon icon={faMusic} />
                         </div>
                         <div className="playlist_show_cover" id={`${one}`}>
-                            <img className="playlist_show_image" src={`${song1}`} />
+                            <img className="playlist_one_image" src={`${song1}`} />
                         </div>
                         <div className="playlist_show_cover" id={`${four}`}>
                             <img className="playlist_show_image"  src={`${song1}`} />

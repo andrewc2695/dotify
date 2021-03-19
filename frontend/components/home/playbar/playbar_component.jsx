@@ -11,6 +11,7 @@ class PlaybarComponent extends React.Component{
         this.playAudio = this.playAudio.bind(this);
         this.pauseAudio = this.pauseAudio.bind(this);
         this.handleToggle = this.handleToggle.bind(this);
+        this.playNextSong = this.playNextSong.bind(this);
         this.state = { playing: true, time: 0}
         this.time = 0
         this.playInterval = undefined;
@@ -26,7 +27,6 @@ class PlaybarComponent extends React.Component{
     } 
 
     componentDidUpdate(previousProps){
-        //double clicking song cause couter to go twice
         if(this.props.currentSong !== undefined){
             this.duration = this.props.currentSong.duration;
             if(previousProps.currentSong !== this.props.currentSong){
@@ -42,10 +42,13 @@ class PlaybarComponent extends React.Component{
                                 this.time += 1
                             }
                             if (this.state.time === Math.floor(this.duration) * 1000) {
+                                this.button = faPlay;
+                                this.time = 0;
                                 this.setState({ playing: false, time: 0 });
                                 this.pauseAudio(this.props.currentSong);
                                 clearInterval(this.playInterval);
                                 this.playInterval = undefined;
+                                this.playNextSong();
                             }
                         }, 100)
                     }
@@ -64,6 +67,26 @@ class PlaybarComponent extends React.Component{
         clearInterval(this.playInterval);
         this.playInterval = undefined;
         currentSong.pause();
+    }
+
+    playNextSong(){
+        let songList;
+        let nextSong;
+        let currentSongId = this.props.songId.sapId.toString()
+        debugger
+        if(this.props.locationWord === "playlists"){
+           songList = Object.keys(this.props.location[this.props.locationId].songs).sort((a, b) => a.sapId > b.sapId ? 1 : -1).reverse()
+           for(let i = 0; i < songList.length; i++){
+               if(songList[i] === currentSongId){
+                   if(songList[i + 1] !== undefined)
+                    nextSong = songList[i + 1];
+                    let songInfo = {location: this.props.locationWord, loactionId: this.props.loactionId,
+                        song: this.props.location[this.props.locationId].songs[nextSong], currentSong: new Audio(this.props.location[this.props.locationId].songs[nextSong].audiUrl),
+                        artist: this.props.location[this.props.locationId].songs[nextSong].artist};
+                    this.props.receiveSong(songInfo);
+               }
+           }
+        }
     }
 
     handleToggle(){
@@ -86,7 +109,7 @@ class PlaybarComponent extends React.Component{
     }
 
     render(){
-    
+        
         if(this.props.currentSong === undefined){
             return(
                 <div className="playbar_mid">

@@ -21,7 +21,7 @@ class SongComponent extends React.Component{
     playAudio(songInfo){
         // const audio = new Audio(this.props.song.audioUrl);
         songInfo.song = this.props.song
-        songInfo.currentSong = this.audio;
+        songInfo.currentSong = new Audio(this.props.song.audioUrl);;
         songInfo.artist = this.props.artist;
         this.props.receiveSong(songInfo)  
     }
@@ -70,7 +70,6 @@ class SongComponent extends React.Component{
         const info = this.props.location.pathname.split("/");
         this.location = info[1];
         this.locationId = Number(info[2]);
-
         if(this.props.sapId === undefined){
             this.add = "add"
             this.delete = "hidden"
