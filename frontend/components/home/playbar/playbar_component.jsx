@@ -48,7 +48,7 @@ class PlaybarComponent extends React.Component{
                                 this.pauseAudio(this.props.currentSong);
                                 clearInterval(this.playInterval);
                                 this.playInterval = undefined;
-                                this.playNextSong();
+                                // this.playNextSong();
                             }
                         }, 100)
                     }
