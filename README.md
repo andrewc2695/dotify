@@ -1,5 +1,5 @@
 # A spotify clone named dotify!
-
+![Dotify Home](dotify-ss.png)
 ## Overfiew
 
 Dotify is a clone of spotify. Here you can make an account, create, rename, delete palylists. Add and remove songs to playlists. And stream songs. 
