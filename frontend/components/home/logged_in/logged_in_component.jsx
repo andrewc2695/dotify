@@ -30,7 +30,7 @@ class LoggedInComponet extends React.Component {
                             <a href="/"><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</a>
                         </div>
                         <div className="website_header_div_div" id="user_profile_div">
-                            <a className="personal_link" id="github" href="https://github.com/andrewc2695" target="_blank">Github</a>
+                            <a className="personal_link" id="github" href="https://github.com/andrewc2695/dotify" target="_blank">Github</a>
                             <a className="personal_link" href="https://www.linkedin.com/in/andrew-curd-054997b1/" target="_blank">LinkedIn</a>
                             <button className="website_header_div_div" onClick={() => this.handleModal()}>
                                 <FontAwesomeIcon icon={faGrinAlt} />

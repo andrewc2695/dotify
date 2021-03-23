@@ -33,7 +33,7 @@ handleModal(){
                             <a href="/"><FontAwesomeIcon icon={faHeadphones} rotation={90} />otify</a>
                         </div>
                         <div className="website_header_div_div" id="logout_link_div">
-                            <a className="personal_link" id="github" href="https://github.com/andrewc2695" target="_blank">Github</a>
+                            <a className="personal_link" id="github" href="https://github.com/andrewc2695/dotify" target="_blank">Github</a>
                             <a className="personal_link" id="linkedin" href="https://www.linkedin.com/in/andrew-curd-054997b1/" target="_blank">LinkedIn</a>
                                 <Link className="non_personal_link" to="/signup">Sign Up</Link>
                                 <Link className="non_personal_link" to="login">Login</Link>
@@ -66,7 +66,7 @@ handleModal(){
                                 <Link className="non_personal_link" to="/signup">Sign Up</Link>
                                 <Link className="non_personal_link" to="login">Login</Link>
                                 <hr id="modal_line" />
-                                <a className="personal_link" id="github" href="https://github.com/andrewc2695" target="_blank">Github</a>
+                                <a className="personal_link" id="github" href="https://github.com/andrewc2695/dotify" target="_blank">Github</a>
                                 <a className="personal_link" href="https://www.linkedin.com/in/andrew-curd-054997b1/" target="_blank">LinkedIn</a>
                             </div>
                         </div>
