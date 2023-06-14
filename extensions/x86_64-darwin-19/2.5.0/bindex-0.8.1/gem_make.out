@@ -1,0 +1,15 @@
+current directory: /Users/andrewcurd/Desktop/dotify/gems/bindex-0.8.1/ext/skiptrace
+/Users/andrewcurd/.rbenv/versions/2.5.1/bin/ruby -I /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20230614-88700-lp93lf.rb extconf.rb
+creating Makefile
+
+current directory: /Users/andrewcurd/Desktop/dotify/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/andrewcurd/Desktop/dotify/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/andrewcurd/Desktop/dotify/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20230614-88700-18tamtb/skiptrace/internal

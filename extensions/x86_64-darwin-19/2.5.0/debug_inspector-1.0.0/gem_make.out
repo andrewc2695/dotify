@@ -1,0 +1,15 @@
+current directory: /Users/andrewcurd/Desktop/dotify/gems/debug_inspector-1.0.0/ext/debug_inspector
+/Users/andrewcurd/.rbenv/versions/2.5.1/bin/ruby -I /Users/andrewcurd/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20230614-88700-7mctc6.rb extconf.rb
+creating Makefile
+
+current directory: /Users/andrewcurd/Desktop/dotify/gems/debug_inspector-1.0.0/ext/debug_inspector
+make DESTDIR\= clean
+
+current directory: /Users/andrewcurd/Desktop/dotify/gems/debug_inspector-1.0.0/ext/debug_inspector
+make DESTDIR\=
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/andrewcurd/Desktop/dotify/gems/debug_inspector-1.0.0/ext/debug_inspector
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20230614-88700-1rcm66c
