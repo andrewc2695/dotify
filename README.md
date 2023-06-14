@@ -52,7 +52,7 @@ const myStyle = {
 
 ### Search Bar
 
-In order to create the search bar I had to create a custom rails route that would bing the databse for the search term that the user inputed. The search routes searches artists, albums and songs all in one search preventing the need for additional requests sent to the database.
+In order to create the search bar I had to create a custom rails route that would ping the databse for the search term that the user inputed. The search routes searches artists, albums and songs all in one search preventing the need for additional requests sent to the database.
 
 ```ruby
     # routes.rb
