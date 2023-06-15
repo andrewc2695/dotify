@@ -83,3 +83,4 @@ production:
   database: dotify_production
   username: dotify
   password: <%= ENV['DOTIFY_DATABASE_PASSWORD'] %>
+  port: 3000
