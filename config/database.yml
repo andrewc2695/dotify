@@ -83,4 +83,4 @@ production:
   database: dotify_production
   username: dotify
   password: <%= ENV['DOTIFY_DATABASE_PASSWORD'] %>
-  url: <%= postgres://aczelijwjpaaqh:25cad7b592eddbfb58384b9b59d0da19825d4fbb4490ab0c13294262001a6f1d@ec2-3-208-74-199.compute-1.amazonaws.com:5432/dfn0jfbj9ln5n0 %>
+  url: <%= ENV['DATABASE_URL'] %>
